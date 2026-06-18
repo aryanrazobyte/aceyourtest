@@ -25,6 +25,36 @@ const contactMenu = [
   { to: "/blog", label: "Blog" },
 ] as const;
 
+const gmatMenu = [
+  { to: "/gmat/plans-pricing", label: "GMAT Plans and Pricing" },
+  { to: "/gmat/hyderabad", label: "GMAT Coaching in Hyderabad" },
+  { to: "/gmat/mumbai", label: "GMAT Coaching in Mumbai" },
+  { to: "/gmat/noida", label: "GMAT Coaching in Noida" },
+  { to: "/gmat/gurgaon", label: "GMAT Coaching in Gurgaon" },
+  { to: "/gmat/pune", label: "GMAT Coaching in Pune" },
+  { to: "/gmat/top-university-cutoff", label: "Top University GMAT Cut-off" },
+] as const;
+
+const greMenu = [
+  { to: "/gre/private-tutoring", label: "GRE One On One Private Tutoring" },
+  { to: "/gre/test-prep-courses", label: "GRE Test Prep Courses Group Classes Programs" },
+  { to: "/gre/plans-pricing", label: "GRE Plans and Pricing" },
+  { to: "/gre/gurgaon", label: "GRE Coaching in Gurgaon" },
+  // { to: "/gre/mumbai", label: "GRE Coaching in Mumbai" },
+  // { to: "/gre/noida", label: "GRE Coaching in Noida" },
+  // { to: "/gre/pune", label: "GRE Coaching in Pune" },
+  // { to: "/gre/hyderabad", label: "GRE Coaching in Hyderabad" },
+] as const;
+
+const satMenu = [
+  { to: "/sat/plans-pricing", label: "SAT Plans and Pricing" },
+  { to: "/sat/gurgaon", label: "SAT Coaching in Gurgaon" },
+  { to: "/sat/noida", label: "SAT Coaching in Noida" },
+  { to: "/sat/mumbai", label: "SAT Coaching in Mumbai" },
+  { to: "/sat/hyderabad", label: "SAT Coaching in Hyderabad" },
+  { to: "/sat/pune", label: "SAT Coaching in Pune" },
+] as const;
+
 const contactPaths = ["/contact", "/about", "/blog"];
 
 const navLinkInactive =
@@ -40,6 +70,9 @@ function isNavActive(pathname: string, to: string, exact = false) {
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [gmatOpen, setGmatOpen] = useState(false);
+  const [greOpen, setGreOpen] = useState(false);
+  const [satOpen, setSatOpen] = useState(false);
   const { location } = useRouterState();
   const isContactActive = contactPaths.includes(location.pathname);
 
@@ -64,6 +97,47 @@ export function Header() {
               n.to,
               "exact" in n ? n.exact : false,
             );
+
+            // Render a dropdown for GMAT / GRE / SAT items
+            if (n.label === "GMAT" || n.label === "GRE" || n.label === "SAT") {
+              const isGmat = n.label === "GMAT";
+              const isGre = n.label === "GRE";
+              const isSat = n.label === "SAT";
+              const menu = isGmat ? gmatMenu : isGre ? greMenu : satMenu;
+              const openState = isGmat ? gmatOpen : isGre ? greOpen : satOpen;
+              const setOpenState = isGmat ? setGmatOpen : isGre ? setGreOpen : setSatOpen;
+              const basePath = isGmat ? "/gmat" : isGre ? "/gre" : "/sat";
+
+              return (
+                <DropdownMenu key={n.to} open={openState} onOpenChange={setOpenState}>
+                  <div onMouseEnter={() => setOpenState(true)} onMouseLeave={() => setOpenState(false)}>
+                    <DropdownMenuTrigger asChild>
+                      <div className={cn("inline-flex items-center gap-1 outline-none cursor-pointer", active ? navLinkActive : navLinkInactive)}>
+                        <Link to={basePath} className="block">{n.label}</Link>
+                        <ChevronDown className="h-4 w-4 opacity-80" />
+                      </div>
+                    </DropdownMenuTrigger>
+
+                    <DropdownMenuContent
+                      align="start"
+                      className="min-w-[16rem]"
+                      onMouseEnter={() => setOpenState(true)}
+                      onMouseLeave={() => setOpenState(false)}
+                    >
+                      {menu.map((item) => {
+                        const itemActive = location.pathname === item.to;
+                        return (
+                          <DropdownMenuItem key={item.to} asChild>
+                            <Link to={item.to as any} className={cn("w-full block py-2 px-3 text-sm", itemActive && "font-semibold text-primary")}>{item.label}</Link>
+                          </DropdownMenuItem>
+                        );
+                      })}
+                    </DropdownMenuContent>
+                  </div>
+                </DropdownMenu>
+              );
+            }
+
             return (
               <Link key={n.to} to={n.to} className={active ? navLinkActive : navLinkInactive}>
                 {n.label}
