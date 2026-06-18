@@ -178,12 +178,13 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-3">
           
-          <Link
-            to="/contact"
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
             className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-secondary transition-colors whitespace-nowrap"
           >
             Book Free Consultation
-          </Link>
+          </button>
         </div>
 
         <button
@@ -248,13 +249,13 @@ export function Header() {
               })}
             </div>
 
-            <Link
-              to="/contact"
-              onClick={() => setOpen(false)}
+            <button
+              type="button"
+              onClick={() => { setOpen(false); window.dispatchEvent(new CustomEvent("open-site-popup")); }}
               className="mt-4 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-white"
             >
               Book Free Consultation
-            </Link>
+            </button>
           </nav>
         </div>
       )}

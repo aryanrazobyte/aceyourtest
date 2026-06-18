@@ -1,5 +1,3 @@
-import { Link } from "@tanstack/react-router";
-
 export function CtaBand({
   title = "Ready to start your journey?",
   subtitle = "Book a free 30-minute strategy session with our mentor team.",
@@ -12,9 +10,13 @@ export function CtaBand({
           <p className="mt-2 text-muted-foreground">{subtitle}</p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <Link to="/contact" className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-secondary transition-colors">
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
+            className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-secondary transition-colors"
+          >
             Book Free Consultation
-          </Link>
+          </button>
           <a href="https://wa.me/918800338783" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-navy hover:bg-muted transition-colors">
             WhatsApp Us
           </a>

@@ -126,3 +126,22 @@
   text-transform: uppercase;
   color: var(--color-secondary);
 }
+
+/* Marquee animations for the BSchoolSection component */
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-left {
+  animation: marqueeLeft 22s linear infinite;
+}
+
+.animate-marquee-right {
+.animate-marquee-left { animation: marqueeLeft 28s linear infinite; }
+.animate-marquee-right { animation: marqueeRight 28s linear infinite; }

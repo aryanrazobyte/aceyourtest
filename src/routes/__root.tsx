@@ -15,6 +15,7 @@ import { Header } from "../components/site/Header";
 import { TopBar } from "../components/site/TopBar";
 import { Footer } from "../components/site/Footer";
 import { WhatsAppFloat } from "../components/site/WhatsAppFloat";
+import SitePopup from "../components/site/SitePopup";
 
 function NotFoundComponent() {
   return (
@@ -115,6 +116,7 @@ function RootComponent() {
         </main>
         <Footer />
         <WhatsAppFloat />
+        <SitePopup />
       </div>
     </QueryClientProvider>
   );

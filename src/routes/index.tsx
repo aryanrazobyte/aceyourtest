@@ -4,8 +4,11 @@ import {
   CheckCircle2, Star, ArrowRight, Award, Globe2,
 } from "lucide-react";
 import heroImg from "../assets/hero-students.jpg";
-import mentorImg from "../assets/mentor-tarun.png";
 import { SectionHeader } from "../components/site/SectionHeader";
+import UniversitiesSection from "../components/site/UniversitiesSection";
+import BlogPreviewSection from "../components/site/BlogPreviewSection";
+import VocabSeminarSection from "../components/site/VocabSeminarSection";
+import BSchoolSection from "../components/site/BSchoolSection";
 import { CtaBand } from "../components/site/CtaBand";
 import { StatsBar } from "../components/site/StatsBar";
 
@@ -86,9 +89,13 @@ function HomePage() {
               Personalized mentoring, expert guidance and proven study systems — built to secure top scores and global university admits.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/contact" className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-secondary transition-colors shadow-sm">
-                Book Free Consultation
-              </Link>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
+                  className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-secondary transition-colors shadow-sm"
+                >
+                  Book Free Consultation
+                </button>
               <a href="#programs" className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
                 Explore Programs
               </a>
@@ -124,6 +131,9 @@ function HomePage() {
 
       <StatsBar />
 
+      {/* Vocabulary Seminar (inserted) */}
+      <VocabSeminarSection />
+
       {/* Why Choose */}
       <section className="section-y">
         <div className="container-page">
@@ -147,7 +157,7 @@ function HomePage() {
         <div className="container-page grid gap-12 lg:grid-cols-[1fr_1.2fr] items-center">
           <div className="relative max-w-md mx-auto lg:mx-0">
             <div className="absolute -inset-4 rounded-3xl bg-primary/15" aria-hidden />
-            <img src={mentorImg} alt="Tarun Kaushik, Founder and Lead Mentor at AceYourTest" loading="lazy" width={1024} height={1280} className="relative rounded-2xl shadow-elevated w-full h-auto object-cover" />
+            <img src="https://res.cloudinary.com/ddcx08e0s/image/upload/v1781780949/arb_qebzqg.png" alt="Tarun Kaushik, Founder and Lead Mentor at AceYourTest" loading="lazy" width={1024} height={1280} className="relative rounded-2xl shadow-elevated w-full h-auto object-cover" />
           </div>
           <div>
             <SectionHeader eyebrow="Meet Your Mentor" title="Tarun Kaushik — Quant Expert & Lead Mentor" subtitle="A coach trusted by 10,000+ students across GMAT, GRE and SAT. Tarun has worked with leading test-prep organisations and built one of India's most respected quant programs." />
@@ -159,9 +169,13 @@ function HomePage() {
               ))}
             </ul>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link to="/contact" className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-secondary transition-colors">
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
+                className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-secondary transition-colors"
+              >
                 Schedule Free Session <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </button>
               <Link to="/about" className="inline-flex items-center justify-center rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-navy hover:bg-muted transition-colors">
                 Read Mentor Story
               </Link>
@@ -194,6 +208,9 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* B-School marquee section */}
+      <BSchoolSection />
 
       {/* Testimonials */}
       <section className="section-y bg-surface">
@@ -230,14 +247,9 @@ function HomePage() {
       {/* Universities */}
       <section className="section-y">
         <div className="container-page">
-          <SectionHeader eyebrow="Our Students Are At" title="Top global universities" center />
-          <div className="mt-10 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-9 gap-4">
-            {universities.map((u) => (
-              <div key={u} className="grid place-items-center rounded-xl border border-border bg-card px-3 py-5 font-display font-semibold text-navy text-sm sm:text-base hover:bg-muted transition-colors">
-                {u}
-              </div>
-            ))}
-          </div>
+          <SectionHeader eyebrow="Our Students Are At" title="TOP GLOBAL UNIVERSITIES" center />
+          <UniversitiesSection />
+          <BlogPreviewSection />
         </div>
       </section>
 
