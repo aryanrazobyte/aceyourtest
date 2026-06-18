@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { HeadContent, Link, Outlet, Scripts, createFileRoute, createRootRouteWithContext, createRouter, lazyRouteComponent, useRouter, useRouterState } from "@tanstack/react-router";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Check, ChevronDown, ChevronRight, Circle, Facebook, Instagram, Linkedin, Mail, MapPin, Menu, MessageCircle, Phone, X, Youtube } from "lucide-react";
+import { Check, ChevronDown, ChevronRight, Circle, Facebook, Instagram, Linkedin, Mail, MapPin, Menu, MessageCircle, Phone, Twitter, X, Youtube } from "lucide-react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 //#region src/styles.css?url
-var styles_default = "/assets/styles-PcA4TuVF.css";
+var styles_default = "/assets/styles-BYignVtN.css";
 //#endregion
 //#region src/lib/lovable-error-reporting.ts
 function reportLovableError(error, context = {}) {
@@ -149,20 +149,24 @@ var contactPaths = [
 	"/about",
 	"/blog"
 ];
-var navLinkBase = "px-3.5 py-2.5 text-sm font-semibold text-white/90 rounded-lg hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap";
-var navLinkActive = "bg-white text-[#081f3d] shadow-sm hover:bg-white hover:text-[#081f3d]";
+var navLinkInactive = "px-3.5 py-2.5 text-sm font-semibold rounded-lg transition-colors whitespace-nowrap text-white/90 hover:text-white hover:bg-white/10";
+var navLinkActive = "px-3.5 py-2.5 text-sm font-semibold rounded-lg transition-colors whitespace-nowrap bg-primary text-white shadow-md hover:bg-primary hover:text-white";
+function isNavActive(pathname, to, exact = false) {
+	if (exact) return pathname === to;
+	return pathname === to || pathname.startsWith(`${to}/`);
+}
 function Header() {
 	const [open, setOpen] = useState(false);
 	const { location } = useRouterState();
 	const isContactActive = contactPaths.includes(location.pathname);
 	return /* @__PURE__ */ jsxs("header", {
-		className: "sticky top-0 z-40 border-b text-white shadow-md",
+		className: "border-b shadow-md",
 		style: {
 			backgroundColor: "#081f3d",
 			borderColor: "#0a2a52"
 		},
 		children: [/* @__PURE__ */ jsxs("div", {
-			className: "container-page flex h-24 items-center justify-between gap-6",
+			className: "container-page flex h-28 items-center justify-between gap-6",
 			children: [
 				/* @__PURE__ */ jsx(Link, {
 					to: "/",
@@ -170,45 +174,44 @@ function Header() {
 					children: /* @__PURE__ */ jsx("img", {
 						src: logo_default,
 						alt: "AceYourTest",
-						className: "h-14 w-auto min-w-[160px] max-w-[220px] object-contain object-left sm:h-16 sm:min-w-[180px] sm:max-w-[240px]"
+						className: "h-16 w-auto min-w-[200px] max-w-[280px] object-contain object-left sm:h-[4.5rem] sm:min-w-[220px] sm:max-w-[300px]"
 					})
 				}),
 				/* @__PURE__ */ jsxs("nav", {
 					className: "hidden lg:flex items-center gap-1",
-					children: [mainNav.map((n) => /* @__PURE__ */ jsx(Link, {
-						to: n.to,
-						activeOptions: { exact: "exact" in n ? n.exact : false },
-						className: navLinkBase,
-						activeProps: { className: cn(navLinkBase, navLinkActive) },
-						children: n.label
-					}, n.to)), /* @__PURE__ */ jsxs(DropdownMenu, { children: [/* @__PURE__ */ jsxs(DropdownMenuTrigger, {
-						className: cn("inline-flex items-center gap-1 outline-none", navLinkBase, isContactActive && navLinkActive),
+					children: [mainNav.map((n) => {
+						const active = isNavActive(location.pathname, n.to, "exact" in n ? n.exact : false);
+						return /* @__PURE__ */ jsx(Link, {
+							to: n.to,
+							className: active ? navLinkActive : navLinkInactive,
+							children: n.label
+						}, n.to);
+					}), /* @__PURE__ */ jsxs(DropdownMenu, { children: [/* @__PURE__ */ jsxs(DropdownMenuTrigger, {
+						className: cn("inline-flex items-center gap-1 outline-none", isContactActive ? navLinkActive : navLinkInactive),
 						children: ["Contact", /* @__PURE__ */ jsx(ChevronDown, { className: "h-4 w-4 opacity-80" })]
 					}), /* @__PURE__ */ jsx(DropdownMenuContent, {
 						align: "end",
 						className: "min-w-[11rem]",
-						children: contactMenu.map((item) => /* @__PURE__ */ jsx(DropdownMenuItem, {
-							asChild: true,
-							children: /* @__PURE__ */ jsx(Link, {
-								to: item.to,
-								className: "w-full cursor-pointer font-medium",
-								activeProps: { className: "w-full cursor-pointer font-semibold text-primary" },
-								children: item.label
-							})
-						}, item.to))
+						children: contactMenu.map((item) => {
+							const active = location.pathname === item.to;
+							return /* @__PURE__ */ jsx(DropdownMenuItem, {
+								asChild: true,
+								children: /* @__PURE__ */ jsx(Link, {
+									to: item.to,
+									className: cn("w-full cursor-pointer font-medium", active && "font-semibold text-primary"),
+									children: item.label
+								})
+							}, item.to);
+						})
 					})] })]
 				}),
-				/* @__PURE__ */ jsxs("div", {
+				/* @__PURE__ */ jsx("div", {
 					className: "hidden md:flex items-center gap-3",
-					children: [/* @__PURE__ */ jsxs("a", {
-						href: "tel:+918800338783",
-						className: "hidden xl:inline-flex items-center gap-2 text-sm font-semibold text-white/95 hover:text-white transition-colors",
-						children: [/* @__PURE__ */ jsx(Phone, { className: "h-4 w-4" }), " +91 88003 38783"]
-					}), /* @__PURE__ */ jsx(Link, {
+					children: /* @__PURE__ */ jsx(Link, {
 						to: "/contact",
 						className: "inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-secondary transition-colors whitespace-nowrap",
 						children: "Book Free Consultation"
-					})]
+					})
 				}),
 				/* @__PURE__ */ jsx("button", {
 					"aria-label": "Menu",
@@ -226,26 +229,29 @@ function Header() {
 			children: /* @__PURE__ */ jsxs("nav", {
 				className: "container-page py-4 flex flex-col gap-1",
 				children: [
-					mainNav.map((n) => /* @__PURE__ */ jsx(Link, {
-						to: n.to,
-						activeOptions: { exact: "exact" in n ? n.exact : false },
-						onClick: () => setOpen(false),
-						className: "px-3 py-3 text-sm font-semibold text-white/85 rounded-lg hover:bg-white/10",
-						activeProps: { className: "px-3 py-3 text-sm font-semibold rounded-lg bg-white text-[#081f3d]" },
-						children: n.label
-					}, n.to)),
+					mainNav.map((n) => {
+						const active = isNavActive(location.pathname, n.to, "exact" in n ? n.exact : false);
+						return /* @__PURE__ */ jsx(Link, {
+							to: n.to,
+							onClick: () => setOpen(false),
+							className: cn("px-3 py-3 text-sm font-semibold rounded-lg", active ? "bg-primary text-white shadow-md" : "text-white/85 hover:bg-white/10"),
+							children: n.label
+						}, n.to);
+					}),
 					/* @__PURE__ */ jsxs("div", {
 						className: "mt-2 border-t border-white/10 pt-3",
 						children: [/* @__PURE__ */ jsx("p", {
 							className: "px-3 pb-2 text-xs font-semibold uppercase tracking-wider text-white/50",
 							children: "Contact"
-						}), contactMenu.map((item) => /* @__PURE__ */ jsx(Link, {
-							to: item.to,
-							onClick: () => setOpen(false),
-							className: "block px-3 py-2.5 text-sm font-medium text-white/85 rounded-lg hover:bg-white/10",
-							activeProps: { className: "block px-3 py-2.5 text-sm font-semibold rounded-lg bg-white text-[#081f3d]" },
-							children: item.label
-						}, item.to))]
+						}), contactMenu.map((item) => {
+							const active = location.pathname === item.to;
+							return /* @__PURE__ */ jsx(Link, {
+								to: item.to,
+								onClick: () => setOpen(false),
+								className: cn("block px-3 py-2.5 text-sm rounded-lg", active ? "bg-primary text-white shadow-md font-semibold" : "font-medium text-white/85 hover:bg-white/10"),
+								children: item.label
+							}, item.to);
+						})]
 					}),
 					/* @__PURE__ */ jsx(Link, {
 						to: "/contact",
@@ -256,6 +262,87 @@ function Header() {
 				]
 			})
 		})]
+	});
+}
+//#endregion
+//#region src/components/site/TopBar.tsx
+function QuoraIcon({ className }) {
+	return /* @__PURE__ */ jsx("svg", {
+		viewBox: "0 0 24 24",
+		fill: "currentColor",
+		className,
+		"aria-hidden": true,
+		children: /* @__PURE__ */ jsx("path", { d: "M12.738 18.701c-1.86 1.489-4.196 2.408-6.738 2.408-1.027 0-2.01-.17-2.919-.48l1.778-2.835c.518.175 1.07.27 1.642.27.99 0 1.9-.293 2.675-.793L5.21 7.3h3.42l2.41 5.36 2.41-5.36h3.42l-4.768 8.49 2.546 4.211z" })
+	});
+}
+var socials = [
+	{
+		icon: Linkedin,
+		href: "https://www.linkedin.com/company/ace-your-test-delhi",
+		label: "LinkedIn"
+	},
+	{
+		icon: Facebook,
+		href: "https://www.facebook.com/aceyourtestofficial",
+		label: "Facebook"
+	},
+	{
+		icon: Instagram,
+		href: "https://www.instagram.com/aceyourtest_official/",
+		label: "Instagram"
+	},
+	{
+		icon: Twitter,
+		href: "https://x.com/Tarun_Tutor",
+		label: "Twitter"
+	},
+	{
+		icon: Youtube,
+		href: "https://www.youtube.com/channel/UC7ri7HaH02gDmRw6kM_1Clg",
+		label: "YouTube"
+	},
+	{
+		icon: QuoraIcon,
+		href: "https://www.quora.com/profile/Tarun-Kaushik-14",
+		label: "Quora"
+	}
+];
+function TopBar() {
+	return /* @__PURE__ */ jsx("div", {
+		className: "hidden md:block bg-[#0d1b2a] border-b border-white/5",
+		children: /* @__PURE__ */ jsxs("div", {
+			className: "container-page flex h-11 items-center justify-between",
+			children: [/* @__PURE__ */ jsx("div", {
+				className: "flex items-center gap-1",
+				children: socials.map(({ icon: Icon, href, label }) => /* @__PURE__ */ jsx("a", {
+					href,
+					target: "_blank",
+					rel: "noreferrer",
+					"aria-label": label,
+					className: "flex h-8 w-8 items-center justify-center rounded-full text-[15px] text-white/50 transition-all duration-200 hover:bg-white/10 hover:text-white",
+					children: /* @__PURE__ */ jsx(Icon, { className: "h-[15px] w-[15px]" })
+				}, label))
+			}), /* @__PURE__ */ jsxs("div", {
+				className: "flex items-center gap-4 text-[13px]",
+				children: [
+					/* @__PURE__ */ jsxs("a", {
+						href: "tel:+919310037791",
+						className: "flex items-center gap-2 text-white/60 transition-colors hover:text-white",
+						children: [/* @__PURE__ */ jsx(Phone, { className: "h-[15px] w-[15px] text-[#4a9eff]" }), /* @__PURE__ */ jsx("span", { children: "9310037791" })]
+					}),
+					/* @__PURE__ */ jsx("span", {
+						className: "text-white/20",
+						"aria-hidden": true,
+						children: "|"
+					}),
+					/* @__PURE__ */ jsxs("a", {
+						href: "mailto:tarunkaushik@aceyourtest.in",
+						className: "flex items-center gap-2 text-white/60 transition-colors hover:text-white",
+						children: [/* @__PURE__ */ jsx(Mail, { className: "h-[15px] w-[15px] text-[#4a9eff]" }), /* @__PURE__ */ jsx("span", { children: "tarunkaushik@aceyourtest.in" })]
+					})
+				]
+			})]
+		})
 	});
 }
 //#endregion
@@ -559,7 +646,10 @@ function RootComponent() {
 		children: /* @__PURE__ */ jsxs("div", {
 			className: "flex min-h-screen flex-col bg-background",
 			children: [
-				/* @__PURE__ */ jsx(Header, {}),
+				/* @__PURE__ */ jsxs("div", {
+					className: "sticky top-0 z-40",
+					children: [/* @__PURE__ */ jsx(TopBar, {}), /* @__PURE__ */ jsx(Header, {})]
+				}),
 				/* @__PURE__ */ jsx("main", {
 					className: "flex-1",
 					children: /* @__PURE__ */ jsx(Outlet, {})
@@ -912,7 +1002,7 @@ var Route$1 = createFileRoute("/about")({
 });
 //#endregion
 //#region src/routes/index.tsx
-var $$splitComponentImporter = () => import("./routes-DWH_bvY6.js");
+var $$splitComponentImporter = () => import("./routes-Czw0E4qW.js");
 var Route = createFileRoute("/")({
 	head: () => ({
 		meta: [

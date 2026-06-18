@@ -1,39 +1,139 @@
 import { t as mentor_tarun_default } from "./mentor-tarun-Cs-yT3Xs.js";
 import { t as SectionHeader } from "./SectionHeader-DpRfiz42.js";
 import { t as CtaBand } from "./CtaBand-BmDkc44B.js";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { ArrowRight, Award, BarChart3, BookOpen, CheckCircle2, ClipboardList, Globe2, GraduationCap, MessageSquare, Star, Target, Trophy, Users } from "lucide-react";
 //#region src/assets/hero-students.jpg
 var hero_students_default = "/assets/hero-students-Bk3SWfnL.jpg";
 //#endregion
-//#region src/routes/index.tsx?tsr-split=component
-var stats = [
+//#region src/hooks/use-count-up.ts
+function useCountUp({ end, duration = 1800, start = 0 }) {
+	const ref = useRef(null);
+	const [value, setValue] = useState(end);
+	const hasRun = useRef(false);
+	useEffect(() => {
+		const node = ref.current;
+		if (!node || hasRun.current) return;
+		if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+			setValue(end);
+			hasRun.current = true;
+			return;
+		}
+		const run = () => {
+			if (hasRun.current) return;
+			hasRun.current = true;
+			setValue(start);
+			const startedAt = performance.now();
+			const tick = (now) => {
+				const progress = Math.min((now - startedAt) / duration, 1);
+				const eased = 1 - Math.pow(1 - progress, 3);
+				setValue(Math.round(start + (end - start) * eased));
+				if (progress < 1) requestAnimationFrame(tick);
+			};
+			requestAnimationFrame(tick);
+		};
+		const observer = new IntersectionObserver(([entry]) => {
+			if (entry.isIntersecting) {
+				run();
+				observer.disconnect();
+			}
+		}, { threshold: .25 });
+		observer.observe(node);
+		return () => observer.disconnect();
+	}, [
+		duration,
+		end,
+		start
+	]);
+	return {
+		ref,
+		value
+	};
+}
+//#endregion
+//#region src/components/site/StatsBar.tsx
+var homeStats = [
 	{
-		value: "10,000+",
-		label: "Students Trained"
+		label: "Students Trained",
+		value: 1e4,
+		suffix: "+"
 	},
 	{
-		value: "15+",
-		label: "Years of Experience"
+		label: "Years of Experience",
+		value: 15,
+		suffix: "+"
 	},
 	{
-		value: "700+",
-		label: "GMAT Achievers"
+		label: "GMAT Achievers",
+		value: 700,
+		suffix: "+"
 	},
 	{
-		value: "325+",
-		label: "GRE Achievers"
+		label: "GRE Achievers",
+		value: 325,
+		suffix: "+"
 	},
 	{
-		value: "1,450+",
-		label: "SAT Achievers"
+		label: "SAT Achievers",
+		value: 1450,
+		suffix: "+"
 	},
 	{
-		value: "Top",
-		label: "University Admits"
+		label: "University Admits",
+		text: "Top"
 	}
 ];
+function AnimatedStat({ label, value, suffix = "", prefix = "" }) {
+	const { ref, value: current } = useCountUp({ end: value });
+	return /* @__PURE__ */ jsxs("div", {
+		ref,
+		className: "text-center",
+		children: [/* @__PURE__ */ jsxs("p", {
+			className: "font-display text-2xl sm:text-3xl font-bold text-navy tabular-nums",
+			children: [
+				prefix,
+				current.toLocaleString("en-IN"),
+				suffix
+			]
+		}), /* @__PURE__ */ jsx("p", {
+			className: "mt-1 text-xs sm:text-sm text-muted-foreground",
+			children: label
+		})]
+	});
+}
+function StaticStat({ label, text }) {
+	return /* @__PURE__ */ jsxs("div", {
+		className: "text-center",
+		children: [/* @__PURE__ */ jsx("p", {
+			className: "font-display text-2xl sm:text-3xl font-bold text-navy",
+			children: text
+		}), /* @__PURE__ */ jsx("p", {
+			className: "mt-1 text-xs sm:text-sm text-muted-foreground",
+			children: label
+		})]
+	});
+}
+function StatsBar({ items = homeStats }) {
+	return /* @__PURE__ */ jsx("section", {
+		className: "border-b border-border bg-surface",
+		children: /* @__PURE__ */ jsx("div", {
+			className: "container-page py-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6",
+			children: items.map((item) => "text" in item ? /* @__PURE__ */ jsx(StaticStat, {
+				label: item.label,
+				text: item.text
+			}, item.label) : /* @__PURE__ */ jsx(AnimatedStat, {
+				label: item.label,
+				value: item.value,
+				suffix: item.suffix,
+				prefix: item.prefix
+			}, item.label))
+		})
+	});
+}
+//#endregion
+//#region src/routes/index.tsx?tsr-split=component
 var features = [
 	{
 		icon: Target,
@@ -255,22 +355,7 @@ function HomePage() {
 				})]
 			})]
 		}),
-		/* @__PURE__ */ jsx("section", {
-			className: "border-b border-border bg-surface",
-			children: /* @__PURE__ */ jsx("div", {
-				className: "container-page py-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6",
-				children: stats.map((s) => /* @__PURE__ */ jsxs("div", {
-					className: "text-center",
-					children: [/* @__PURE__ */ jsx("p", {
-						className: "font-display text-2xl sm:text-3xl font-bold text-navy",
-						children: s.value
-					}), /* @__PURE__ */ jsx("p", {
-						className: "mt-1 text-xs sm:text-sm text-muted-foreground",
-						children: s.label
-					})]
-				}, s.label))
-			})
-		}),
+		/* @__PURE__ */ jsx(StatsBar, {}),
 		/* @__PURE__ */ jsx("section", {
 			className: "section-y",
 			children: /* @__PURE__ */ jsxs("div", {
