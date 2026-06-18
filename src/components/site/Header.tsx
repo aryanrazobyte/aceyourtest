@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import logoImg from "@/assets/logo.png";
 import {
@@ -76,6 +76,36 @@ export function Header() {
   const { location } = useRouterState();
   const isContactActive = contactPaths.includes(location.pathname);
 
+  // Hover close timers to avoid blink when moving pointer into portal-rendered content
+  const closeTimers = useRef<Record<string, number | null>>({});
+
+  useEffect(() => {
+    return () => {
+      // clear any pending timers on unmount
+      Object.values(closeTimers.current).forEach((t) => {
+        if (t) clearTimeout(t);
+      });
+    };
+  }, []);
+
+  function clearClose(key: string) {
+    const t = closeTimers.current[key];
+    if (t) {
+      clearTimeout(t);
+      closeTimers.current[key] = null;
+    }
+  }
+
+  function scheduleClose(key: string, setter: (v: boolean) => void, delay = 180) {
+    clearClose(key);
+    // Use window.setTimeout to get number return type
+    const id = window.setTimeout(() => {
+      setter(false);
+      closeTimers.current[key] = null;
+    }, delay) as unknown as number;
+    closeTimers.current[key] = id;
+  }
+
   return (
     <header
       className="border-b shadow-md"
@@ -105,12 +135,22 @@ export function Header() {
               const isSat = n.label === "SAT";
               const menu = isGmat ? gmatMenu : isGre ? greMenu : satMenu;
               const openState = isGmat ? gmatOpen : isGre ? greOpen : satOpen;
-              const setOpenState = isGmat ? setGmatOpen : isGre ? setGreOpen : setSatOpen;
+                        const setOpenState = isGmat ? setGmatOpen : isGre ? setGreOpen : setSatOpen;
+                        const menuKey = isGmat ? "gmat" : isGre ? "gre" : "sat";
               const basePath = isGmat ? "/gmat" : isGre ? "/gre" : "/sat";
 
               return (
                 <DropdownMenu key={n.to} open={openState} onOpenChange={setOpenState}>
-                  <div onMouseEnter={() => setOpenState(true)} onMouseLeave={() => setOpenState(false)}>
+                  <div
+                    onMouseEnter={() => {
+                      // clear any pending close and open immediately
+                      clearClose(menuKey);
+                      setOpenState(true);
+                    }}
+                    onMouseLeave={() => {
+                      scheduleClose(menuKey, setOpenState);
+                    }}
+                  >
                     <DropdownMenuTrigger asChild>
                       <div className={cn("inline-flex items-center gap-1 outline-none cursor-pointer", active ? navLinkActive : navLinkInactive)}>
                         <Link to={basePath} className="block">{n.label}</Link>
@@ -121,8 +161,11 @@ export function Header() {
                     <DropdownMenuContent
                       align="start"
                       className="min-w-[16rem]"
-                      onMouseEnter={() => setOpenState(true)}
-                      onMouseLeave={() => setOpenState(false)}
+                      onMouseEnter={() => {
+                        clearClose(menuKey);
+                        setOpenState(true);
+                      }}
+                      onMouseLeave={() => scheduleClose(menuKey, setOpenState)}
                     >
                       {menu.map((item) => {
                         const itemActive = location.pathname === item.to;
