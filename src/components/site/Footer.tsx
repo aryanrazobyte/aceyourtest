@@ -1,15 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, Youtube } from "lucide-react";
+import logoImg from "@/assets/logo.png";
 
 export function Footer() {
   return (
     <footer className="mt-16 bg-navy text-navy-foreground">
       <div className="container-page py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-primary text-primary-foreground font-display font-bold">A</span>
-            <span className="font-display text-lg font-bold">AceYourTest</span>
-          </div>
+          <Link to="/" className="flex shrink-0 items-center py-1">
+            <img src={logoImg} alt="AceYourTest" className="h-14 w-auto object-contain" />
+          </Link>
           <p className="mt-4 text-sm text-white/70 leading-relaxed">
             India's trusted GMAT, GRE & SAT coaching platform — personalized mentoring,
             proven systems, and admission support for global universities.
