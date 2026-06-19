@@ -60,7 +60,7 @@ export default function DemoPopup({ isOpen, onClose }: DemoPopupProps) {
 
           {/* Text over image */}
           <div className="absolute bottom-0 left-0 right-0 p-6">
-            <h2 className="text-white text-xl font-bold leading-snug mb-2 font-display">
+            <h2 className="text-white text-xl font-bold leading-snug mb-2">
               Make Your Ivy-League Dream School A Reality
             </h2>
             <p className="text-white/80 text-sm leading-relaxed">
@@ -73,7 +73,7 @@ export default function DemoPopup({ isOpen, onClose }: DemoPopupProps) {
         {/* Right — Form Panel */}
         <div className="flex-1 p-8 overflow-y-auto">
           <div className="mb-6">
-            <p id="popup-title" className="text-2xl font-bold text-foreground leading-tight mb-1 font-display">
+            <p id="popup-title" className="text-2xl font-bold text-foreground leading-tight mb-1">
               The start to your <span className="text-primary">99%ile Score</span>
             </p>
             <p className="text-sm text-muted-foreground">Schedule a one-on-one demo session and a call</p>

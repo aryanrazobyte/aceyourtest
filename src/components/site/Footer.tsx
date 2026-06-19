@@ -4,11 +4,11 @@ import logoImg from "@/assets/logo.png";
 
 export function Footer() {
   return (
-    <footer className="mt-16 bg-navy text-navy-foreground">
-      <div className="container-page py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="bg-navy text-navy-foreground">
+      <div className="container-page py-6 sm:py-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" className="flex shrink-0 items-center py-1">
-            <img src={logoImg} alt="AceYourTest" className="h-14 w-auto object-contain" />
+            <img src={logoImg} alt="AceYourTest" className="h-10 w-auto object-contain sm:h-12" />
           </Link>
           <p className="mt-4 text-sm text-white/70 leading-relaxed">
             India's trusted GMAT, GRE & SAT coaching platform — personalized mentoring,

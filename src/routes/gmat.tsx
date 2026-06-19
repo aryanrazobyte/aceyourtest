@@ -38,7 +38,7 @@ function GmatPage() {
       <PageHero eyebrow="GMAT Program" title="Crack GMAT Focus Edition with a mentor-led system" subtitle="A structured Quant + Verbal + Data Insights program — built around the latest GMAT Focus syllabus, proven frameworks and small-batch attention." />
 
       <section className="section-y">
-        <div className="container-page grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+        <div className="container-page grid gap-6 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <SectionHeader eyebrow="Why GMAT Matters" title="The gateway to top global MBA programs" subtitle="A strong GMAT score remains the single biggest scholarship and admission lever for leading business schools across the US, Europe and Asia." />
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -54,20 +54,20 @@ function GmatPage() {
               ))}
             </div>
 
-            <div className="mt-12">
+            <div className="mt-6">
               <SectionHeader eyebrow="Course Options" title="Pick the program that fits your goal" />
               <div className="mt-8 grid gap-5 sm:grid-cols-3">
                 {courseOptions.map((c) => (
                   <div key={c.title} className={`rounded-2xl border bg-card p-6 shadow-card ${c.popular ? "border-primary ring-1 ring-primary/30" : "border-border"}`}>
                     <p className="text-xs font-semibold tracking-widest uppercase text-primary">{c.price}</p>
-                    <h3 className="mt-2 font-display text-lg font-bold text-navy">{c.title}</h3>
+                    <h3 className="mt-2 text-lg font-bold text-navy">{c.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mt-12">
+            <div className="mt-6">
               <SectionHeader eyebrow="Study Plan" title="A 4-phase journey to your target score" />
               <ol className="mt-8 grid gap-5 sm:grid-cols-2">
                 {[
@@ -77,21 +77,21 @@ function GmatPage() {
                   { n: "04", t: "Final Push & Admits", d: "Mock review, last-mile sprints and admissions guidance for target schools." },
                 ].map((s) => (
                   <li key={s.n} className="rounded-xl border border-border bg-card p-5 shadow-card">
-                    <p className="font-display text-2xl font-bold text-primary">{s.n}</p>
-                    <h4 className="mt-2 font-display font-semibold text-navy">{s.t}</h4>
+                    <p className="text-2xl font-bold text-primary">{s.n}</p>
+                    <h4 className="mt-2 font-semibold text-navy">{s.t}</h4>
                     <p className="mt-1 text-sm text-muted-foreground">{s.d}</p>
                   </li>
                 ))}
               </ol>
             </div>
 
-            <div className="mt-12">
+            <div className="mt-6">
               <SectionHeader eyebrow="FAQ" title="GMAT prep — common questions" />
               <div className="mt-6 space-y-3">
                 {faqs.map((f) => (
                   <details key={f.q} className="group rounded-xl border border-border bg-card p-5 shadow-card">
                     <summary className="flex items-center justify-between cursor-pointer list-none">
-                      <span className="font-display font-semibold text-navy">{f.q}</span>
+                      <span className="font-semibold text-navy">{f.q}</span>
                       <ChevronDown className="h-5 w-5 text-muted-foreground transition-transform group-open:rotate-180" />
                     </summary>
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{f.a}</p>

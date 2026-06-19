@@ -34,14 +34,14 @@ function StudyAbroadPage() {
       <PageHero eyebrow="Study Abroad" title="End-to-end mentoring for top global admissions" subtitle="From the first university shortlist to the final scholarship application — we walk every step with you." />
 
       <section className="section-y">
-        <div className="container-page grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+        <div className="container-page grid gap-6 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <SectionHeader eyebrow="What We Cover" title="Premium admissions support, end-to-end" />
-            <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            <div className="mt-5 grid gap-5 sm:grid-cols-2">
               {services.map((s) => (
                 <div key={s.title} className="rounded-2xl border border-border bg-card p-6 shadow-card">
                   <div className="grid h-11 w-11 place-items-center rounded-lg bg-primary/10 text-primary"><s.icon className="h-5 w-5" /></div>
-                  <h3 className="mt-4 font-display text-lg font-bold text-navy">{s.title}</h3>
+                  <h3 className="mt-4 text-lg font-bold text-navy">{s.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
               ))}

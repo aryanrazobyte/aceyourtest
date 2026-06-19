@@ -111,12 +111,12 @@ export function Header() {
       className="border-b shadow-md"
       style={{ backgroundColor: "#081f3d", borderColor: "#0a2a52" }}
     >
-      <div className="container-page flex h-28 items-center justify-between gap-6">
-        <Link to="/" className="flex shrink-0 items-center py-1">
+      <div className="container-page flex h-14 sm:h-16 items-center justify-between gap-3 sm:gap-4">
+        <Link to="/" className="flex shrink-0 items-center">
           <img
             src={logoImg}
             alt="AceYourTest"
-            className="h-16 w-auto min-w-[200px] max-w-[280px] object-contain object-left sm:h-[4.5rem] sm:min-w-[220px] sm:max-w-[300px]"
+            className="h-10 w-auto max-w-[160px] object-contain object-left sm:h-12 sm:max-w-[200px]"
           />
         </Link>
 
@@ -219,12 +219,11 @@ export function Header() {
           </DropdownMenu>
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
-          
+        <div className="hidden md:flex items-center gap-2">
           <button
             type="button"
             onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
-            className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-secondary transition-colors whitespace-nowrap"
+            className="inline-flex items-center justify-center rounded-lg bg-primary px-3 py-2 text-xs sm:px-4 sm:py-2.5 sm:text-sm font-semibold text-white shadow-sm hover:bg-secondary transition-colors whitespace-nowrap"
           >
             Book Free Consultation
           </button>
@@ -244,7 +243,7 @@ export function Header() {
           className="lg:hidden border-t"
           style={{ borderColor: "#0a2a52", backgroundColor: "#081f3d" }}
         >
-          <nav className="container-page py-4 flex flex-col gap-1">
+          <nav className="container-page py-3 flex flex-col gap-0.5">
             {mainNav.map((n) => {
               const active = isNavActive(
                 location.pathname,

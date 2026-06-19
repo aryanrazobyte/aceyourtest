@@ -104,7 +104,7 @@ function StudentCard({ s }: { s: Student }) {
 
       {/* Right Half — Text content */}
       <div className="flex w-[60%] flex-col justify-center gap-2 p-4">
-        <p className="text-[14px] md:text-[15px] font-display font-semibold leading-tight text-navy">{s.name}</p>
+        <p className="text-[14px] md:text-[15px] font-semibold leading-tight text-navy">{s.name}</p>
         <span className={`w-fit rounded-full px-2 py-0.5 text-[10px] font-medium ${badgeMap[s.badge]}`}>{s.school}</span>
         <p className="text-[12px] md:text-[13px] italic leading-relaxed text-muted-foreground">&ldquo;{s.quote}&rdquo;</p>
       </div>
@@ -137,10 +137,11 @@ function MarqueeRow({
 
 export default function BSchoolSection() {
   return (
-    <section className="flex flex-col gap-12 overflow-hidden px-6 py-20 md:flex-row md:items-start md:px-12 lg:px-20">
+    <section className="section-y overflow-hidden">
+      <div className="container-page flex flex-col gap-6 lg:flex-row lg:items-start">
       {/* ── Left column ── */}
       <div className="w-full md:w-1/2 flex-shrink-0 md:pr-8 lg:pr-12">
-        <h2 className="mb-4 text-4xl leading-tight lg:text-5xl font-display text-navy">
+        <h2 className="mb-3 text-2xl sm:text-3xl lg:text-4xl leading-tight text-navy">
           Which <span className="text-red-600">TOP B-School/University</span> do you see yourself in?
         </h2>
 
@@ -181,16 +182,17 @@ export default function BSchoolSection() {
           ))}
         </ul>
 
-        <button className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-4 text-base font-medium text-navy transition hover:bg-muted active:scale-95">
+        <button className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-medium text-navy transition hover:bg-muted active:scale-95 sm:px-6 sm:py-3.5 sm:text-base">
           Book a Personalised Diagnostic + Strategy Call{" "}
           <span aria-hidden>›</span>
         </button>
       </div>
 
       {/* ── Right column — two marquee rows ── */}
-      <div className="flex flex-1 flex-col gap-6 overflow-hidden md:w-1/2">
+      <div className="flex flex-1 flex-col gap-4 overflow-hidden md:w-1/2">
         <MarqueeRow items={students.slice(0, 4)} direction="left" />
         <MarqueeRow items={students.slice(4)} direction="right" />
+      </div>
       </div>
     </section>
   );

@@ -31,15 +31,15 @@ export function EnquiryForm({ title = "Book a Free Consultation", compact = fals
   if (sent) {
     return (
       <div className="rounded-2xl bg-success/10 border border-success/30 p-6 text-center">
-        <h3 className="font-display text-xl font-semibold text-navy">Thank you!</h3>
+        <h3 className="text-xl font-semibold text-navy">Thank you!</h3>
         <p className="mt-2 text-sm text-muted-foreground">Our mentor team will reach out within 24 hours.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} className={`rounded-2xl bg-card border border-border p-6 sm:p-7 shadow-card ${compact ? "" : "sm:p-8"}`}>
-      <h3 className="font-display text-xl font-semibold text-navy">{title}</h3>
+    <form onSubmit={onSubmit} className={`rounded-xl bg-card border border-border p-4 sm:p-5 shadow-card ${compact ? "" : "sm:p-6"}`}>
+      <h3 className="text-xl font-semibold text-navy">{title}</h3>
       <p className="mt-1 text-sm text-muted-foreground">Speak with a mentor — no obligations.</p>
 
       <div className="mt-5 grid gap-4 sm:grid-cols-2">

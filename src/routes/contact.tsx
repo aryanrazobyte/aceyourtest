@@ -23,10 +23,10 @@ function ContactPage() {
       <PageHero eyebrow="Contact" title="Talk to a mentor — book a free consultation" subtitle="Tell us about your goals and we'll design a personalized prep + admissions plan." />
 
       <section className="section-y">
-        <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.1fr]">
+        <div className="container-page grid gap-5 lg:grid-cols-[1fr_1.1fr]">
           <div className="space-y-5">
             <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
-              <h3 className="font-display text-lg font-bold text-navy">Office</h3>
+              <h3 className="text-lg font-bold text-navy">Office</h3>
               <ul className="mt-4 space-y-4 text-sm">
                 <li className="flex gap-3"><MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                   <span>Alaknanda, New Delhi, India</span>

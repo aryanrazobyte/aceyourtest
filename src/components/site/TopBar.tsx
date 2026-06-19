@@ -30,7 +30,7 @@ const socials: { icon: LucideIcon | ComponentType<{ className?: string }>; href:
 export function TopBar() {
   return (
     <div className="hidden md:block bg-[#0d1b2a] border-b border-white/5">
-      <div className="container-page flex h-11 items-center justify-between">
+      <div className="container-page flex h-9 items-center justify-between">
         <div className="flex items-center gap-1">
           {socials.map(({ icon: Icon, href, label }) => (
             <a

@@ -48,7 +48,7 @@ function TestimonialsPage() {
                   <PlayCircle className="h-14 w-14 opacity-80 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
-                  <p className="font-display font-semibold">{v.name}</p>
+                  <p className="font-semibold">{v.name}</p>
                   <p className="text-xs text-white/80">{v.score}</p>
                 </div>
               </div>

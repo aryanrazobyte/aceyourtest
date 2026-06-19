@@ -172,7 +172,7 @@ interface University {
 
 function UniversityCard({ u }: { u: University }) {
   return (
-    <div className="group flex w-[170px] flex-shrink-0 flex-col items-center gap-3 rounded-[20px] border-[1.5px] border-border bg-card px-4 py-6 transition-all duration-250 hover:-translate-y-1.5 hover:border-[#0B1F4E] hover:shadow-2xl hover:shadow-[#0B1F4E]/10">
+    <div className="group flex w-[130px] sm:w-[150px] flex-shrink-0 flex-col items-center gap-2 sm:gap-3 rounded-2xl border border-border bg-card px-3 py-4 sm:px-4 sm:py-5 transition-all duration-250 hover:-translate-y-1 hover:border-navy hover:shadow-elevated">
       {/* SVG Logo */}
       <div className="h-[72px] w-[72px] flex-shrink-0 overflow-hidden rounded-2xl">
         {u.logo}
@@ -207,12 +207,12 @@ export default function UniversitiesSection() {
   const doubled = [...universities, ...universities];
 
   return (
-    <section className="overflow-hidden py-16 text-center">
+    <section className="overflow-hidden section-gap text-center">
 
       {/* Marquee */}
       <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-28 bg-gradient-to-r from-white to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-28 bg-gradient-to-l from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 sm:w-20 bg-gradient-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 sm:w-20 bg-gradient-to-l from-white to-transparent" />
 
         <div className="flex w-max animate-marquee-left gap-5 hover:[animation-play-state:paused]">
           {doubled.map((u, i) => (

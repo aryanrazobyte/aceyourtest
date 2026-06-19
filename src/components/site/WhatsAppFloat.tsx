@@ -7,7 +7,7 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-success text-success-foreground px-4 py-3 shadow-elevated hover:scale-105 transition-transform"
+      className="fixed bottom-3 right-3 sm:bottom-4 sm:right-4 z-50 inline-flex items-center gap-2 rounded-full bg-success text-success-foreground p-3 sm:px-4 sm:py-3 shadow-elevated hover:scale-105 transition-transform"
     >
       <MessageCircle className="h-5 w-5" />
       <span className="hidden sm:inline text-sm font-semibold">WhatsApp Us</span>

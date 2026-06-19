@@ -28,7 +28,7 @@ function AboutPage() {
       />
 
       <section className="section-y">
-        <div className="container-page grid gap-12 lg:grid-cols-2">
+        <div className="container-page grid gap-6 lg:grid-cols-2">
           <div>
             <SectionHeader eyebrow="Our Story" title="From one mentor to 10,000+ students" />
             <div className="mt-5 space-y-4 text-foreground leading-relaxed">
@@ -45,7 +45,7 @@ function AboutPage() {
             ].map((c) => (
               <div key={c.title} className="rounded-xl border border-border bg-card p-6 shadow-card">
                 <div className="grid h-10 w-10 place-items-center rounded-lg bg-primary/10 text-primary"><c.icon className="h-5 w-5" /></div>
-                <h3 className="mt-4 font-display text-lg font-semibold text-navy">{c.title}</h3>
+                <h3 className="mt-4 text-lg font-semibold text-navy">{c.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.text}</p>
               </div>
             ))}
@@ -54,7 +54,7 @@ function AboutPage() {
       </section>
 
       <section className="section-y bg-surface">
-        <div className="container-page grid gap-12 lg:grid-cols-[1fr_1.2fr] items-center">
+        <div className="container-page grid gap-6 lg:grid-cols-[1fr_1.2fr] items-center">
           <div className="relative max-w-md mx-auto lg:mx-0">
             <div className="absolute -inset-4 rounded-3xl bg-primary/15" aria-hidden />
             <img src="https://res.cloudinary.com/ddcx08e0s/image/upload/v1781780949/arb_qebzqg.png" alt="Tarun Kaushik" loading="lazy" width={1024} height={1280} className="relative rounded-2xl shadow-elevated w-full h-auto object-cover" />
@@ -85,8 +85,8 @@ function AboutPage() {
             { v: "325+", l: "GRE Achievers" },
             { v: "1,450+", l: "SAT Achievers" },
           ].map((s) => (
-            <div key={s.l} className="rounded-2xl border border-border bg-card p-7 shadow-card">
-              <p className="font-display text-3xl font-bold text-navy">{s.v}</p>
+            <div key={s.l} className="rounded-xl border border-border bg-card p-5 shadow-card">
+              <p className="text-3xl font-bold text-navy">{s.v}</p>
               <p className="mt-1 text-sm text-muted-foreground">{s.l}</p>
             </div>
           ))}

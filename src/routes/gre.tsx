@@ -31,7 +31,7 @@ function GrePage() {
       <PageHero eyebrow="GRE Program" title="Score higher on the GRE with a structured, mentor-led program" subtitle="60+ live hours of curriculum, intensive practice and full-length mocks — designed for top MS and PhD admissions." />
 
       <section className="section-y">
-        <div className="container-page grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+        <div className="container-page grid gap-6 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <SectionHeader eyebrow="GRE Overview" title="The most flexible test for graduate admissions" subtitle="Accepted by thousands of MS, MBA and PhD programs worldwide. The shorter GRE format rewards a focused, well-trained test-taker." />
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -49,18 +49,18 @@ function GrePage() {
               ))}
             </div>
 
-            <div className="mt-12 grid gap-5 md:grid-cols-2">
+            <div className="mt-6 grid gap-5 md:grid-cols-2">
               <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
-                <h3 className="font-display text-xl font-bold text-navy">Quant Strategy</h3>
+                <h3 className="text-xl font-bold text-navy">Quant Strategy</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">From arithmetic foundations to advanced data interpretation — we drill the exact patterns the GRE tests, with timing tactics for each question type.</p>
               </div>
               <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
-                <h3 className="font-display text-xl font-bold text-navy">Verbal Strategy</h3>
+                <h3 className="text-xl font-bold text-navy">Verbal Strategy</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">Targeted vocabulary, RC frameworks and a logic-first approach to text completion and sentence equivalence.</p>
               </div>
             </div>
 
-            <div className="mt-12">
+            <div className="mt-6">
               <SectionHeader eyebrow="Success Stories" title="Students who hit their target GRE score" />
               <div className="mt-6 grid gap-4 sm:grid-cols-3">
                 {[
@@ -69,7 +69,7 @@ function GrePage() {
                   { name: "Meera K.", score: "325", uni: "NUS" },
                 ].map((s) => (
                   <div key={s.name} className="rounded-xl border border-border bg-card p-5 shadow-card text-center">
-                    <p className="font-display text-3xl font-bold text-primary">{s.score}</p>
+                    <p className="text-3xl font-bold text-primary">{s.score}</p>
                     <p className="mt-1 font-semibold text-navy">{s.name}</p>
                     <p className="text-xs text-muted-foreground">{s.uni}</p>
                   </div>
@@ -77,13 +77,13 @@ function GrePage() {
               </div>
             </div>
 
-            <div className="mt-12">
+            <div className="mt-6">
               <SectionHeader eyebrow="FAQ" title="GRE prep — common questions" />
               <div className="mt-6 space-y-3">
                 {faqs.map((f) => (
                   <details key={f.q} className="group rounded-xl border border-border bg-card p-5 shadow-card">
                     <summary className="flex items-center justify-between cursor-pointer list-none">
-                      <span className="font-display font-semibold text-navy">{f.q}</span>
+                      <span className="font-semibold text-navy">{f.q}</span>
                       <ChevronDown className="h-5 w-5 text-muted-foreground transition-transform group-open:rotate-180" />
                     </summary>
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{f.a}</p>

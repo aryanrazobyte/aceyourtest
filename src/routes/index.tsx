@@ -9,8 +9,8 @@ import UniversitiesSection from "../components/site/UniversitiesSection";
 import BlogPreviewSection from "../components/site/BlogPreviewSection";
 import VocabSeminarSection from "../components/site/VocabSeminarSection";
 import BSchoolSection from "../components/site/BSchoolSection";
-import { CtaBand } from "../components/site/CtaBand";
 import { StatsBar } from "../components/site/StatsBar";
+import { CtaBand } from "../components/site/CtaBand";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -77,33 +77,33 @@ function HomePage() {
       {/* Hero */}
       <section className="relative bg-navy text-navy-foreground overflow-hidden">
         <div className="absolute inset-0 opacity-[0.07] [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:24px_24px]" aria-hidden />
-        <div className="container-page relative grid gap-12 lg:grid-cols-[1.1fr_1fr] py-16 lg:py-24 items-center">
+        <div className="container-page relative grid gap-5 lg:grid-cols-[1.1fr_1fr] py-6 sm:py-8 lg:py-10 items-center">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-widest uppercase text-white/90">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-2.5 py-1 text-[11px] sm:text-xs font-semibold tracking-widest uppercase text-white/90">
               <Award className="h-3.5 w-3.5 text-primary" /> 15+ Years · 10,000+ Mentored
             </span>
-            <h1 className="mt-5 font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.05]">
+            <h1 className="mt-3 text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
               India's Trusted <span className="text-primary">GMAT, GRE & SAT</span> Coaching Platform
             </h1>
-            <p className="mt-5 text-lg text-white/75 max-w-xl leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base text-white/75 max-w-xl leading-relaxed">
               Personalized mentoring, expert guidance and proven study systems — built to secure top scores and global university admits.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-4 flex flex-wrap gap-2 sm:gap-3">
                 <button
                   type="button"
                   onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
-                  className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-secondary transition-colors shadow-sm"
+                  className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-secondary transition-colors shadow-sm"
                 >
                   Book Free Consultation
                 </button>
-              <a href="#programs" className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
+              <a href="#programs" className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
                 Explore Programs
               </a>
-              <a href="https://wa.me/918800338783" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-md bg-success px-5 py-3 text-sm font-semibold text-success-foreground hover:opacity-90 transition-opacity">
+              <a href="https://wa.me/918800338783" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-md bg-success px-4 py-2.5 text-sm font-semibold text-success-foreground hover:opacity-90 transition-opacity">
                 Talk To Mentor
               </a>
             </div>
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/70">
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs sm:text-sm text-white/70">
               <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-success" /> Live Online & Classroom</span>
               <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-success" /> Small Batches</span>
               <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-success" /> Admission Support</span>
@@ -122,7 +122,7 @@ function HomePage() {
               <div className="grid h-10 w-10 place-items-center rounded-full bg-success/10 text-success"><Trophy className="h-5 w-5" /></div>
               <div>
                 <p className="text-xs text-muted-foreground">Top GMAT score</p>
-                <p className="font-display font-bold text-navy">765 / 805</p>
+                <p className="font-bold text-navy">765 / 805</p>
               </div>
             </div>
           </div>
@@ -138,13 +138,13 @@ function HomePage() {
       <section className="section-y">
         <div className="container-page">
           <SectionHeader eyebrow="Why AceYourTest" title="A premium prep experience, end-to-end" subtitle="Everything you need to score high and land at your dream university — under one roof." center />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="section-gap grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((f) => (
-              <div key={f.title} className="rounded-xl border border-border bg-card p-6 shadow-card hover:shadow-elevated hover:-translate-y-0.5 transition-all">
+              <div key={f.title} className="rounded-xl border border-border bg-card p-4 sm:p-5 shadow-card hover:shadow-elevated transition-all">
                 <div className="grid h-11 w-11 place-items-center rounded-lg bg-primary/10 text-primary">
                   <f.icon className="h-5 w-5" />
                 </div>
-                <h3 className="mt-4 font-display text-lg font-semibold text-navy">{f.title}</h3>
+                <h3 className="mt-3 text-base sm:text-lg font-semibold text-navy">{f.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
               </div>
             ))}
@@ -154,7 +154,7 @@ function HomePage() {
 
       {/* Meet your mentor */}
       <section className="section-y bg-surface">
-        <div className="container-page grid gap-12 lg:grid-cols-[1fr_1.2fr] items-center">
+        <div className="container-page grid gap-6 lg:grid-cols-[1fr_1.2fr] items-center">
           <div className="relative max-w-md mx-auto lg:mx-0">
             <div className="absolute -inset-4 rounded-3xl bg-primary/15" aria-hidden />
             <img src="https://res.cloudinary.com/ddcx08e0s/image/upload/v1781780949/arb_qebzqg.png" alt="Tarun Kaushik, Founder and Lead Mentor at AceYourTest" loading="lazy" width={1024} height={1280} className="relative rounded-2xl shadow-elevated w-full h-auto object-cover" />
@@ -168,7 +168,7 @@ function HomePage() {
                 </li>
               ))}
             </ul>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-4 flex flex-wrap gap-2 sm:gap-3">
               <button
                 type="button"
                 onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
@@ -188,12 +188,12 @@ function HomePage() {
       <section id="programs" className="section-y">
         <div className="container-page">
           <SectionHeader eyebrow="Programs" title="Choose the program built for your goal" subtitle="Three flagship programs — built around proven curriculum, mentorship and outcomes." center />
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="section-gap grid gap-4 sm:gap-5 lg:grid-cols-3">
             {programs.map((p) => (
-              <div key={p.code} className={`relative rounded-2xl border bg-card p-7 shadow-card flex flex-col ${p.featured ? "border-primary ring-1 ring-primary/30" : "border-border"}`}>
+              <div key={p.code} className={`relative rounded-xl border bg-card p-5 sm:p-6 shadow-card flex flex-col ${p.featured ? "border-primary ring-1 ring-primary/30" : "border-border"}`}>
                 {p.featured && <span className="absolute -top-3 right-6 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">Most Popular</span>}
                 <span className="inline-flex items-center justify-center rounded-md bg-navy text-navy-foreground px-2.5 py-1 text-xs font-bold tracking-wider w-fit">{p.code}</span>
-                <h3 className="mt-4 font-display text-2xl font-bold text-navy">{p.title}</h3>
+                <h3 className="mt-3 text-xl sm:text-2xl font-bold text-navy">{p.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
                 <ul className="mt-5 space-y-2.5 text-sm flex-1">
                   {p.bullets.map((b) => (
@@ -216,15 +216,15 @@ function HomePage() {
       <section className="section-y bg-surface">
         <div className="container-page">
           <SectionHeader eyebrow="Student Success" title="Real students. Real scores. Real admits." subtitle="A few stories from the AceYourTest community." center />
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="section-gap grid gap-4 sm:gap-5 md:grid-cols-2">
             {testimonials.map((t) => (
-              <figure key={t.name} className="rounded-2xl border border-border bg-card p-7 shadow-card">
+              <figure key={t.name} className="rounded-xl border border-border bg-card p-5 shadow-card">
                 <div className="flex items-center gap-1 text-primary">
                   {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
                 </div>
                 <blockquote className="mt-4 text-foreground leading-relaxed">"{t.quote}"</blockquote>
                 <figcaption className="mt-5 flex items-center gap-4 border-t border-border pt-4">
-                  <div className="grid h-11 w-11 place-items-center rounded-full bg-navy text-navy-foreground font-display font-bold">
+                  <div className="grid h-11 w-11 place-items-center rounded-full bg-navy text-navy-foreground font-bold">
                     {t.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                   </div>
                   <div className="text-sm">
@@ -236,7 +236,7 @@ function HomePage() {
               </figure>
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-5 text-center">
             <Link to="/success-stories" className="inline-flex items-center text-sm font-semibold text-primary hover:text-secondary">
               View all success stories <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
@@ -249,11 +249,11 @@ function HomePage() {
         <div className="container-page">
           <SectionHeader eyebrow="Our Students Are At" title="TOP GLOBAL UNIVERSITIES" center />
           <UniversitiesSection />
-          <BlogPreviewSection />
+          <BlogPreviewSection embedded />
         </div>
       </section>
 
-      <CtaBand />
+      <CtaBand compact bookLabel="Book Free" whatsappLabel="WhatsApp" />
     </>
   );
 }

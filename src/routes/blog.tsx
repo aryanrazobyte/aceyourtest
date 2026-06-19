@@ -34,14 +34,14 @@ function BlogPage() {
             ))}
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((p) => (
               <article key={p.title} className="group rounded-2xl border border-border bg-card overflow-hidden shadow-card hover:shadow-elevated transition-shadow flex flex-col">
                 <div className="aspect-[16/9] bg-gradient-to-br from-navy to-secondary relative">
                   <span className="absolute top-4 left-4 rounded-md bg-white/95 text-navy px-2.5 py-1 text-xs font-semibold">{p.cat}</span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="font-display text-lg font-bold text-navy group-hover:text-primary transition-colors">{p.title}</h3>
+                  <h3 className="text-lg font-bold text-navy group-hover:text-primary transition-colors">{p.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">{p.desc}</p>
                   <div className="mt-5 flex items-center justify-between text-xs text-muted-foreground">
                     <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" /> {p.date} · {p.read}</span>

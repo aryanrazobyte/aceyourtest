@@ -38,11 +38,11 @@ function SuccessPage() {
           {stories.map((s) => (
             <article key={s.name} className="rounded-2xl border border-border bg-card p-6 shadow-card flex flex-col">
               <div className="flex items-center gap-4">
-                <div className="grid h-14 w-14 place-items-center rounded-full bg-navy text-navy-foreground font-display font-bold text-lg">
+                <div className="grid h-14 w-14 place-items-center rounded-full bg-navy text-navy-foreground font-bold text-lg">
                   {s.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                 </div>
                 <div>
-                  <p className="font-display font-semibold text-navy">{s.name}</p>
+                  <p className="font-semibold text-navy">{s.name}</p>
                   <p className="text-xs text-muted-foreground">{s.test} · {s.uni}</p>
                 </div>
                 <span className="ml-auto rounded-md bg-primary/10 text-primary px-2.5 py-1 text-xs font-semibold">{s.score}</span>

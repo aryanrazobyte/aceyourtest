@@ -28,7 +28,7 @@ function AnimatedStat({
 
   return (
     <div ref={ref} className="text-center">
-      <p className="font-display text-2xl sm:text-3xl font-bold text-navy tabular-nums">
+      <p className="text-xl sm:text-2xl font-bold text-navy tabular-nums">
         {prefix}
         {current.toLocaleString("en-IN")}
         {suffix}
@@ -41,7 +41,7 @@ function AnimatedStat({
 function StaticStat({ label, text }: { label: string; text: string }) {
   return (
     <div className="text-center">
-      <p className="font-display text-2xl sm:text-3xl font-bold text-navy">{text}</p>
+      <p className="text-xl sm:text-2xl font-bold text-navy">{text}</p>
       <p className="mt-1 text-xs sm:text-sm text-muted-foreground">{label}</p>
     </div>
   );
@@ -50,7 +50,7 @@ function StaticStat({ label, text }: { label: string; text: string }) {
 export function StatsBar({ items = homeStats }: { items?: StatItem[] }) {
   return (
     <section className="border-b border-border bg-surface">
-      <div className="container-page py-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+      <div className="container-page py-5 sm:py-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
         {items.map((item) =>
           "text" in item ? (
             <StaticStat key={item.label} label={item.label} text={item.text} />
