@@ -20,6 +20,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GrePrivateTutoringRouteImport } from './routes/gre/private-tutoring'
 
 const TestimonialsRoute = TestimonialsRouteImport.update({
   id: '/testimonials',
@@ -76,6 +77,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GrePrivateTutoringRoute = GrePrivateTutoringRouteImport.update({
+  id: '/private-tutoring',
+  path: '/private-tutoring',
+  getParentRoute: () => GreRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -83,12 +89,13 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/gmat': typeof GmatRoute
-  '/gre': typeof GreRoute
+  '/gre': typeof GreRouteWithChildren
   '/sat': typeof SatRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study-abroad': typeof StudyAbroadRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/testimonials': typeof TestimonialsRoute
+  '/gre/private-tutoring': typeof GrePrivateTutoringRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -96,12 +103,13 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/gmat': typeof GmatRoute
-  '/gre': typeof GreRoute
+  '/gre': typeof GreRouteWithChildren
   '/sat': typeof SatRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study-abroad': typeof StudyAbroadRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/testimonials': typeof TestimonialsRoute
+  '/gre/private-tutoring': typeof GrePrivateTutoringRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -110,12 +118,13 @@ export interface FileRoutesById {
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
   '/gmat': typeof GmatRoute
-  '/gre': typeof GreRoute
+  '/gre': typeof GreRouteWithChildren
   '/sat': typeof SatRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study-abroad': typeof StudyAbroadRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/testimonials': typeof TestimonialsRoute
+  '/gre/private-tutoring': typeof GrePrivateTutoringRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -131,6 +140,7 @@ export interface FileRouteTypes {
     | '/study-abroad'
     | '/success-stories'
     | '/testimonials'
+    | '/gre/private-tutoring'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -144,6 +154,7 @@ export interface FileRouteTypes {
     | '/study-abroad'
     | '/success-stories'
     | '/testimonials'
+    | '/gre/private-tutoring'
   id:
     | '__root__'
     | '/'
@@ -157,6 +168,7 @@ export interface FileRouteTypes {
     | '/study-abroad'
     | '/success-stories'
     | '/testimonials'
+    | '/gre/private-tutoring'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -165,7 +177,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
   GmatRoute: typeof GmatRoute
-  GreRoute: typeof GreRoute
+  GreRoute: typeof GreRouteWithChildren
   SatRoute: typeof SatRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudyAbroadRoute: typeof StudyAbroadRoute
@@ -252,8 +264,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gre/private-tutoring': {
+      id: '/gre/private-tutoring'
+      path: '/private-tutoring'
+      fullPath: '/gre/private-tutoring'
+      preLoaderRoute: typeof GrePrivateTutoringRouteImport
+      parentRoute: typeof GreRoute
+    }
   }
 }
+
+interface GreRouteChildren {
+  GrePrivateTutoringRoute: typeof GrePrivateTutoringRoute
+}
+
+const GreRouteChildren: GreRouteChildren = {
+  GrePrivateTutoringRoute: GrePrivateTutoringRoute,
+}
+
+const GreRouteWithChildren = GreRoute._addFileChildren(GreRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -261,7 +290,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
   GmatRoute: GmatRoute,
-  GreRoute: GreRoute,
+  GreRoute: GreRouteWithChildren,
   SatRoute: SatRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudyAbroadRoute: StudyAbroadRoute,
