@@ -82,7 +82,7 @@ export default function DemoPopup({ isOpen, onClose }: DemoPopupProps) {
             >
               The start to your{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-rose-500">
-                99%ile Score
+                99% Score
               </span>
             </p>
             <p className="text-sm text-gray-500">

@@ -74,7 +74,7 @@ export default function DemoPopup({ isOpen, onClose }: DemoPopupProps) {
         <div className="flex-1 p-8 overflow-y-auto">
           <div className="mb-6">
             <p id="popup-title" className="text-2xl font-bold text-foreground leading-tight mb-1">
-              The start to your <span className="text-primary">99%ile Score</span>
+              The start to your <span className="text-primary">99% Score</span>
             </p>
             <p className="text-sm text-muted-foreground">Schedule a one-on-one demo session and a call</p>
           </div>

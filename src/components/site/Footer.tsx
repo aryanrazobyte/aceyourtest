@@ -217,7 +217,7 @@ export function Footer() {
                     {group.cities.map((city) => (
                       <li key={city.to}>
                         <Link
-                          to={city.to}
+                          to={city.to as any}
                           className="inline-flex rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-white/70 transition hover:border-primary/30 hover:bg-primary/15 hover:text-white"
                         >
                           {city.label}
