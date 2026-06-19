@@ -13,7 +13,7 @@ export default function Home() {
           Top One Percent
         </h1>
         <p className="text-gray-500 mb-8">
-          Achieve the 99th percentile on GMAT &amp; GRE
+          Achieve the 99 percentile on GMAT &amp; GRE
         </p>
         <button
           onClick={popup.open}
