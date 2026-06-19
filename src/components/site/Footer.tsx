@@ -1,5 +1,6 @@
 import type { ComponentType, ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
+import { BOOK_CONSULTATION_PATH } from "@/lib/site-constants";
 import type { LucideIcon } from "lucide-react";
 import {
   Mail,
@@ -126,14 +127,13 @@ export function Footer() {
             </p>
           </div>
           <div className="flex w-full flex-wrap gap-2 sm:w-auto">
-            <button
-              type="button"
-              onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
+            <Link
+              to={BOOK_CONSULTATION_PATH}
               className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90 sm:flex-none"
             >
               Book Free Consultation
               <ArrowRight className="h-4 w-4" />
-            </button>
+            </Link>
             <a
               href="https://wa.me/918800338783"
               target="_blank"

@@ -1,4 +1,6 @@
 import { Calendar, MessageCircle, Sparkles } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { BOOK_CONSULTATION_PATH } from "@/lib/site-constants";
 
 export function CtaBand({
   title = "Ready to start your journey?",
@@ -76,14 +78,13 @@ export function CtaBand({
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-              <button
-                type="button"
-                onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
+              <Link
+                to={BOOK_CONSULTATION_PATH}
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary/90 px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg hover:from-primary/95"
               >
                 <Calendar className="h-4 w-4 transition-transform group-hover:scale-110" aria-hidden />
                 {bookLabel}
-              </button>
+              </Link>
               <a
                 href="https://wa.me/918800338783"
                 target="_blank"

@@ -11,6 +11,7 @@ import VocabSeminarSection from "../components/site/VocabSeminarSection";
 import BSchoolSection from "../components/site/BSchoolSection";
 import { StatsBar } from "../components/site/StatsBar";
 import { CtaBand } from "../components/site/CtaBand";
+import { BookConsultationButton } from "../components/site/BookConsultationButton";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -89,13 +90,7 @@ function HomePage() {
               Personalized mentoring, expert guidance and proven study systems — built to secure top scores and global university admits.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 sm:gap-3">
-                <button
-                  type="button"
-                  onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
-                  className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-secondary transition-colors shadow-sm"
-                >
-                  Book Free Consultation
-                </button>
+                <BookConsultationButton className="rounded-md px-4 py-2.5 text-sm shadow-sm" />
               <a href="#programs" className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
                 Explore Programs
               </a>
@@ -169,13 +164,9 @@ function HomePage() {
               ))}
             </ul>
             <div className="mt-4 flex flex-wrap gap-2 sm:gap-3">
-              <button
-                type="button"
-                onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
-                className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-secondary transition-colors"
-              >
-                Schedule Free Session <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
+              <BookConsultationButton className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm">
+                Schedule Free Session <ArrowRight className="h-4 w-4" />
+              </BookConsultationButton>
               <Link to="/about" className="inline-flex items-center justify-center rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-navy hover:bg-muted transition-colors">
                 Read Mentor Story
               </Link>

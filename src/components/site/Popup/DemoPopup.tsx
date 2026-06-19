@@ -3,6 +3,7 @@
 import React, { useEffect, useCallback } from "react";
 import { X } from "lucide-react";
 import DemoForm from "./DemoForm";
+import { MENTOR_IMAGE } from "@/lib/site-constants";
 
 interface DemoPopupProps {
   isOpen: boolean;
@@ -32,13 +33,13 @@ export default function DemoPopup({ isOpen, onClose }: DemoPopupProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in"
       onClick={(e) => e.target === e.currentTarget && onClose()}
       role="dialog"
       aria-modal="true"
       aria-labelledby="popup-title"
     >
-      <div className="relative flex w-full max-w-3xl rounded-2xl overflow-hidden shadow-elevated bg-card max-h-[90vh]">
+      <div className="relative flex w-full max-w-3xl rounded-2xl overflow-hidden shadow-elevated bg-card max-h-[90vh] animate-scale-in">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -51,8 +52,8 @@ export default function DemoPopup({ isOpen, onClose }: DemoPopupProps) {
         {/* Left — Image Panel */}
         <div className="relative hidden md:flex md:w-[42%] flex-shrink-0">
           <img
-            src="https://res.cloudinary.com/ddcx08e0s/image/upload/v1781780949/arb_qebzqg.png"
-            alt="Graduate celebrating achievement"
+            src={MENTOR_IMAGE}
+            alt="Tarun Kaushik, Lead Mentor at AceYourTest"
             className="object-cover w-full h-full"
           />
           {/* Gradient overlay */}
@@ -74,7 +75,7 @@ export default function DemoPopup({ isOpen, onClose }: DemoPopupProps) {
         <div className="flex-1 p-8 overflow-y-auto">
           <div className="mb-6">
             <p id="popup-title" className="text-2xl font-bold text-foreground leading-tight mb-1">
-              The start to your <span className="text-primary">99% Score</span>
+              The start to your <span className="text-primary">99.9% Score</span>
             </p>
             <p className="text-sm text-muted-foreground">Schedule a one-on-one demo session and a call</p>
           </div>

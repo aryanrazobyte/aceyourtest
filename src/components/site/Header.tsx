@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
+import { BookConsultationButton } from "@/components/site/BookConsultationButton";
 
 const mainNav = [
   { to: "/", label: "Home", exact: true },
@@ -220,13 +221,7 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
-            className="inline-flex items-center justify-center rounded-lg bg-primary px-3 py-2 text-xs sm:px-4 sm:py-2.5 sm:text-sm font-semibold text-white shadow-sm hover:bg-secondary transition-colors whitespace-nowrap"
-          >
-            Book Free Consultation
-          </button>
+          <BookConsultationButton className="rounded-lg px-3 py-2 text-xs sm:px-4 sm:py-2.5 sm:text-sm whitespace-nowrap" />
         </div>
 
         <button
@@ -291,13 +286,10 @@ export function Header() {
               })}
             </div>
 
-            <button
-              type="button"
-              onClick={() => { setOpen(false); window.dispatchEvent(new CustomEvent("open-site-popup")); }}
-              className="mt-4 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-white"
-            >
-              Book Free Consultation
-            </button>
+            <BookConsultationButton
+              onClick={() => setOpen(false)}
+              className="mt-4 w-full rounded-lg px-4 py-3 text-sm"
+            />
           </nav>
         </div>
       )}

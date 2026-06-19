@@ -61,16 +61,7 @@ export default function DemoPopup({ isOpen, onClose }: DemoPopupProps) {
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-          {/* Text over image */}
-          <div className="absolute bottom-0 left-0 right-0 p-6">
-            <h2 className="text-white text-xl font-bold leading-snug mb-2">
-              Make Your Ivy-League Dream School A Reality
-            </h2>
-            <p className="text-white/80 text-sm leading-relaxed">
-              A call/demo appointment focused on maximizing your efforts and
-              reaching the 99th percentile on the GMAT / GRE.
-            </p>
-          </div>
+          {/* Text overlay removed as requested */}
         </div>
 
         {/* Right — Form Panel */}

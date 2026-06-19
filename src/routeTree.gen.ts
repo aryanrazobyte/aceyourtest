@@ -17,6 +17,7 @@ import { Route as SatRouteImport } from './routes/sat'
 import { Route as GreRouteImport } from './routes/gre'
 import { Route as GmatRouteImport } from './routes/gmat'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BookConsultationRouteImport } from './routes/book-consultation'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -62,6 +63,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookConsultationRoute = BookConsultationRouteImport.update({
+  id: '/book-consultation',
+  path: '/book-consultation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
@@ -87,6 +93,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
+  '/book-consultation': typeof BookConsultationRoute
   '/contact': typeof ContactRoute
   '/gmat': typeof GmatRoute
   '/gre': typeof GreRouteWithChildren
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
+  '/book-consultation': typeof BookConsultationRoute
   '/contact': typeof ContactRoute
   '/gmat': typeof GmatRoute
   '/gre': typeof GreRouteWithChildren
@@ -116,6 +124,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
+  '/book-consultation': typeof BookConsultationRoute
   '/contact': typeof ContactRoute
   '/gmat': typeof GmatRoute
   '/gre': typeof GreRouteWithChildren
@@ -132,6 +141,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/book-consultation'
     | '/contact'
     | '/gmat'
     | '/gre'
@@ -146,6 +156,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/book-consultation'
     | '/contact'
     | '/gmat'
     | '/gre'
@@ -160,6 +171,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/book-consultation'
     | '/contact'
     | '/gmat'
     | '/gre'
@@ -175,6 +187,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRoute
+  BookConsultationRoute: typeof BookConsultationRoute
   ContactRoute: typeof ContactRoute
   GmatRoute: typeof GmatRoute
   GreRoute: typeof GreRouteWithChildren
@@ -243,6 +256,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/book-consultation': {
+      id: '/book-consultation'
+      path: '/book-consultation'
+      fullPath: '/book-consultation'
+      preLoaderRoute: typeof BookConsultationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog': {
       id: '/blog'
       path: '/blog'
@@ -288,6 +308,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BlogRoute: BlogRoute,
+  BookConsultationRoute: BookConsultationRoute,
   ContactRoute: ContactRoute,
   GmatRoute: GmatRoute,
   GreRoute: GreRouteWithChildren,

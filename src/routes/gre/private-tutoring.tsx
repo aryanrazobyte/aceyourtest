@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   CheckCircle2,
   User,
@@ -17,6 +17,7 @@ import { PageHero } from "../../components/site/PageHero";
 import { SectionHeader } from "../../components/site/SectionHeader";
 import { CtaBand } from "../../components/site/CtaBand";
 import { EnquiryForm } from "../../components/site/EnquiryForm";
+import { BOOK_CONSULTATION_PATH } from "../../lib/site-constants";
 
 export const Route = createFileRoute("/gre/private-tutoring")({
   head: () => ({
@@ -245,13 +246,12 @@ function GrePrivateTutoringPage() {
         title="Achieve Your Target GRE Score with Elite 1-on-1 Mentorship"
         subtitle="Experience India's most personalized GRE preparation program — designed for ambitious students targeting top universities worldwide."
       >
-        <button
-          type="button"
-          onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
+        <Link
+          to={BOOK_CONSULTATION_PATH}
           className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-secondary transition-colors"
         >
           Schedule Free Consultation
-        </button>
+        </Link>
       </PageHero>
 
       <section className="section-y">
@@ -509,13 +509,12 @@ function GrePrivateTutoringPage() {
                   </li>
                 ))}
               </ul>
-              <button
-                type="button"
-                onClick={() => window.dispatchEvent(new CustomEvent("open-site-popup"))}
+              <Link
+                to={BOOK_CONSULTATION_PATH}
                 className="mt-6 inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
               >
                 Book Your First Session
-              </button>
+              </Link>
             </div>
 
             <blockquote className="relative rounded-xl border border-border bg-surface p-5 sm:p-6">
