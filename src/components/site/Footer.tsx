@@ -19,6 +19,8 @@ import {
 } from "lucide-react";
 import logoImg from "@/assets/logo.png";
 import { GRE_COACHING_CITIES } from "@/lib/gre-coaching-cities";
+import { GMAT_COACHING_CITIES } from "@/lib/gmat-coaching-cities";
+import { SAT_COACHING_CITIES } from "@/lib/sat-coaching-cities";
 
 function QuoraIcon({ className }: { className?: string }) {
   return (
@@ -52,16 +54,19 @@ const resources = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
+const quickLinks = [
+  { to: "/terms-and-conditions", label: "Terms & Conditions" },
+  { to: "/refund-policy", label: "Refund Policy" },
+  { to: "/privacy-policy", label: "Privacy Policy" },
+] as const;
+
 const coachingRegions = [
   {
     exam: "GMAT",
-    cities: [
-      { to: "/gmat/hyderabad", label: "Hyderabad" },
-      { to: "/gmat/mumbai", label: "Mumbai" },
-      { to: "/gmat/noida", label: "Noida" },
-      { to: "/gmat/gurgaon", label: "Gurgaon" },
-      { to: "/gmat/pune", label: "Pune" },
-    ],
+    cities: GMAT_COACHING_CITIES.map((city) => ({
+      to: `/gmat/${city.slug}`,
+      label: city.label,
+    })),
   },
   {
     exam: "GRE",
@@ -72,13 +77,10 @@ const coachingRegions = [
   },
   {
     exam: "SAT",
-    cities: [
-      { to: "/sat/gurgaon", label: "Gurgaon" },
-      { to: "/sat/noida", label: "Noida" },
-      { to: "/sat/mumbai", label: "Mumbai" },
-      { to: "/sat/hyderabad", label: "Hyderabad" },
-      { to: "/sat/pune", label: "Pune" },
-    ],
+    cities: SAT_COACHING_CITIES.map((city) => ({
+      to: `/sat/${city.slug}`,
+      label: city.label,
+    })),
   },
 ] as const;
 
@@ -172,7 +174,7 @@ export function Footer() {
       <div className="container-page relative py-8 sm:py-10">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-6 xl:gap-8">
           {/* Brand */}
-          <div className="sm:col-span-2 lg:col-span-4">
+          <div className="sm:col-span-2 lg:col-span-3">
             <Link to="/" className="inline-flex items-center">
               <img src={logoImg} alt="AceYourTest" className="h-10 w-auto object-contain sm:h-11" />
             </Link>
@@ -239,6 +241,18 @@ export function Footer() {
             <FooterHeading>Resources</FooterHeading>
             <ul className="mt-4 space-y-2.5">
               {resources.map((item) => (
+                <li key={item.to}>
+                  <FooterLink to={item.to}>{item.label}</FooterLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div className="lg:col-span-1">
+            <FooterHeading>Quick Links</FooterHeading>
+            <ul className="mt-4 space-y-2.5">
+              {quickLinks.map((item) => (
                 <li key={item.to}>
                   <FooterLink to={item.to}>{item.label}</FooterLink>
                 </li>

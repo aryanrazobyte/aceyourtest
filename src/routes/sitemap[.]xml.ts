@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { GRE_COACHING_CITIES } from "../lib/gre-coaching-cities";
+import { GMAT_COACHING_CITIES } from "../lib/gmat-coaching-cities";
+import { SAT_COACHING_CITIES } from "../lib/sat-coaching-cities";
 
 const BASE_URL = "";
 
@@ -20,6 +22,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/gmat", changefreq: "monthly", priority: "0.9" },
           { path: "/gmat/plans-pricing", changefreq: "monthly", priority: "0.85" },
           { path: "/gmat/top-university-cutoff", changefreq: "monthly", priority: "0.85" },
+          ...GMAT_COACHING_CITIES.map((city) => ({
+            path: `/gmat/${city.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.8",
+          })),
           { path: "/gre", changefreq: "monthly", priority: "0.9" },
           { path: "/gre/private-tutoring", changefreq: "monthly", priority: "0.85" },
           { path: "/gre/test-prep-courses", changefreq: "monthly", priority: "0.85" },
@@ -31,11 +38,19 @@ export const Route = createFileRoute("/sitemap.xml")({
           })),
           { path: "/sat", changefreq: "monthly", priority: "0.9" },
           { path: "/sat/plans-pricing", changefreq: "monthly", priority: "0.85" },
+          ...SAT_COACHING_CITIES.map((city) => ({
+            path: `/sat/${city.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.8",
+          })),
           { path: "/study-abroad", changefreq: "monthly", priority: "0.8" },
           { path: "/success-stories", changefreq: "monthly", priority: "0.7" },
           { path: "/testimonials", changefreq: "monthly", priority: "0.6" },
           { path: "/blog", changefreq: "weekly", priority: "0.7" },
           { path: "/contact", changefreq: "monthly", priority: "0.8" },
+          { path: "/terms-and-conditions", changefreq: "monthly", priority: "0.5" },
+          { path: "/refund-policy", changefreq: "monthly", priority: "0.5" },
+          { path: "/privacy-policy", changefreq: "monthly", priority: "0.5" },
           { path: "/book-consultation", changefreq: "monthly", priority: "0.9" },
         ];
         const urls = entries.map((e) => `  <url><loc>${BASE_URL}${e.path}</loc><changefreq>${e.changefreq}</changefreq><priority>${e.priority}</priority></url>`).join("\n");

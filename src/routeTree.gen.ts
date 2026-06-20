@@ -10,10 +10,13 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
 import { Route as StudyAbroadRouteImport } from './routes/study-abroad'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SatRouteImport } from './routes/sat'
+import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as GreRouteImport } from './routes/gre'
 import { Route as GmatRouteImport } from './routes/gmat'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -25,16 +28,23 @@ import { Route as SatIndexRouteImport } from './routes/sat.index'
 import { Route as GreIndexRouteImport } from './routes/gre.index'
 import { Route as GmatIndexRouteImport } from './routes/gmat.index'
 import { Route as SatPlansPricingRouteImport } from './routes/sat.plans-pricing'
+import { Route as SatCityRouteImport } from './routes/sat.$city'
 import { Route as GreTestPrepCoursesRouteImport } from './routes/gre.test-prep-courses'
 import { Route as GrePrivateTutoringRouteImport } from './routes/gre.private-tutoring'
 import { Route as GrePlansPricingRouteImport } from './routes/gre.plans-pricing'
 import { Route as GreCityRouteImport } from './routes/gre.$city'
 import { Route as GmatTopUniversityCutoffRouteImport } from './routes/gmat.top-university-cutoff'
 import { Route as GmatPlansPricingRouteImport } from './routes/gmat.plans-pricing'
+import { Route as GmatCityRouteImport } from './routes/gmat.$city'
 
 const TestimonialsRoute = TestimonialsRouteImport.update({
   id: '/testimonials',
   path: '/testimonials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SuccessStoriesRoute = SuccessStoriesRouteImport.update({
@@ -55,6 +65,16 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const SatRoute = SatRouteImport.update({
   id: '/sat',
   path: '/sat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RefundPolicyRoute = RefundPolicyRouteImport.update({
+  id: '/refund-policy',
+  path: '/refund-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GreRoute = GreRouteImport.update({
@@ -112,6 +132,11 @@ const SatPlansPricingRoute = SatPlansPricingRouteImport.update({
   path: '/plans-pricing',
   getParentRoute: () => SatRoute,
 } as any)
+const SatCityRoute = SatCityRouteImport.update({
+  id: '/$city',
+  path: '/$city',
+  getParentRoute: () => SatRoute,
+} as any)
 const GreTestPrepCoursesRoute = GreTestPrepCoursesRouteImport.update({
   id: '/test-prep-courses',
   path: '/test-prep-courses',
@@ -142,6 +167,11 @@ const GmatPlansPricingRoute = GmatPlansPricingRouteImport.update({
   path: '/plans-pricing',
   getParentRoute: () => GmatRoute,
 } as any)
+const GmatCityRoute = GmatCityRouteImport.update({
+  id: '/$city',
+  path: '/$city',
+  getParentRoute: () => GmatRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -151,17 +181,22 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/gmat': typeof GmatRouteWithChildren
   '/gre': typeof GreRouteWithChildren
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/sat': typeof SatRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study-abroad': typeof StudyAbroadRoute
   '/success-stories': typeof SuccessStoriesRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/testimonials': typeof TestimonialsRoute
+  '/gmat/$city': typeof GmatCityRoute
   '/gmat/plans-pricing': typeof GmatPlansPricingRoute
   '/gmat/top-university-cutoff': typeof GmatTopUniversityCutoffRoute
   '/gre/$city': typeof GreCityRoute
   '/gre/plans-pricing': typeof GrePlansPricingRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
   '/gre/test-prep-courses': typeof GreTestPrepCoursesRoute
+  '/sat/$city': typeof SatCityRoute
   '/sat/plans-pricing': typeof SatPlansPricingRoute
   '/gmat/': typeof GmatIndexRoute
   '/gre/': typeof GreIndexRoute
@@ -173,16 +208,21 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRoute
   '/book-consultation': typeof BookConsultationRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study-abroad': typeof StudyAbroadRoute
   '/success-stories': typeof SuccessStoriesRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/testimonials': typeof TestimonialsRoute
+  '/gmat/$city': typeof GmatCityRoute
   '/gmat/plans-pricing': typeof GmatPlansPricingRoute
   '/gmat/top-university-cutoff': typeof GmatTopUniversityCutoffRoute
   '/gre/$city': typeof GreCityRoute
   '/gre/plans-pricing': typeof GrePlansPricingRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
   '/gre/test-prep-courses': typeof GreTestPrepCoursesRoute
+  '/sat/$city': typeof SatCityRoute
   '/sat/plans-pricing': typeof SatPlansPricingRoute
   '/gmat': typeof GmatIndexRoute
   '/gre': typeof GreIndexRoute
@@ -197,17 +237,22 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/gmat': typeof GmatRouteWithChildren
   '/gre': typeof GreRouteWithChildren
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/sat': typeof SatRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/study-abroad': typeof StudyAbroadRoute
   '/success-stories': typeof SuccessStoriesRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/testimonials': typeof TestimonialsRoute
+  '/gmat/$city': typeof GmatCityRoute
   '/gmat/plans-pricing': typeof GmatPlansPricingRoute
   '/gmat/top-university-cutoff': typeof GmatTopUniversityCutoffRoute
   '/gre/$city': typeof GreCityRoute
   '/gre/plans-pricing': typeof GrePlansPricingRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
   '/gre/test-prep-courses': typeof GreTestPrepCoursesRoute
+  '/sat/$city': typeof SatCityRoute
   '/sat/plans-pricing': typeof SatPlansPricingRoute
   '/gmat/': typeof GmatIndexRoute
   '/gre/': typeof GreIndexRoute
@@ -223,17 +268,22 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gmat'
     | '/gre'
+    | '/privacy-policy'
+    | '/refund-policy'
     | '/sat'
     | '/sitemap.xml'
     | '/study-abroad'
     | '/success-stories'
+    | '/terms-and-conditions'
     | '/testimonials'
+    | '/gmat/$city'
     | '/gmat/plans-pricing'
     | '/gmat/top-university-cutoff'
     | '/gre/$city'
     | '/gre/plans-pricing'
     | '/gre/private-tutoring'
     | '/gre/test-prep-courses'
+    | '/sat/$city'
     | '/sat/plans-pricing'
     | '/gmat/'
     | '/gre/'
@@ -245,16 +295,21 @@ export interface FileRouteTypes {
     | '/blog'
     | '/book-consultation'
     | '/contact'
+    | '/privacy-policy'
+    | '/refund-policy'
     | '/sitemap.xml'
     | '/study-abroad'
     | '/success-stories'
+    | '/terms-and-conditions'
     | '/testimonials'
+    | '/gmat/$city'
     | '/gmat/plans-pricing'
     | '/gmat/top-university-cutoff'
     | '/gre/$city'
     | '/gre/plans-pricing'
     | '/gre/private-tutoring'
     | '/gre/test-prep-courses'
+    | '/sat/$city'
     | '/sat/plans-pricing'
     | '/gmat'
     | '/gre'
@@ -268,17 +323,22 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gmat'
     | '/gre'
+    | '/privacy-policy'
+    | '/refund-policy'
     | '/sat'
     | '/sitemap.xml'
     | '/study-abroad'
     | '/success-stories'
+    | '/terms-and-conditions'
     | '/testimonials'
+    | '/gmat/$city'
     | '/gmat/plans-pricing'
     | '/gmat/top-university-cutoff'
     | '/gre/$city'
     | '/gre/plans-pricing'
     | '/gre/private-tutoring'
     | '/gre/test-prep-courses'
+    | '/sat/$city'
     | '/sat/plans-pricing'
     | '/gmat/'
     | '/gre/'
@@ -293,10 +353,13 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   GmatRoute: typeof GmatRouteWithChildren
   GreRoute: typeof GreRouteWithChildren
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  RefundPolicyRoute: typeof RefundPolicyRoute
   SatRoute: typeof SatRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudyAbroadRoute: typeof StudyAbroadRoute
   SuccessStoriesRoute: typeof SuccessStoriesRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   TestimonialsRoute: typeof TestimonialsRoute
 }
 
@@ -307,6 +370,13 @@ declare module '@tanstack/react-router' {
       path: '/testimonials'
       fullPath: '/testimonials'
       preLoaderRoute: typeof TestimonialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/success-stories': {
@@ -335,6 +405,20 @@ declare module '@tanstack/react-router' {
       path: '/sat'
       fullPath: '/sat'
       preLoaderRoute: typeof SatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/refund-policy': {
+      id: '/refund-policy'
+      path: '/refund-policy'
+      fullPath: '/refund-policy'
+      preLoaderRoute: typeof RefundPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gre': {
@@ -414,6 +498,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SatPlansPricingRouteImport
       parentRoute: typeof SatRoute
     }
+    '/sat/$city': {
+      id: '/sat/$city'
+      path: '/$city'
+      fullPath: '/sat/$city'
+      preLoaderRoute: typeof SatCityRouteImport
+      parentRoute: typeof SatRoute
+    }
     '/gre/test-prep-courses': {
       id: '/gre/test-prep-courses'
       path: '/test-prep-courses'
@@ -456,16 +547,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GmatPlansPricingRouteImport
       parentRoute: typeof GmatRoute
     }
+    '/gmat/$city': {
+      id: '/gmat/$city'
+      path: '/$city'
+      fullPath: '/gmat/$city'
+      preLoaderRoute: typeof GmatCityRouteImport
+      parentRoute: typeof GmatRoute
+    }
   }
 }
 
 interface GmatRouteChildren {
+  GmatCityRoute: typeof GmatCityRoute
   GmatPlansPricingRoute: typeof GmatPlansPricingRoute
   GmatTopUniversityCutoffRoute: typeof GmatTopUniversityCutoffRoute
   GmatIndexRoute: typeof GmatIndexRoute
 }
 
 const GmatRouteChildren: GmatRouteChildren = {
+  GmatCityRoute: GmatCityRoute,
   GmatPlansPricingRoute: GmatPlansPricingRoute,
   GmatTopUniversityCutoffRoute: GmatTopUniversityCutoffRoute,
   GmatIndexRoute: GmatIndexRoute,
@@ -492,11 +592,13 @@ const GreRouteChildren: GreRouteChildren = {
 const GreRouteWithChildren = GreRoute._addFileChildren(GreRouteChildren)
 
 interface SatRouteChildren {
+  SatCityRoute: typeof SatCityRoute
   SatPlansPricingRoute: typeof SatPlansPricingRoute
   SatIndexRoute: typeof SatIndexRoute
 }
 
 const SatRouteChildren: SatRouteChildren = {
+  SatCityRoute: SatCityRoute,
   SatPlansPricingRoute: SatPlansPricingRoute,
   SatIndexRoute: SatIndexRoute,
 }
@@ -511,10 +613,13 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   GmatRoute: GmatRouteWithChildren,
   GreRoute: GreRouteWithChildren,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  RefundPolicyRoute: RefundPolicyRoute,
   SatRoute: SatRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudyAbroadRoute: StudyAbroadRoute,
   SuccessStoriesRoute: SuccessStoriesRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
   TestimonialsRoute: TestimonialsRoute,
 }
 export const routeTree = rootRouteImport
