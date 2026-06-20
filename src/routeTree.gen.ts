@@ -21,6 +21,7 @@ import { Route as BookConsultationRouteImport } from './routes/book-consultation
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GreTestPrepCoursesRouteImport } from './routes/gre/test-prep-courses'
 import { Route as GrePrivateTutoringRouteImport } from './routes/gre/private-tutoring'
 
 const TestimonialsRoute = TestimonialsRouteImport.update({
@@ -83,6 +84,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GreTestPrepCoursesRoute = GreTestPrepCoursesRouteImport.update({
+  id: '/test-prep-courses',
+  path: '/test-prep-courses',
+  getParentRoute: () => GreRoute,
+} as any)
 const GrePrivateTutoringRoute = GrePrivateTutoringRouteImport.update({
   id: '/private-tutoring',
   path: '/private-tutoring',
@@ -103,6 +109,7 @@ export interface FileRoutesByFullPath {
   '/success-stories': typeof SuccessStoriesRoute
   '/testimonials': typeof TestimonialsRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
+  '/gre/test-prep-courses': typeof GreTestPrepCoursesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -118,6 +125,7 @@ export interface FileRoutesByTo {
   '/success-stories': typeof SuccessStoriesRoute
   '/testimonials': typeof TestimonialsRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
+  '/gre/test-prep-courses': typeof GreTestPrepCoursesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -134,6 +142,7 @@ export interface FileRoutesById {
   '/success-stories': typeof SuccessStoriesRoute
   '/testimonials': typeof TestimonialsRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
+  '/gre/test-prep-courses': typeof GreTestPrepCoursesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -151,6 +160,7 @@ export interface FileRouteTypes {
     | '/success-stories'
     | '/testimonials'
     | '/gre/private-tutoring'
+    | '/gre/test-prep-courses'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -166,6 +176,7 @@ export interface FileRouteTypes {
     | '/success-stories'
     | '/testimonials'
     | '/gre/private-tutoring'
+    | '/gre/test-prep-courses'
   id:
     | '__root__'
     | '/'
@@ -181,6 +192,7 @@ export interface FileRouteTypes {
     | '/success-stories'
     | '/testimonials'
     | '/gre/private-tutoring'
+    | '/gre/test-prep-courses'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -284,6 +296,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gre/test-prep-courses': {
+      id: '/gre/test-prep-courses'
+      path: '/test-prep-courses'
+      fullPath: '/gre/test-prep-courses'
+      preLoaderRoute: typeof GreTestPrepCoursesRouteImport
+      parentRoute: typeof GreRoute
+    }
     '/gre/private-tutoring': {
       id: '/gre/private-tutoring'
       path: '/private-tutoring'
@@ -296,10 +315,12 @@ declare module '@tanstack/react-router' {
 
 interface GreRouteChildren {
   GrePrivateTutoringRoute: typeof GrePrivateTutoringRoute
+  GreTestPrepCoursesRoute: typeof GreTestPrepCoursesRoute
 }
 
 const GreRouteChildren: GreRouteChildren = {
   GrePrivateTutoringRoute: GrePrivateTutoringRoute,
+  GreTestPrepCoursesRoute: GreTestPrepCoursesRoute,
 }
 
 const GreRouteWithChildren = GreRoute._addFileChildren(GreRouteChildren)
