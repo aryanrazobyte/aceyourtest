@@ -3,29 +3,26 @@
 import React, { useEffect, useState } from "react";
 import { useRouterState } from "@tanstack/react-router";
 import DemoPopup from "./Popup/DemoPopup";
-import { BOOK_CONSULTATION_PATH } from "@/lib/site-constants";
+
+const HOME_PATH = "/";
+const POPUP_DELAY_MS = 5000;
 
 export default function SitePopup() {
   const [open, setOpen] = useState(false);
   const { location } = useRouterState();
+  const isHomePage = location.pathname === HOME_PATH;
 
   useEffect(() => {
-    function onOpenEvent() {
-      setOpen(true);
+    if (!isHomePage) {
+      setOpen(false);
+      return;
     }
 
-    window.addEventListener("open-site-popup", onOpenEvent as EventListener);
+    const autoOpen = setTimeout(() => setOpen(true), POPUP_DELAY_MS);
+    return () => clearTimeout(autoOpen);
+  }, [isHomePage]);
 
-    const autoOpen =
-      location.pathname !== BOOK_CONSULTATION_PATH
-        ? setTimeout(() => setOpen(true), 5000)
-        : undefined;
-
-    return () => {
-      if (autoOpen) clearTimeout(autoOpen);
-      window.removeEventListener("open-site-popup", onOpenEvent as EventListener);
-    };
-  }, [location.pathname]);
+  if (!isHomePage) return null;
 
   return <DemoPopup isOpen={open} onClose={() => setOpen(false)} />;
 }

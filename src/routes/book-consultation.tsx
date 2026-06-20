@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
 import {
   CheckCircle2,
   Clock,
@@ -55,13 +54,6 @@ const stats = [
 ];
 
 function BookConsultationPage() {
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      window.dispatchEvent(new CustomEvent("open-site-popup"));
-    }, 1200);
-    return () => window.clearTimeout(timer);
-  }, []);
-
   return (
     <div className="relative overflow-hidden bg-surface">
       <div

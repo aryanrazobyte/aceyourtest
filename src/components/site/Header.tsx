@@ -67,13 +67,13 @@ const greMenu: ExamMenuItem[] = [
   { to: "/gre/private-tutoring", label: "GRE One On One Private Tutoring" },
   { to: "/gre/test-prep-courses", label: "GRE Test Prep Courses Group Classes Programs" },
   { to: "/gre/plans-pricing", label: "GRE Plans and Pricing" },
-  {
-    label: "GRE Coaching",
-    children: [
-      { slug: "delhi", label: "Delhi" },
-      { slug: "gurgaon", label: "Gurugram" },
-    ],
-  },
+  // {
+  //   label: "GRE Coaching",
+  //   children: [
+  //     { slug: "delhi", label: "Delhi" },
+  //     { slug: "gurgaon", label: "Gurugram" },
+  //   ],
+  // },
 ];
 
 const satMenu = [
