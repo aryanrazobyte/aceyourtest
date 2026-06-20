@@ -1,4 +1,5 @@
 export const GRE_COACHING_CITIES = [
+  { slug: "delhi", label: "Delhi", name: "Delhi" },
   { slug: "gurgaon", label: "Gurgaon", name: "Gurugram" },
   { slug: "noida", label: "Noida", name: "Noida" },
   { slug: "mumbai", label: "Mumbai", name: "Mumbai" },

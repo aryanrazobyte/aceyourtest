@@ -79,7 +79,17 @@ const universityBenchmarks = [
   { university: "Dartmouth College (Tuck)", average: "585", range: "565 – 595" },
 ] as const;
 
-const scoreTargetCards = [
+type ScoreTargetCard = {
+  score: string;
+  label: string;
+  accent: string;
+  border: string;
+  schools: readonly string[];
+  desc: string;
+  muted?: boolean;
+};
+
+const scoreTargetCards: ScoreTargetCard[] = [
   {
     score: "750+",
     label: "GMAT Score",
@@ -135,7 +145,7 @@ const scoreTargetCards = [
     desc: "Focus on holistic profile building alongside score improvement.",
     muted: true,
   },
-] as const;
+];
 
 const holisticFactors = [
   {

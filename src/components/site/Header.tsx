@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import logoImg from "@/assets/logo.png";
 import {
   DropdownMenu,
@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { BookConsultationButton } from "@/components/site/BookConsultationButton";
+import type { GreCitySlug } from "@/lib/gre-coaching-cities";
 
 const mainNav = [
   { to: "/", label: "Home", exact: true },
@@ -26,6 +27,32 @@ const contactMenu = [
   { to: "/blog", label: "Blog" },
 ] as const;
 
+type ExamMenuLink = {
+  to:
+    | "/gmat/plans-pricing"
+    | "/gmat/top-university-cutoff"
+    | "/gre/private-tutoring"
+    | "/gre/test-prep-courses"
+    | "/gre/plans-pricing"
+    | "/sat/plans-pricing";
+  label: string;
+};
+
+type ExamMenuGroup = {
+  label: string;
+  children: readonly { slug: GreCitySlug; label: string }[];
+};
+
+type ExamMenuItem = ExamMenuLink | ExamMenuGroup;
+
+function isExamMenuGroup(item: ExamMenuItem): item is ExamMenuGroup {
+  return "children" in item;
+}
+
+function isGreCoachingCityActive(pathname: string, slug: GreCitySlug) {
+  return pathname === `/gre/${slug}`;
+}
+
 const gmatMenu = [
   { to: "/gmat/plans-pricing", label: "GMAT Plans and Pricing" },
   // { to: "/gmat/hyderabad", label: "GMAT Coaching in Hyderabad" },
@@ -36,16 +63,18 @@ const gmatMenu = [
   { to: "/gmat/top-university-cutoff", label: "Top University GMAT Cut-off" },
 ] as const;
 
-const greMenu = [
+const greMenu: ExamMenuItem[] = [
   { to: "/gre/private-tutoring", label: "GRE One On One Private Tutoring" },
   { to: "/gre/test-prep-courses", label: "GRE Test Prep Courses Group Classes Programs" },
   { to: "/gre/plans-pricing", label: "GRE Plans and Pricing" },
-  // { to: "/gre/gurgaon", label: "GRE Coaching" },
-  // { to: "/gre/mumbai", label: "GRE Coaching in Mumbai" },
-  // { to: "/gre/noida", label: "GRE Coaching in Noida" },
-  // { to: "/gre/pune", label: "GRE Coaching in Pune" },
-  // { to: "/gre/hyderabad", label: "GRE Coaching in Hyderabad" },
-] as const;
+  {
+    label: "GRE Coaching",
+    children: [
+      { slug: "delhi", label: "Delhi" },
+      { slug: "gurgaon", label: "Gurugram" },
+    ],
+  },
+];
 
 const satMenu = [
   { to: "/sat/plans-pricing", label: "SAT Plans and Pricing" },
@@ -58,7 +87,7 @@ const satMenu = [
 
 const contactPaths = ["/contact", "/about", "/blog"];
 
-const examMenus: Record<string, readonly { to: string; label: string }[]> = {
+const examMenus: Record<string, readonly ExamMenuItem[]> = {
   GMAT: gmatMenu,
   GRE: greMenu,
   SAT: satMenu,
@@ -78,11 +107,13 @@ function isNavActive(pathname: string, to: string, exact = false) {
 export function Header() {
   const [open, setOpen] = useState(false);
   const [openExamMenu, setOpenExamMenu] = useState<string | null>(null);
+  const [openNestedMenu, setOpenNestedMenu] = useState<string | null>(null);
   const { location } = useRouterState();
   const isContactActive = contactPaths.includes(location.pathname);
 
   useEffect(() => {
     setOpenExamMenu(null);
+    setOpenNestedMenu(null);
   }, [location.pathname]);
 
   return (
@@ -116,7 +147,10 @@ export function Header() {
                   key={n.to}
                   className="relative"
                   onMouseEnter={() => setOpenExamMenu(n.label)}
-                  onMouseLeave={() => setOpenExamMenu(null)}
+                  onMouseLeave={() => {
+                    setOpenExamMenu(null);
+                    setOpenNestedMenu(null);
+                  }}
                 >
                   <div
                     className={cn(
@@ -148,6 +182,65 @@ export function Header() {
                     <div className="absolute left-0 top-full z-50 pt-1">
                       <div className="min-w-[16rem] rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md">
                         {menu.map((item) => {
+                          if (isExamMenuGroup(item)) {
+                            const nestedOpen = openNestedMenu === item.label;
+                            const groupActive = item.children.some((child) =>
+                              isGreCoachingCityActive(location.pathname, child.slug),
+                            );
+
+                            return (
+                              <div
+                                key={item.label}
+                                className="relative"
+                                onMouseEnter={() => setOpenNestedMenu(item.label)}
+                                onMouseLeave={() => setOpenNestedMenu(null)}
+                              >
+                                <div
+                                  className={cn(
+                                    "flex w-full cursor-default items-center justify-between gap-2 rounded-sm px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
+                                    (nestedOpen || groupActive) &&
+                                      "bg-accent/60 text-accent-foreground",
+                                    groupActive && "font-semibold text-primary",
+                                  )}
+                                >
+                                  <span>{item.label}</span>
+                                  <ChevronRight className="h-4 w-4 shrink-0 opacity-70" />
+                                </div>
+
+                                {nestedOpen && (
+                                  <div className="absolute left-full top-0 z-50 pl-1">
+                                    <div className="min-w-[10rem] rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md">
+                                      {item.children.map((child) => {
+                                        const childActive = isGreCoachingCityActive(
+                                          location.pathname,
+                                          child.slug,
+                                        );
+                                        return (
+                                          <Link
+                                            key={child.slug}
+                                            to="/gre/$city"
+                                            params={{ city: child.slug }}
+                                            onClick={() => {
+                                              setOpenExamMenu(null);
+                                              setOpenNestedMenu(null);
+                                            }}
+                                            className={cn(
+                                              "block w-full rounded-sm px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
+                                              childActive &&
+                                                "font-semibold text-primary",
+                                            )}
+                                          >
+                                            {child.label}
+                                          </Link>
+                                        );
+                                      })}
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          }
+
                           const itemActive = location.pathname === item.to;
                           return (
                             <Link
@@ -252,6 +345,49 @@ export function Header() {
                     </Link>
                     <div className="ml-3 mt-0.5 border-l border-white/10 pl-2">
                       {subMenu.map((item) => {
+                        if (isExamMenuGroup(item)) {
+                          const groupActive = item.children.some((child) =>
+                            isGreCoachingCityActive(location.pathname, child.slug),
+                          );
+
+                          return (
+                            <div key={item.label} className="py-0.5">
+                              <p
+                                className={cn(
+                                  "px-3 py-2 text-xs font-semibold rounded-lg",
+                                  groupActive ? "text-white" : "text-white/80",
+                                )}
+                              >
+                                {item.label}
+                              </p>
+                              <div className="ml-2 border-l border-white/10 pl-2">
+                                {item.children.map((child) => {
+                                  const subActive = isGreCoachingCityActive(
+                                    location.pathname,
+                                    child.slug,
+                                  );
+                                  return (
+                                    <Link
+                                      key={child.slug}
+                                      to="/gre/$city"
+                                      params={{ city: child.slug }}
+                                      onClick={() => setOpen(false)}
+                                      className={cn(
+                                        "block px-3 py-2 text-xs rounded-lg leading-snug",
+                                        subActive
+                                          ? "bg-primary/90 text-white font-semibold"
+                                          : "text-white/70 hover:bg-white/10 hover:text-white",
+                                      )}
+                                    >
+                                      {child.label}
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          );
+                        }
+
                         const subActive = location.pathname === item.to;
                         return (
                           <Link
