@@ -28,11 +28,11 @@ const contactMenu = [
 
 const gmatMenu = [
   { to: "/gmat/plans-pricing", label: "GMAT Plans and Pricing" },
-  { to: "/gmat/hyderabad", label: "GMAT Coaching in Hyderabad" },
-  { to: "/gmat/mumbai", label: "GMAT Coaching in Mumbai" },
-  { to: "/gmat/noida", label: "GMAT Coaching in Noida" },
-  { to: "/gmat/gurgaon", label: "GMAT Coaching in Gurgaon" },
-  { to: "/gmat/pune", label: "GMAT Coaching in Pune" },
+  // { to: "/gmat/hyderabad", label: "GMAT Coaching in Hyderabad" },
+  // { to: "/gmat/mumbai", label: "GMAT Coaching in Mumbai" },
+  // { to: "/gmat/noida", label: "GMAT Coaching in Noida" },
+  // { to: "/gmat/gurgaon", label: "GMAT Coaching in Gurgaon" },
+  // { to: "/gmat/pune", label: "GMAT Coaching in Pune" },
   { to: "/gmat/top-university-cutoff", label: "Top University GMAT Cut-off" },
 ] as const;
 
@@ -49,11 +49,11 @@ const greMenu = [
 
 const satMenu = [
   { to: "/sat/plans-pricing", label: "SAT Plans and Pricing" },
-  { to: "/sat/gurgaon", label: "SAT Coaching in Gurgaon" },
-  { to: "/sat/noida", label: "SAT Coaching in Noida" },
-  { to: "/sat/mumbai", label: "SAT Coaching in Mumbai" },
-  { to: "/sat/hyderabad", label: "SAT Coaching in Hyderabad" },
-  { to: "/sat/pune", label: "SAT Coaching in Pune" },
+  // { to: "/sat/gurgaon", label: "SAT Coaching in Gurgaon" },
+  // { to: "/sat/noida", label: "SAT Coaching in Noida" },
+  // { to: "/sat/mumbai", label: "SAT Coaching in Mumbai" },
+  // { to: "/sat/hyderabad", label: "SAT Coaching in Hyderabad" },
+  // { to: "/sat/pune", label: "SAT Coaching in Pune" },
 ] as const;
 
 const contactPaths = ["/contact", "/about", "/blog"];
