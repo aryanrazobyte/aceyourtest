@@ -66,6 +66,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "theme-color", content: "#081f3d" },
       { title: "AceYourTest — India's Trusted GMAT, GRE & SAT Coaching" },
       { name: "description", content: "Personalized GMAT, GRE & SAT coaching with expert mentor Tarun Kaushik. 10,000+ students trained, 700+ GMAT achievers, top global university admits." },
       { name: "author", content: "AceYourTest" },
@@ -77,9 +78,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
     { rel: "stylesheet", href: appCss },
-    { rel: "icon", href: "/favicon.svg", sizes: "256x256", type: "image/svg+xml" },
-    { rel: "icon", href: "/favicon.svg", sizes: "32x32", type: "image/svg+xml" },
-    { rel: "apple-touch-icon", href: "/favicon.svg", sizes: "180x180" },
+    { rel: "icon", href: "https://res.cloudinary.com/ddcx08e0s/image/upload/v1781860633/1logo_xiniqt.png", sizes: "192x192", type: "image/png" },
+    { rel: "icon", href: "https://res.cloudinary.com/ddcx08e0s/image/upload/v1781860633/1logo_xiniqt.png", sizes: "32x32", type: "image/png" },
+    { rel: "apple-touch-icon", href: "https://res.cloudinary.com/ddcx08e0s/image/upload/v1781860633/1logo_xiniqt.png", sizes: "180x180" },
+    { rel: "shortcut icon", href: "https://res.cloudinary.com/ddcx08e0s/image/upload/v1781860633/1logo_xiniqt.png", type: "image/png" },
+    { rel: "mask-icon", href: "https://res.cloudinary.com/ddcx08e0s/image/upload/v1781860633/1logo_xiniqt.png", color: "#081f3d" },
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" },

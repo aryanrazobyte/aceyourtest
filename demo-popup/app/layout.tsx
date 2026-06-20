@@ -9,10 +9,11 @@ export const metadata: Metadata = {
   description: "Schedule a free demo session and reach the 99th percentile.",
   icons: {
     icon: [
-      { url: '/favicon.svg', sizes: '256x256', type: 'image/svg+xml' },
-      { url: '/favicon.svg', sizes: '32x32', type: 'image/svg+xml' },
+      { url: 'https://res.cloudinary.com/ddcx08e0s/image/upload/v1781860633/1logo_xiniqt.png', sizes: '192x192', type: 'image/png' },
+      { url: 'https://res.cloudinary.com/ddcx08e0s/image/upload/v1781860633/1logo_xiniqt.png', sizes: '32x32', type: 'image/png' },
     ],
-    apple: '/favicon.svg',
+    apple: 'https://res.cloudinary.com/ddcx08e0s/image/upload/v1781860633/1logo_xiniqt.png',
+    shortcut: 'https://res.cloudinary.com/ddcx08e0s/image/upload/v1781860633/1logo_xiniqt.png',
   },
 };
 
