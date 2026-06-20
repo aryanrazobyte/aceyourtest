@@ -40,7 +40,7 @@ const greMenu = [
   { to: "/gre/private-tutoring", label: "GRE One On One Private Tutoring" },
   { to: "/gre/test-prep-courses", label: "GRE Test Prep Courses Group Classes Programs" },
   { to: "/gre/plans-pricing", label: "GRE Plans and Pricing" },
-  { to: "/gre/gurgaon", label: "GRE Coaching in Gurgaon" },
+  // { to: "/gre/gurgaon", label: "GRE Coaching" },
   // { to: "/gre/mumbai", label: "GRE Coaching in Mumbai" },
   // { to: "/gre/noida", label: "GRE Coaching in Noida" },
   // { to: "/gre/pune", label: "GRE Coaching in Pune" },

@@ -27,6 +27,7 @@ import { Route as GmatIndexRouteImport } from './routes/gmat.index'
 import { Route as GreTestPrepCoursesRouteImport } from './routes/gre.test-prep-courses'
 import { Route as GrePrivateTutoringRouteImport } from './routes/gre.private-tutoring'
 import { Route as GrePlansPricingRouteImport } from './routes/gre.plans-pricing'
+import { Route as GreCityRouteImport } from './routes/gre.$city'
 
 const TestimonialsRoute = TestimonialsRouteImport.update({
   id: '/testimonials',
@@ -118,6 +119,11 @@ const GrePlansPricingRoute = GrePlansPricingRouteImport.update({
   path: '/plans-pricing',
   getParentRoute: () => GreRoute,
 } as any)
+const GreCityRoute = GreCityRouteImport.update({
+  id: '/$city',
+  path: '/$city',
+  getParentRoute: () => GreRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -132,6 +138,7 @@ export interface FileRoutesByFullPath {
   '/study-abroad': typeof StudyAbroadRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/testimonials': typeof TestimonialsRoute
+  '/gre/$city': typeof GreCityRoute
   '/gre/plans-pricing': typeof GrePlansPricingRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
   '/gre/test-prep-courses': typeof GreTestPrepCoursesRoute
@@ -149,6 +156,7 @@ export interface FileRoutesByTo {
   '/study-abroad': typeof StudyAbroadRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/testimonials': typeof TestimonialsRoute
+  '/gre/$city': typeof GreCityRoute
   '/gre/plans-pricing': typeof GrePlansPricingRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
   '/gre/test-prep-courses': typeof GreTestPrepCoursesRoute
@@ -170,6 +178,7 @@ export interface FileRoutesById {
   '/study-abroad': typeof StudyAbroadRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/testimonials': typeof TestimonialsRoute
+  '/gre/$city': typeof GreCityRoute
   '/gre/plans-pricing': typeof GrePlansPricingRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
   '/gre/test-prep-courses': typeof GreTestPrepCoursesRoute
@@ -192,6 +201,7 @@ export interface FileRouteTypes {
     | '/study-abroad'
     | '/success-stories'
     | '/testimonials'
+    | '/gre/$city'
     | '/gre/plans-pricing'
     | '/gre/private-tutoring'
     | '/gre/test-prep-courses'
@@ -209,6 +219,7 @@ export interface FileRouteTypes {
     | '/study-abroad'
     | '/success-stories'
     | '/testimonials'
+    | '/gre/$city'
     | '/gre/plans-pricing'
     | '/gre/private-tutoring'
     | '/gre/test-prep-courses'
@@ -229,6 +240,7 @@ export interface FileRouteTypes {
     | '/study-abroad'
     | '/success-stories'
     | '/testimonials'
+    | '/gre/$city'
     | '/gre/plans-pricing'
     | '/gre/private-tutoring'
     | '/gre/test-prep-courses'
@@ -380,6 +392,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GrePlansPricingRouteImport
       parentRoute: typeof GreRoute
     }
+    '/gre/$city': {
+      id: '/gre/$city'
+      path: '/$city'
+      fullPath: '/gre/$city'
+      preLoaderRoute: typeof GreCityRouteImport
+      parentRoute: typeof GreRoute
+    }
   }
 }
 
@@ -394,6 +413,7 @@ const GmatRouteChildren: GmatRouteChildren = {
 const GmatRouteWithChildren = GmatRoute._addFileChildren(GmatRouteChildren)
 
 interface GreRouteChildren {
+  GreCityRoute: typeof GreCityRoute
   GrePlansPricingRoute: typeof GrePlansPricingRoute
   GrePrivateTutoringRoute: typeof GrePrivateTutoringRoute
   GreTestPrepCoursesRoute: typeof GreTestPrepCoursesRoute
@@ -401,6 +421,7 @@ interface GreRouteChildren {
 }
 
 const GreRouteChildren: GreRouteChildren = {
+  GreCityRoute: GreCityRoute,
   GrePlansPricingRoute: GrePlansPricingRoute,
   GrePrivateTutoringRoute: GrePrivateTutoringRoute,
   GreTestPrepCoursesRoute: GreTestPrepCoursesRoute,

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { GRE_COACHING_CITIES } from "../lib/gre-coaching-cities";
 
 const BASE_URL = "";
 
@@ -21,6 +22,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/gre/private-tutoring", changefreq: "monthly", priority: "0.85" },
           { path: "/gre/test-prep-courses", changefreq: "monthly", priority: "0.85" },
           { path: "/gre/plans-pricing", changefreq: "monthly", priority: "0.85" },
+          ...GRE_COACHING_CITIES.map((city) => ({
+            path: `/gre/${city.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.8",
+          })),
           { path: "/sat", changefreq: "monthly", priority: "0.9" },
           { path: "/study-abroad", changefreq: "monthly", priority: "0.8" },
           { path: "/success-stories", changefreq: "monthly", priority: "0.7" },

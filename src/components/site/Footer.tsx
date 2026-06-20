@@ -18,6 +18,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import logoImg from "@/assets/logo.png";
+import { GRE_COACHING_CITIES } from "@/lib/gre-coaching-cities";
 
 function QuoraIcon({ className }: { className?: string }) {
   return (
@@ -64,7 +65,10 @@ const coachingRegions = [
   },
   {
     exam: "GRE",
-    cities: [{ to: "/gre/gurgaon", label: "Gurgaon" }],
+    cities: GRE_COACHING_CITIES.map((city) => ({
+      to: `/gre/${city.slug}`,
+      label: city.label,
+    })),
   },
   {
     exam: "SAT",
@@ -217,7 +221,7 @@ export function Footer() {
                     {group.cities.map((city) => (
                       <li key={city.to}>
                         <Link
-                          to={city.to as any}
+                          to={city.to}
                           className="inline-flex rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-white/70 transition hover:border-primary/30 hover:bg-primary/15 hover:text-white"
                         >
                           {city.label}
