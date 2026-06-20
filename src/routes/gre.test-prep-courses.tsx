@@ -17,11 +17,11 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import { PageHero } from "../../components/site/PageHero";
-import { SectionHeader } from "../../components/site/SectionHeader";
-import { CtaBand } from "../../components/site/CtaBand";
-import { EnquiryForm } from "../../components/site/EnquiryForm";
-import { BOOK_CONSULTATION_PATH } from "../../lib/site-constants";
+import { PageHero } from "../components/site/PageHero";
+import { SectionHeader } from "../components/site/SectionHeader";
+import { CtaBand } from "../components/site/CtaBand";
+import { EnquiryForm } from "../components/site/EnquiryForm";
+import { BOOK_CONSULTATION_PATH } from "../lib/site-constants";
 
 export const Route = createFileRoute("/gre/test-prep-courses")({
   head: () => ({

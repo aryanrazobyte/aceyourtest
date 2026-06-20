@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useState, useRef, useEffect } from "react";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import logoImg from "@/assets/logo.png";
 import {
   DropdownMenu,
@@ -58,6 +58,12 @@ const satMenu = [
 
 const contactPaths = ["/contact", "/about", "/blog"];
 
+const examMenus: Record<string, readonly { to: string; label: string }[]> = {
+  GMAT: gmatMenu,
+  GRE: greMenu,
+  SAT: satMenu,
+};
+
 const navLinkInactive =
   "px-3.5 py-2.5 text-sm font-semibold rounded-lg transition-colors whitespace-nowrap text-white/90 hover:text-white hover:bg-white/10";
 
@@ -71,41 +77,13 @@ function isNavActive(pathname: string, to: string, exact = false) {
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [gmatOpen, setGmatOpen] = useState(false);
-  const [greOpen, setGreOpen] = useState(false);
-  const [satOpen, setSatOpen] = useState(false);
+  const [openExamMenu, setOpenExamMenu] = useState<string | null>(null);
   const { location } = useRouterState();
   const isContactActive = contactPaths.includes(location.pathname);
 
-  // Hover close timers to avoid blink when moving pointer into portal-rendered content
-  const closeTimers = useRef<Record<string, number | null>>({});
-
   useEffect(() => {
-    return () => {
-      // clear any pending timers on unmount
-      Object.values(closeTimers.current).forEach((t) => {
-        if (t) clearTimeout(t);
-      });
-    };
-  }, []);
-
-  function clearClose(key: string) {
-    const t = closeTimers.current[key];
-    if (t) {
-      clearTimeout(t);
-      closeTimers.current[key] = null;
-    }
-  }
-
-  function scheduleClose(key: string, setter: (v: boolean) => void, delay = 180) {
-    clearClose(key);
-    // Use window.setTimeout to get number return type
-    const id = window.setTimeout(() => {
-      setter(false);
-      closeTimers.current[key] = null;
-    }, delay) as unknown as number;
-    closeTimers.current[key] = id;
-  }
+    setOpenExamMenu(null);
+  }, [location.pathname]);
 
   return (
     <header
@@ -129,56 +107,66 @@ export function Header() {
               "exact" in n ? n.exact : false,
             );
 
-            // Render a dropdown for GMAT / GRE / SAT items
-            if (n.label === "GMAT" || n.label === "GRE" || n.label === "SAT") {
-              const isGmat = n.label === "GMAT";
-              const isGre = n.label === "GRE";
-              const isSat = n.label === "SAT";
-              const menu = isGmat ? gmatMenu : isGre ? greMenu : satMenu;
-              const openState = isGmat ? gmatOpen : isGre ? greOpen : satOpen;
-                        const setOpenState = isGmat ? setGmatOpen : isGre ? setGreOpen : setSatOpen;
-                        const menuKey = isGmat ? "gmat" : isGre ? "gre" : "sat";
-              const basePath = isGmat ? "/gmat" : isGre ? "/gre" : "/sat";
+            if (n.label in examMenus) {
+              const menu = examMenus[n.label];
+              const isExamMenuOpen = openExamMenu === n.label;
 
               return (
-                <DropdownMenu key={n.to} open={openState} onOpenChange={setOpenState}>
+                <div
+                  key={n.to}
+                  className="relative"
+                  onMouseEnter={() => setOpenExamMenu(n.label)}
+                  onMouseLeave={() => setOpenExamMenu(null)}
+                >
                   <div
-                    onMouseEnter={() => {
-                      // clear any pending close and open immediately
-                      clearClose(menuKey);
-                      setOpenState(true);
-                    }}
-                    onMouseLeave={() => {
-                      scheduleClose(menuKey, setOpenState);
-                    }}
+                    className={cn(
+                      "inline-flex items-center rounded-lg",
+                      active ? navLinkActive : navLinkInactive,
+                    )}
                   >
-                    <DropdownMenuTrigger asChild>
-                      <div className={cn("inline-flex items-center gap-1 outline-none cursor-pointer", active ? navLinkActive : navLinkInactive)}>
-                        <Link to={basePath} className="block">{n.label}</Link>
-                        <ChevronDown className="h-4 w-4 opacity-80" />
-                      </div>
-                    </DropdownMenuTrigger>
-
-                    <DropdownMenuContent
-                      align="start"
-                      className="min-w-[16rem]"
-                      onMouseEnter={() => {
-                        clearClose(menuKey);
-                        setOpenState(true);
-                      }}
-                      onMouseLeave={() => scheduleClose(menuKey, setOpenState)}
+                    <Link
+                      to={n.to}
+                      className="px-3.5 py-2.5 hover:bg-white/10 transition-colors rounded-l-lg"
+                      onClick={() => setOpenExamMenu(null)}
                     >
-                      {menu.map((item) => {
-                        const itemActive = location.pathname === item.to;
-                        return (
-                          <DropdownMenuItem key={item.to} asChild>
-                            <Link to={item.to as any} className={cn("w-full block py-2 px-3 text-sm", itemActive && "font-semibold text-primary")}>{item.label}</Link>
-                          </DropdownMenuItem>
-                        );
-                      })}
-                    </DropdownMenuContent>
+                      {n.label}
+                    </Link>
+                    <span
+                      className="px-2 py-2.5 border-l border-white/15 rounded-r-lg"
+                      aria-hidden
+                    >
+                      <ChevronDown
+                        className={cn(
+                          "h-4 w-4 opacity-80 transition-transform duration-200",
+                          isExamMenuOpen && "rotate-180",
+                        )}
+                      />
+                    </span>
                   </div>
-                </DropdownMenu>
+
+                  {isExamMenuOpen && (
+                    <div className="absolute left-0 top-full z-50 pt-1">
+                      <div className="min-w-[16rem] rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md">
+                        {menu.map((item) => {
+                          const itemActive = location.pathname === item.to;
+                          return (
+                            <Link
+                              key={item.to}
+                              to={item.to}
+                              onClick={() => setOpenExamMenu(null)}
+                              className={cn(
+                                "block w-full rounded-sm px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
+                                itemActive && "font-semibold text-primary",
+                              )}
+                            >
+                              {item.label}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </div>
               );
             }
 
@@ -245,6 +233,47 @@ export function Header() {
                 n.to,
                 "exact" in n ? n.exact : false,
               );
+              const subMenu = examMenus[n.label];
+
+              if (subMenu) {
+                return (
+                  <div key={n.to} className="rounded-lg">
+                    <Link
+                      to={n.to}
+                      onClick={() => setOpen(false)}
+                      className={cn(
+                        "block px-3 py-3 text-sm font-semibold rounded-lg",
+                        active
+                          ? "bg-primary text-white shadow-md"
+                          : "text-white/85 hover:bg-white/10",
+                      )}
+                    >
+                      {n.label}
+                    </Link>
+                    <div className="ml-3 mt-0.5 border-l border-white/10 pl-2">
+                      {subMenu.map((item) => {
+                        const subActive = location.pathname === item.to;
+                        return (
+                          <Link
+                            key={item.to}
+                            to={item.to}
+                            onClick={() => setOpen(false)}
+                            className={cn(
+                              "block px-3 py-2 text-xs rounded-lg leading-snug",
+                              subActive
+                                ? "bg-primary/90 text-white font-semibold"
+                                : "text-white/70 hover:bg-white/10 hover:text-white",
+                            )}
+                          >
+                            {item.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={n.to}
