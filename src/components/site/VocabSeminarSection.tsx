@@ -16,7 +16,7 @@ export default function VocabSeminarSection() {
           </h2>
 
           <p className="mb-5 text-sm sm:text-base leading-relaxed text-muted-foreground">
-            At just 14 years old, Sandeep had already crammed the entire Oxford
+            At just 14 years old,Tarun Kaushik had already crammed the entire Oxford
             Advanced Learners Dictionary in! With an impressive vocabulary of over
             1,50,000 words, he&apos;s been teaching the GRE for 20 years! To see
             this literary whiz in action, check out this clip from the 2003 3-hour

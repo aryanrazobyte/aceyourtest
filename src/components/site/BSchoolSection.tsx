@@ -8,14 +8,14 @@ const students = [
     school: "LBS & INSEAD",
     badge: "blue",
     initials: "SV",
-    quote: "Every question Sandeep gives has a purpose to develop your thought process.",
+    quote: "Every questionTarun Kaushik gives has a purpose to develop your thought process.",
   },
   {
     name: "Nayantara Mehta",
     school: "MIT Sloan",
     badge: "red",
     initials: "NM",
-    quote: "Thanks to Sandeep sir and team TOP for helping me constantly through this journey.",
+    quote: "Thanks toTarun Kaushik sir and team TOP for helping me constantly through this journey.",
   },
   {
     name: "Pawan Gupta",
