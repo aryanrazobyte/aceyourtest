@@ -13,8 +13,8 @@ import {
   Twitter,
   ArrowRight,
   GraduationCap,
-  Globe2,
   Trophy,
+  BookOpen,
   MessageCircle,
 } from "lucide-react";
 import logoImg from "@/assets/logo.png";
@@ -84,11 +84,11 @@ const coachingRegions = [
   },
 ] as const;
 
-const highlights = [
-  { icon: GraduationCap, value: "10,000+", label: "Students trained" },
-  { icon: Trophy, value: "700+", label: "GMAT achievers" },
-  { icon: Globe2, value: "Top", label: "Global admits" },
-];
+const scoreHighlights = [
+  { icon: Trophy, value: "700+", label: "GMAT" },
+  { icon: BookOpen, value: "330+", label: "GRE" },
+  { icon: GraduationCap, value: "1500+", label: "SAT" },
+] as const;
 
 function FooterHeading({ children }: { children: ReactNode }) {
   return (
@@ -155,15 +155,24 @@ export function Footer() {
 
       {/* Stats strip */}
       <div className="relative border-b border-white/10 bg-white/[0.03]">
-        <div className="container-page grid grid-cols-3 gap-3 py-4 sm:gap-6">
-          {highlights.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="flex items-center gap-2 sm:gap-3">
-              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-primary/15 text-primary sm:h-10 sm:w-10">
-                <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
-              </div>
-              <div>
-                <p className="text-sm font-bold text-white sm:text-base">{value}</p>
-                <p className="text-[10px] text-white/55 sm:text-xs">{label}</p>
+        <div className="container-page flex flex-wrap items-center justify-center gap-3 py-4 sm:gap-4 sm:py-5">
+          {scoreHighlights.map(({ icon: Icon, value, label }, index) => (
+            <div key={label} className="flex items-center gap-3">
+              {index > 0 && (
+                <span className="hidden text-xl font-light text-primary/50 sm:inline" aria-hidden>
+                  ·
+                </span>
+              )}
+              <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary/15 text-primary ring-1 ring-primary/20">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-lg font-bold leading-none text-primary sm:text-xl">{value}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-white/75">
+                    {label}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

@@ -117,7 +117,7 @@ function HomePage() {
               <div className="grid h-10 w-10 place-items-center rounded-full bg-success/10 text-success"><Trophy className="h-5 w-5" /></div>
               <div>
                 <p className="text-xs text-muted-foreground">Top GMAT score</p>
-                <p className="font-bold text-navy">765 / 805</p>
+                <p className="font-bold text-navy">735 / 805</p>
               </div>
             </div>
           </div>
