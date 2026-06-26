@@ -142,28 +142,21 @@ export default function BSchoolSection() {
       {/* ── Left column ── */}
       <div className="w-full md:w-1/2 flex-shrink-0 md:pr-8 lg:pr-12">
         <h2 className="mb-3 text-2xl sm:text-3xl lg:text-4xl leading-tight text-navy">
-          Which <span className="text-red-600">TOP B-School/University</span> do you see yourself in?
+          Which  <span className="text-red-600">Top University or B-School</span> Is Your Goal?
         </h2>
 
         <p className="mb-3 text-base leading-relaxed text-muted-foreground">
-          Harvard, Stanford, Wharton, Booth, Kellogg, MIT-Sloan, LBS, INSEAD,
-          ISB… these are the BEST out there. You must target these schools
-          exclusively. You may keep a few safe options but these are the real
-          deal!!
-        </p>
-
-        <p className="mb-5 text-base leading-relaxed text-muted-foreground">
-          We have students regularly selected to each of these schools. Across
-          the globe, no other institute has better results in terms of scores
-          and admits.
+          Target schools include top MBA programs—Harvard, Stanford, Wharton, Booth, Kellogg, MIT Sloan, LBS, INSEAD, ISB—and elite undergraduate universities such as MIT, Caltech, Princeton, Yale, Columbia, University of Chicago, UC Berkeley, UCLA, NYU Stern, and University of Michigan Ross.
         </p>
 
         <ul className="mb-6 space-y-3">
           {[
-            "These schools expect Top 1% scores",
-            "Your GMAT/GRE drives both admits and money",
-            "A high score de-risks your profile",
-            "Admissions is not holistic until your score clears the bar",
+            "Our focus is simple: top global admits, consistently delivered.",
+            "Students under our guidance secure admissions across these elite schools year after year.",
+            "These institutions demand exceptional performance at every level.",
+            "Your GMAT, GRE & SAT is not optional- It is a decisive filter for admits and scholarships.",
+            "A strong score transforms your entire application and reduces admission risk.",
+            "Admissions becomes competitive only after your score crosses the benchmark.",
           ].map((item) => (
             <li key={item} className="flex items-start gap-2 text-sm md:text-base text-muted-foreground">
               <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-600">

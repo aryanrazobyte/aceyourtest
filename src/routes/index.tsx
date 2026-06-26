@@ -51,15 +51,15 @@ const programs = [
     to: "/gre",
     title: "GRE Program",
     desc: "Master the GRE with Structured Learning and Focused Practice.",
-    bullets: ["Individual Coaching","Micro-Batches", "Group Classes",  "Self-Study Plans", "Sectional Mock Tests"],
+    bullets: ["Individual Coaching","Micro-Batches", "Group Classes", "Sectional Mock Tests"],
     featured: true,
   },
   {
     code: "SAT",
     to: "/sat",
     title: "SAT Program",
-    desc: "Foundation to mastery for the Digital SAT — built for US university admissions.",
-    bullets: ["Foundation Building", "Concept Mastery", "University Preparation"],
+    desc: "From Foundation to 1500+ on the Digital SAT.",
+    bullets: ["Individual Coaching","Micro-Batches", "Group Classes"],
   },
 ];
 
