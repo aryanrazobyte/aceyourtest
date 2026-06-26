@@ -197,7 +197,7 @@ export default function DemoForm({ onSuccess }: DemoFormProps) {
             }`}
         >
           <option value="" disabled>
-            Interested Courses
+            Select a course
           </option>
           {COURSES.map((c) => (
             <option key={c.value} value={c.value} className="text-foreground">

@@ -185,9 +185,9 @@ function BookConsultationPage() {
             style={{ animationDelay: "0.5s" }}
           >
             {[
-              "Trusted by students placed at MIT, Stanford, INSEAD & more",
-              "Small batches · Personalized attention · Proven frameworks",
-              "GMAT, GRE, SAT & study abroad admissions support",
+              "Trusted by students admitted to MIT, Stanford, Harvard, Wharton, Booth, Kellogg, LBS, INSEAD, Oxford & more",
+              "Small batches · Personal mentorship · Individual tutoring · Structured frameworks for result",
+              "Complete GMAT, GRE, SAT Prep with Study Abroad Admissions Guidance",
             ].map((text) => (
               <div
                 key={text}
