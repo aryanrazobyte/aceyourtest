@@ -181,9 +181,9 @@ export function Footer() {
 
       {/* Main grid */}
       <div className="container-page relative py-8 sm:py-10">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-6 xl:gap-8">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-6 xl:gap-8">
           {/* Brand */}
-          <div className="sm:col-span-2 lg:col-span-3">
+          <div className="lg:col-span-3">
             <Link to="/" className="inline-flex items-center">
               <img src={logoImg} alt="AceYourTest" className="h-10 w-auto object-contain sm:h-11" />
             </Link>
@@ -220,7 +220,7 @@ export function Footer() {
           </div>
 
           {/* Coaching regions */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-7">
             <FooterHeading>Coaching Regions</FooterHeading>
             <div className="mt-4 space-y-4">
               {coachingRegions.map((group) => (
@@ -245,59 +245,61 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Resources */}
-          <div className="lg:col-span-1">
-            <FooterHeading>Resources</FooterHeading>
-            <ul className="mt-4 space-y-2.5">
-              {resources.map((item) => (
-                <li key={item.to}>
-                  <FooterLink to={item.to}>{item.label}</FooterLink>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Resources · Quick Links · Get in Touch — single row */}
+          <div className="lg:col-span-12 border-t border-white/10 pt-8">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6 lg:gap-10">
+              <div>
+                <FooterHeading>Resources</FooterHeading>
+                <ul className="mt-4 space-y-2.5">
+                  {resources.map((item) => (
+                    <li key={item.to}>
+                      <FooterLink to={item.to}>{item.label}</FooterLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Quick Links */}
-          <div className="lg:col-span-1">
-            <FooterHeading>Quick Links</FooterHeading>
-            <ul className="mt-4 space-y-2.5">
-              {quickLinks.map((item) => (
-                <li key={item.to}>
-                  <FooterLink to={item.to}>{item.label}</FooterLink>
-                </li>
-              ))}
-            </ul>
-          </div>
+              <div>
+                <FooterHeading>Quick Links</FooterHeading>
+                <ul className="mt-4 space-y-2.5">
+                  {quickLinks.map((item) => (
+                    <li key={item.to}>
+                      <FooterLink to={item.to}>{item.label}</FooterLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Contact */}
-          <div className="sm:col-span-2 lg:col-span-2">
-            <FooterHeading>Get in Touch</FooterHeading>
-            <ul className="mt-4 space-y-3">
-              <li className="flex gap-3 rounded-xl border border-white/10 bg-white/5 p-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span className="text-sm text-white/75">Alaknanda, New Delhi, India</span>
-              </li>
-              <li className="flex gap-3 rounded-xl border border-white/10 bg-white/5 p-3">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span className="text-sm">
-                  <a href="tel:+918800338783" className="block text-white/75 hover:text-white">
-                    +91 88003 38783
-                  </a>
-                  <a href="tel:+919310037791" className="block text-white/75 hover:text-white">
-                    +91 93100 37791
-                  </a>
-                </span>
-              </li>
-              <li className="flex gap-3 rounded-xl border border-white/10 bg-white/5 p-3">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <a
-                  href="mailto:tarunkaushik@aceyourtest.in"
-                  className="break-all text-sm text-white/75 hover:text-white"
-                >
-                  tarunkaushik@aceyourtest.in
-                </a>
-              </li>
-            </ul>
+              <div>
+                <FooterHeading>Get in Touch</FooterHeading>
+                <ul className="mt-4 space-y-3">
+                  <li className="flex gap-2.5">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <span className="text-sm text-white/75">Alaknanda, New Delhi, India</span>
+                  </li>
+                  <li className="flex gap-2.5">
+                    <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <span className="text-sm">
+                      <a href="tel:+918800338783" className="block text-white/75 hover:text-white">
+                        +91 88003 38783
+                      </a>
+                      <a href="tel:+919310037791" className="block text-white/75 hover:text-white">
+                        +91 93100 37791
+                      </a>
+                    </span>
+                  </li>
+                  <li className="flex gap-2.5">
+                    <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <a
+                      href="mailto:tarunkaushik@aceyourtest.in"
+                      className="break-all text-sm text-white/75 hover:text-white"
+                    >
+                      tarunkaushik@aceyourtest.in
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
