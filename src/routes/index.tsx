@@ -50,7 +50,7 @@ const programs = [
     code: "GRE",
     to: "/gre",
     title: "GRE Program",
-    desc: "60+ live hours, structured curriculum and intensive practice for top GRE scores.",
+    desc: "Master the GRE with Structured Learning and Focused Practice.",
     bullets: ["Individual Coaching","Micro-Batches", "Group Classes",  "Self-Study Plans", "Sectional Mock Tests"],
     featured: true,
   },
