@@ -82,7 +82,7 @@ function AboutPage() {
           {[
             { v: "10,000+", l: "Students Trained" },
             { v: "700+", l: "GMAT Achievers" },
-            { v: "325+", l: "GRE Achievers" },
+            { v: "330+", l: "GRE Achievers" },
             { v: "1,450+", l: "SAT Achievers" },
           ].map((s) => (
             <div key={s.l} className="rounded-xl border border-border bg-card p-5 shadow-card">

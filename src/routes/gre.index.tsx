@@ -99,7 +99,7 @@ function GrePage() {
         </div>
       </section>
 
-      <CtaBand title="Aiming for a 325+?" subtitle="Talk to a mentor and get a personalized GRE roadmap." />
+      <CtaBand title="Aiming for a 330+?" subtitle="Talk to a mentor and get a personalized GRE roadmap." />
     </>
   );
 }

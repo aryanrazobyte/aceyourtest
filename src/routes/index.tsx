@@ -44,14 +44,14 @@ const programs = [
     to: "/gmat",
     title: "GMAT Program",
     desc: "Crack GMAT Focus Edition with a structured Quant + Verbal mastery plan.",
-    bullets: ["Individual Coaching", "Group Classes", "Self-Study Plans", "Full-length Mock Tests", "Quant + Verbal Support"],
+    bullets: ["Individual Coaching","Micro-Batches", "Group Classes",  "Self-Study Plans", "Sectional Mock Tests"],
   },
   {
     code: "GRE",
     to: "/gre",
     title: "GRE Program",
     desc: "60+ live hours, structured curriculum and intensive practice for top GRE scores.",
-    bullets: ["60+ Live Hours", "Structured Curriculum", "Practice Questions", "Full Mock Exams"],
+    bullets: ["Individual Coaching","Micro-Batches", "Group Classes",  "Self-Study Plans", "Sectional Mock Tests"],
     featured: true,
   },
   {

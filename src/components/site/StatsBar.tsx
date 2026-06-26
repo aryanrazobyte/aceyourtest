@@ -8,8 +8,8 @@ export const homeStats: StatItem[] = [
   { label: "Students Trained", value: 10000, suffix: "+" },
   { label: "Years of Experience", value: 15, suffix: "+" },
   { label: "GMAT Achievers", value: 700, suffix: "+" },
-  { label: "GRE Achievers", value: 325, suffix: "+" },
-  { label: "SAT Achievers", value: 1450, suffix: "+" },
+  { label: "GRE Achievers", value: 330, suffix: "+" },
+  { label: "SAT Achievers", value: 1500, suffix: "+" },
   { label: "University Admits", text: "Top" },
 ];
 
