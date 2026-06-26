@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Link } from "@tanstack/react-router";
 
 export default function VocabSeminarSection() {
   return (
@@ -12,23 +13,22 @@ export default function VocabSeminarSection() {
           </span>
 
           <h2 className="mb-3 text-2xl sm:text-3xl lg:text-4xl leading-tight text-navy">
-            India's Top GMAT, GRE & SAT Quant Expert
+            A Legacy of Clarity and Performance
           </h2>
 
           <p className="mb-5 text-sm sm:text-base leading-relaxed text-muted-foreground">
-         An exceptionally driven Quant trainer with over 15 years of experience coaching students for GMAT, GRE, and SAT, he has successfully trained 10,000+ students, many through referrals. Having worked with reputed organizations like The Princeton Review and Leverage Edu, he is known for delivering outcome-focused results through adaptive teaching methods, real-life application of complex quantitative concepts, and highly engaging, collaborative classroom sessions.
+            AceYourTest began over a decade ago as a small group of GMAT aspirants gathering around a whiteboard in Delhi. What started as informal mentoring quickly grew into something far more powerful - students were not only improving scores, but learning how to think clearly, solve under pressure, and perform when it mattered most.
+
 
   
           </p>
 
-          <a
-            href="https://youtu.be/VatvGmuqfvg?si=HeamYEgDU32ts6k3"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/about"
             className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-medium text-navy transition hover:bg-muted sm:px-6 sm:py-3.5 sm:text-base"
           >
-            Watch Video <span aria-hidden>→</span>
-          </a>
+            Read more <span aria-hidden>→</span>
+          </Link>
         </div>
 
         <div className="w-full md:w-1/2 flex-1">
