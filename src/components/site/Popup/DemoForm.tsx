@@ -14,9 +14,8 @@ const COUNTRY_CODES = [
 const COURSES = [
   { value: "gmat", label: "GMAT" },
   { value: "gre", label: "GRE" },
-  { value: "mba", label: "MBA Admissions" },
-  { value: "gmat-admissions", label: "GMAT + Admissions" },
-  { value: "gre-admissions", label: "GRE + Admissions" },
+  { value: "sat", label: "SAT" },
+  { value: "admissions", label: "Admissions Consulting" },
 ];
 
 interface FormData {
