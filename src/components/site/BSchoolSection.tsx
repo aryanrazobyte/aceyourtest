@@ -142,7 +142,7 @@ export default function BSchoolSection() {
       {/* ── Left column ── */}
       <div className="w-full md:w-1/2 flex-shrink-0 md:pr-8 lg:pr-12">
         <h2 className="mb-3 text-2xl sm:text-3xl lg:text-4xl leading-tight text-navy">
-          Which  <span className="text-primary">Top University or B-School</span> Is Your Goal?
+          Which  <span className="text-primary">Top University </span> Is Your Goal?
         </h2>
 
         <p className="mb-3 text-base leading-relaxed text-muted-foreground">

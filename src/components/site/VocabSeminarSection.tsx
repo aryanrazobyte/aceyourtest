@@ -9,7 +9,7 @@ export default function VocabSeminarSection() {
       <div className="container-page flex flex-col gap-6 md:flex-row md:items-start">
         <div className="w-full md:w-1/2 flex-shrink-0 md:pr-6">
           <span className="mb-3 inline-block rounded-full bg-primary px-3 py-1 text-xs sm:text-sm font-medium text-white">
-            Special Vocabulary Seminar
+            With AceYourTest 
           </span>
 
           <h2 className="mb-3 text-2xl sm:text-3xl lg:text-4xl leading-tight text-navy">
