@@ -142,7 +142,7 @@ export default function BSchoolSection() {
       {/* ── Left column ── */}
       <div className="w-full md:w-1/2 flex-shrink-0 md:pr-8 lg:pr-12">
         <h2 className="mb-3 text-2xl sm:text-3xl lg:text-4xl leading-tight text-navy">
-          Which  <span className="text-red-600">Top University or B-School</span> Is Your Goal?
+          Which  <span className="text-primary">Top University or B-School</span> Is Your Goal?
         </h2>
 
         <p className="mb-3 text-base leading-relaxed text-muted-foreground">
@@ -159,7 +159,7 @@ export default function BSchoolSection() {
             "Admissions becomes competitive only after your score crosses the benchmark.",
           ].map((item) => (
             <li key={item} className="flex items-start gap-2 text-sm md:text-base text-muted-foreground">
-              <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-600">
+              <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary">
                 <svg viewBox="0 0 20 20" fill="none" className="h-3 w-3">
                   <path
                     d="M5 10l3.5 3.5L15 7"

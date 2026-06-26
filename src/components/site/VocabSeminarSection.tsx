@@ -7,20 +7,18 @@ export default function VocabSeminarSection() {
     <section className="section-y bg-surface">
       <div className="container-page flex flex-col gap-6 md:flex-row md:items-start">
         <div className="w-full md:w-1/2 flex-shrink-0 md:pr-6">
-          <span className="mb-3 inline-block rounded-full bg-red-600 px-3 py-1 text-xs sm:text-sm font-medium text-white">
+          <span className="mb-3 inline-block rounded-full bg-primary px-3 py-1 text-xs sm:text-sm font-medium text-white">
             Special Vocabulary Seminar
           </span>
 
           <h2 className="mb-3 text-2xl sm:text-3xl lg:text-4xl leading-tight text-navy">
-            Vocabulary Marathon Seminar
+            India's Top GMAT, GRE & SAT Quant Expert
           </h2>
 
           <p className="mb-5 text-sm sm:text-base leading-relaxed text-muted-foreground">
-            At just 14 years old,Tarun Kaushik had already crammed the entire Oxford
-            Advanced Learners Dictionary in! With an impressive vocabulary of over
-            1,50,000 words, he&apos;s been teaching the GRE for 20 years! To see
-            this literary whiz in action, check out this clip from the 2003 3-hour
-            live Vocabulary Seminar - Vocabulary Marathon Seminar.
+         An exceptionally driven Quant trainer with over 15 years of experience coaching students for GMAT, GRE, and SAT, he has successfully trained 10,000+ students, many through referrals. Having worked with reputed organizations like The Princeton Review and Leverage Edu, he is known for delivering outcome-focused results through adaptive teaching methods, real-life application of complex quantitative concepts, and highly engaging, collaborative classroom sessions.
+
+  
           </p>
 
           <a
