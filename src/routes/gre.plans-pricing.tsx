@@ -112,23 +112,25 @@ const programCards = [
     id: "self-study",
     badge: "Program 3",
     title: "Self Study Package",
-    subtitle: "GRE Self-Study Mastery Program",
-    tagline: "Premium Preparation. Complete Flexibility.",
-    price: "₹29,999",
+    subtitle: "GRE Mastery Program",
+    tagline: "Self Study Package",
+    price: "₹1,20,000",
     priceNote: "one-time",
     image: PROGRAM_IMAGES.selfStudy,
-    imageAlt: "GRE self-study mastery program resources",
+    imageAlt: "GRE mastery program resources",
     idealFor: [
-      "Independent learners",
-      "Budget-conscious students",
-      "Students preparing alongside college or work commitments",
+      "Students targeting 330+ GRE scores",
+      "Beginners seeking structured preparation",
+      "Working professionals with busy schedules",
+      "Learners who value personalized mentoring",
     ],
     highlights: [
-      "Elite GRE Study Notes",
-      "Structured Preparation Roadmap",
-      "Concept Mastery Framework",
-      "5,000+ Practice Questions",
-      "Exam-Day Strategy Modules",
+      "Micro Batches (3–4 Students)",
+      "Live Interactive Classes",
+      "Personalized Mentoring",
+      "30+ Sectional Tests",
+      "ecorded Sessions",
+      "Proven 330+ Score Strategy",
     ],
     cta: "Get Self-Study Access",
     to: BOOK_CONSULTATION_PATH,
@@ -488,14 +490,14 @@ function GrePlansPricingPage() {
             <div id="self-study">
               <SectionHeader
                 eyebrow="Program 3"
-                title="GRE Self-Study Mastery Program"
+                title="GRE Mastery Program"
                 subtitle="Premium preparation with complete flexibility — the same conceptual framework used in our guided coaching programs."
               />
               <div className="section-gap overflow-hidden rounded-2xl border border-border bg-card shadow-card">
                 <div className="grid md:grid-cols-[minmax(240px,340px)_1fr]">
                   <ProgramImage
                     src={PROGRAM_IMAGES.selfStudy}
-                    alt="GRE self-study mastery program"
+                    alt="GRE smastery program"
                     variant="detail"
                   />
                   <div className="p-5 sm:p-6">
