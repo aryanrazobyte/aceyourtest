@@ -1,5 +1,6 @@
-export const MENTOR_IMAGE =
-  "https://res.cloudinary.com/ddcx08e0s/image/upload/v1781780949/arb_qebzqg.png";
+import mentorHomeImg from "@/assets/mentor-home.png";
+
+export const MENTOR_IMAGE = mentorHomeImg;
 
 export const MENTOR_NAME = "Tarun Kaushik";
 

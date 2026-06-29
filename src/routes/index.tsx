@@ -4,7 +4,7 @@ import {
   CheckCircle2, Star, ArrowRight, Award, Globe2,
 } from "lucide-react";
 import heroImg from "../assets/hero-students.jpg";
-import mentorHomeImg from "../assets/mentor-home.png";
+import { MENTOR_IMAGE } from "../lib/site-constants";
 import { SectionHeader } from "../components/site/SectionHeader";
 import UniversitiesSection from "../components/site/UniversitiesSection";
 import BlogPreviewSection from "../components/site/BlogPreviewSection";
@@ -153,7 +153,7 @@ function HomePage() {
         <div className="container-page grid gap-6 lg:grid-cols-[1fr_1.2fr] items-center">
           <div className="relative max-w-md mx-auto lg:mx-0">
             <div className="absolute -inset-4 rounded-3xl bg-primary/15" aria-hidden />
-            <img src={mentorHomeImg} alt="Tarun Kaushik, Founder and Lead Mentor at AceYourTest" loading="lazy" width={800} height={800} className="relative rounded-2xl shadow-elevated w-full h-auto object-cover" />
+            <img src={MENTOR_IMAGE} alt="Tarun Kaushik, Founder and Lead Mentor at AceYourTest" loading="lazy" width={800} height={800} className="relative rounded-2xl shadow-elevated w-full h-auto object-cover" />
           </div>
           <div>
             <SectionHeader eyebrow="Meet Your Mentor" title="Tarun Kaushik — Quant Expert & Lead Mentor" subtitle="A coach trusted by 10,000+ students across GMAT, GRE and SAT. Tarun has worked with leading test-prep organisations and built one of India's most respected quant programs." />

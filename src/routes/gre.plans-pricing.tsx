@@ -15,6 +15,7 @@ import {
 import { PageHero } from "../components/site/PageHero";
 import { SectionHeader } from "../components/site/SectionHeader";
 import { CtaBand } from "../components/site/CtaBand";
+import { GreProgramCard } from "../components/gre/GreProgramCard";
 import { BOOK_CONSULTATION_PATH } from "../lib/site-constants";
 import { cn } from "../lib/utils";
 
@@ -51,7 +52,7 @@ const PROGRAM_IMAGES = {
   group:
     "https://res.cloudinary.com/ddcx08e0s/image/upload/v1781938345/Group_Classes_xd0q68.png",
   selfStudy:
-    "https://res.cloudinary.com/ddcx08e0s/image/upload/v1781938740/Self_z2hmav.png",
+    "https://res.cloudinary.com/ddcx08e0s/image/upload/v1782751324/Group_Classes_fwpsm2.png",
 } as const;
 
 const programCards = [
@@ -66,17 +67,38 @@ const programCards = [
     image: PROGRAM_IMAGES.individual,
     imageAlt: "GRE individual private coaching classes",
     idealFor: [
-      "Students targeting 325–340+ scores",
+      "High-score aspirants (330-335)",
       "Working professionals",
-      "Students with limited preparation time",
-      "Candidates seeking maximum personalization",
+      "Students requiring flexible scheduling",
+      "Learners seeking individual attention",
+      "Candidates who want a personalized preparation strategy",
     ],
     highlights: [
-      "Personalized Quantitative & Verbal Training",
-      "Individualized Study Roadmap",
-      "Direct Mentorship from Tarun Kaushik",
-      "5,000+ Premium Practice Questions",
-      "Flexible Weekday & Weekend Scheduling",
+      "Personalized 1:1 Mentoring",
+      "Customized Study Roadmap",
+      "Quant & Verbal Mastery",
+      "100,000+ Curated Questions",
+      "30+ Sectional Tests",
+    ],
+    extendedHighlights: [
+      "Personalized 1:1 Mentoring",
+      "Customized Study Roadmap",
+      "Quant & Verbal Mastery",
+      "100,000+ Curated Questions",
+      "30+ Sectional Tests",
+      "Official GRE-Level Practice",
+      "Full-Length Mock Tests",
+      "Practice Drills",
+      "Advanced Test-Taking Strategies",
+      "Time Management Techniques",
+      "Personalized Error Analysis",
+      "Unlimited Doubt Support",
+      "Vocabulary Enhancement Program",
+      "Flexible Learning Schedule",
+      "Recorded Sessions",
+      "Expert Performance Reviews",
+      "Score Improvement Strategy",
+      "Exam-Day Preparation",
     ],
     cta: "Explore Private Coaching",
     to: "/gre/private-tutoring" as const,
@@ -98,11 +120,28 @@ const programCards = [
       "Students seeking premium preparation at optimized cost",
     ],
     highlights: [
-      "Maximum 10 Students Per Batch",
-      "50+ Hours of Live Interactive Classes",
-      "40+ Sectional Practice Tests",
-      "WhatsApp Support Community",
-      "6 Months Recording Access",
+      "50 Hours of Live, Interactive Instruction",
+      "Small Batches (Maximum 10 Students)",
+      "5,000+ Curated GRE Practice Questions",
+      "30+ Sectional Tests with Detailed Analytics",
+      "Official GRE-Style Practice Material",
+    ],
+    extendedHighlights: [
+      "50 Hours of Live, Interactive Instruction",
+      "Small Batches (Maximum 10 Students)",
+      "5,000+ Curated GRE Practice Questions",
+      "30+ Sectional Tests with Detailed Analytics",
+      "Official GRE-Style Practice Material",
+      "Comprehensive Study Notes for Every Topic",
+      "Daily Study Targets for Consistent Progress",
+      "Topic-Wise Practice & Concept Reinforcement",
+      "Expert Test Reviews & Score-Boosting Strategies",
+      "Personalized Performance Analysis",
+      "Instant Doubt Resolution During & Beyond Class",
+      "Weekly Progress Reviews & Action Plans",
+      "Collaborative Learning with Peer Discussions",
+      "Dedicated WhatsApp Support for Quick Assistance",
+      "Class Recordings with 6-Month Access",
     ],
     cta: "Explore Group Classes",
     to: "/gre/gre-test-prep-courses-group-classes-program" as const,
@@ -125,12 +164,25 @@ const programCards = [
       "Learners who value personalized mentoring",
     ],
     highlights: [
-      "Micro Batches (3–4 Students)",
-      "Live Interactive Classes",
-      "Personalized Mentoring",
-      "30+ Sectional Tests",
-      "ecorded Sessions",
-      "Proven 330+ Score Strategy",
+      "3-Month Intensive GRE Preparation",
+      "Live Interactive Online Classes with recorded access",
+      "Micro Batches (Up to 4 Students) for personalized attention",
+      "Expert Faculty with 1:1 Mentoring Support",
+      "30+ Sectional Tests with in-depth performance analysis",
+    ],
+    extendedHighlights: [
+      "3-Month Intensive GRE Preparation",
+      "Live Interactive Online Classes with recorded access",
+      "Micro Batches (Up to 4 Students) for personalized attention",
+      "Expert Faculty with 1:1 Mentoring Support",
+      "30+ Sectional Tests with in-depth performance analysis",
+      "Structured Topic-Wise Practice for Quant & Verbal mastery",
+      "Customized Assignments based on individual progress",
+      "Comprehensive Study Plan aligned with target score",
+      "Detailed Error Analysis for continuous improvement",
+      "Regular Performance Tracking with actionable insights",
+      "Flexible Learning Schedule for working professionals & students",
+      "Strategy Sessions focused on high-score techniques",
     ],
     cta: "Get Self-Study Access",
     to: BOOK_CONSULTATION_PATH,
@@ -139,33 +191,42 @@ const programCards = [
 ] as const;
 
 const privateFeatures = [
-  "Personalized Quantitative & Verbal Training",
-  "Individualized Study Roadmap",
-  "Comprehensive Diagnostic Assessment",
-  "Direct Mentorship from Tarun Kaushik",
-  "Advanced Time Management Strategies",
-  "Unlimited Doubt Resolution",
-  "Performance Tracking & Analytics",
-  "5,000+ Premium Practice Questions",
-  "Topic-Wise Diagnostic Drills",
-  "Official GRE-Level Material",
-  "Flexible Weekday & Weekend Scheduling",
-  "Session Recordings & Revision Resources",
+  "Personalized 1:1 Mentoring",
+  "Customized Study Roadmap",
+  "Quant & Verbal Mastery",
+  "100,000+ Curated Questions",
+  "30+ Sectional Tests",
+  "Official GRE-Level Practice",
+  "Full-Length Mock Tests",
+  "Practice Drills",
+  "Advanced Test-Taking Strategies",
+  "Time Management Techniques",
+  "Personalized Error Analysis",
+  "Unlimited Doubt Support",
+  "Vocabulary Enhancement Program",
+  "Flexible Learning Schedule",
+  "Recorded Sessions",
+  "Expert Performance Reviews",
+  "Score Improvement Strategy",
+  "Exam-Day Preparation",
 ];
 
 const groupFeatures = [
-  "Maximum 10 Students Per Batch",
-  "50+ Hours of Live Interactive Classes",
-  "Daily Study Plans & Progress Tracking",
-  "Weekly Performance Reviews",
-  "5,000+ Practice Questions",
-  "40+ Sectional Practice Tests",
-  "Detailed Error Analysis Framework",
-  "Official GRE-Level Practice Material",
-  "Collaborative Peer Learning",
-  "WhatsApp Support Community",
-  "6 Months Recording Access",
-  "Optional 1-on-1 Mentorship Sessions",
+  "50 Hours of Live, Interactive Instruction",
+  "Small Batches (Maximum 10 Students)",
+  "5,000+ Curated GRE Practice Questions",
+  "30+ Sectional Tests with Detailed Analytics",
+  "Official GRE-Style Practice Material",
+  "Comprehensive Study Notes for Every Topic",
+  "Daily Study Targets for Consistent Progress",
+  "Topic-Wise Practice & Concept Reinforcement",
+  "Expert Test Reviews & Score-Boosting Strategies",
+  "Personalized Performance Analysis",
+  "Instant Doubt Resolution During & Beyond Class",
+  "Weekly Progress Reviews & Action Plans",
+  "Collaborative Learning with Peer Discussions",
+  "Dedicated WhatsApp Support for Quick Assistance",
+  "Class Recordings with 6-Month Access",
 ];
 
 const cohortAdvantages = [
@@ -177,16 +238,18 @@ const cohortAdvantages = [
 ];
 
 const selfStudyFeatures = [
-  "Elite GRE Study Notes",
-  "Structured Preparation Roadmap",
-  "Concept Mastery Framework",
-  "Quantitative Strategy Guides",
-  "Verbal Reasoning Systems",
-  "Official GRE-Style Practice Material",
-  "5,000+ Practice Questions",
-  "Topic-Wise Practice Sets",
-  "Progress Monitoring Framework",
-  "Exam-Day Strategy Modules",
+  "3-Month Intensive GRE Preparation",
+  "Live Interactive Online Classes with recorded access",
+  "Micro Batches (Up to 4 Students) for personalized attention",
+  "Expert Faculty with 1:1 Mentoring Support",
+  "30+ Sectional Tests with in-depth performance analysis",
+  "Structured Topic-Wise Practice for Quant & Verbal mastery",
+  "Customized Assignments based on individual progress",
+  "Comprehensive Study Plan aligned with target score",
+  "Detailed Error Analysis for continuous improvement",
+  "Regular Performance Tracking with actionable insights",
+  "Flexible Learning Schedule for working professionals & students",
+  "Strategy Sessions focused on high-score techniques",
 ];
 
 const impactStats = [
@@ -265,71 +328,6 @@ function ProgramImage({
   );
 }
 
-function ProgramCard({
-  program,
-}: {
-  program: (typeof programCards)[number];
-}) {
-  return (
-    <article
-      className={cn(
-        "flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-card transition-shadow hover:shadow-elevated",
-        program.featured ? "border-primary/40 ring-1 ring-primary/20" : "border-border",
-      )}
-    >
-      <div className="relative">
-        <ProgramImage src={program.image} alt={program.imageAlt} variant="card" />
-        <span className="absolute left-3 top-3 z-10 rounded-full bg-navy/90 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-white">
-          {program.badge}
-        </span>
-      </div>
-
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <p className="text-xs font-bold uppercase tracking-wider text-primary">
-          {program.subtitle}
-        </p>
-        <h3 className="mt-1 text-xl font-bold text-navy">{program.title}</h3>
-        <p className="mt-1 text-sm text-muted-foreground">{program.tagline}</p>
-
-        <div className="mt-4 flex items-baseline gap-1.5">
-          <span className="text-2xl font-bold text-primary sm:text-3xl">
-            {program.price}
-          </span>
-          <span className="text-sm text-muted-foreground">{program.priceNote}</span>
-        </div>
-
-        <ul className="mt-4 flex-1 space-y-2">
-          {program.highlights.map((item) => (
-            <li key={item} className="flex items-start gap-2 text-sm text-foreground">
-              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-success" />
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-4 rounded-lg border border-border bg-surface p-3">
-          <p className="text-xs font-bold uppercase tracking-wider text-navy">Ideal For</p>
-          <ul className="mt-2 space-y-1">
-            {program.idealFor.map((item) => (
-              <li key={item} className="text-xs text-muted-foreground sm:text-sm">
-                • {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <Link
-          to={program.to}
-          className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-        >
-          {program.cta}
-          <ArrowRight className="h-4 w-4" />
-        </Link>
-      </div>
-    </article>
-  );
-}
-
 function FeatureList({ items }: { items: readonly string[] }) {
   return (
     <ul className="grid gap-2 sm:grid-cols-2">
@@ -382,7 +380,7 @@ function GrePlansPricingPage() {
               />
               <div className="section-gap grid gap-5 lg:grid-cols-3">
                 {programCards.map((program) => (
-                  <ProgramCard key={program.id} program={program} />
+                  <GreProgramCard key={program.id} program={program} />
                 ))}
               </div>
             </div>
