@@ -29,9 +29,9 @@ import { Route as GreIndexRouteImport } from './routes/gre.index'
 import { Route as GmatIndexRouteImport } from './routes/gmat.index'
 import { Route as SatPlansPricingRouteImport } from './routes/sat.plans-pricing'
 import { Route as SatCityRouteImport } from './routes/sat.$city'
-import { Route as GreTestPrepCoursesRouteImport } from './routes/gre.test-prep-courses'
 import { Route as GrePrivateTutoringRouteImport } from './routes/gre.private-tutoring'
 import { Route as GrePlansPricingRouteImport } from './routes/gre.plans-pricing'
+import { Route as GreGreTestPrepCoursesGroupClassesProgramRouteImport } from './routes/gre.gre-test-prep-courses-group-classes-program'
 import { Route as GreCityRouteImport } from './routes/gre.$city'
 import { Route as GmatTopUniversityCutoffRouteImport } from './routes/gmat.top-university-cutoff'
 import { Route as GmatPlansPricingRouteImport } from './routes/gmat.plans-pricing'
@@ -137,11 +137,6 @@ const SatCityRoute = SatCityRouteImport.update({
   path: '/$city',
   getParentRoute: () => SatRoute,
 } as any)
-const GreTestPrepCoursesRoute = GreTestPrepCoursesRouteImport.update({
-  id: '/test-prep-courses',
-  path: '/test-prep-courses',
-  getParentRoute: () => GreRoute,
-} as any)
 const GrePrivateTutoringRoute = GrePrivateTutoringRouteImport.update({
   id: '/private-tutoring',
   path: '/private-tutoring',
@@ -152,6 +147,12 @@ const GrePlansPricingRoute = GrePlansPricingRouteImport.update({
   path: '/plans-pricing',
   getParentRoute: () => GreRoute,
 } as any)
+const GreGreTestPrepCoursesGroupClassesProgramRoute =
+  GreGreTestPrepCoursesGroupClassesProgramRouteImport.update({
+    id: '/gre-test-prep-courses-group-classes-program',
+    path: '/gre-test-prep-courses-group-classes-program',
+    getParentRoute: () => GreRoute,
+  } as any)
 const GreCityRoute = GreCityRouteImport.update({
   id: '/$city',
   path: '/$city',
@@ -193,9 +194,9 @@ export interface FileRoutesByFullPath {
   '/gmat/plans-pricing': typeof GmatPlansPricingRoute
   '/gmat/top-university-cutoff': typeof GmatTopUniversityCutoffRoute
   '/gre/$city': typeof GreCityRoute
+  '/gre/gre-test-prep-courses-group-classes-program': typeof GreGreTestPrepCoursesGroupClassesProgramRoute
   '/gre/plans-pricing': typeof GrePlansPricingRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
-  '/gre/test-prep-courses': typeof GreTestPrepCoursesRoute
   '/sat/$city': typeof SatCityRoute
   '/sat/plans-pricing': typeof SatPlansPricingRoute
   '/gmat/': typeof GmatIndexRoute
@@ -219,9 +220,9 @@ export interface FileRoutesByTo {
   '/gmat/plans-pricing': typeof GmatPlansPricingRoute
   '/gmat/top-university-cutoff': typeof GmatTopUniversityCutoffRoute
   '/gre/$city': typeof GreCityRoute
+  '/gre/gre-test-prep-courses-group-classes-program': typeof GreGreTestPrepCoursesGroupClassesProgramRoute
   '/gre/plans-pricing': typeof GrePlansPricingRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
-  '/gre/test-prep-courses': typeof GreTestPrepCoursesRoute
   '/sat/$city': typeof SatCityRoute
   '/sat/plans-pricing': typeof SatPlansPricingRoute
   '/gmat': typeof GmatIndexRoute
@@ -249,9 +250,9 @@ export interface FileRoutesById {
   '/gmat/plans-pricing': typeof GmatPlansPricingRoute
   '/gmat/top-university-cutoff': typeof GmatTopUniversityCutoffRoute
   '/gre/$city': typeof GreCityRoute
+  '/gre/gre-test-prep-courses-group-classes-program': typeof GreGreTestPrepCoursesGroupClassesProgramRoute
   '/gre/plans-pricing': typeof GrePlansPricingRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
-  '/gre/test-prep-courses': typeof GreTestPrepCoursesRoute
   '/sat/$city': typeof SatCityRoute
   '/sat/plans-pricing': typeof SatPlansPricingRoute
   '/gmat/': typeof GmatIndexRoute
@@ -280,9 +281,9 @@ export interface FileRouteTypes {
     | '/gmat/plans-pricing'
     | '/gmat/top-university-cutoff'
     | '/gre/$city'
+    | '/gre/gre-test-prep-courses-group-classes-program'
     | '/gre/plans-pricing'
     | '/gre/private-tutoring'
-    | '/gre/test-prep-courses'
     | '/sat/$city'
     | '/sat/plans-pricing'
     | '/gmat/'
@@ -306,9 +307,9 @@ export interface FileRouteTypes {
     | '/gmat/plans-pricing'
     | '/gmat/top-university-cutoff'
     | '/gre/$city'
+    | '/gre/gre-test-prep-courses-group-classes-program'
     | '/gre/plans-pricing'
     | '/gre/private-tutoring'
-    | '/gre/test-prep-courses'
     | '/sat/$city'
     | '/sat/plans-pricing'
     | '/gmat'
@@ -335,9 +336,9 @@ export interface FileRouteTypes {
     | '/gmat/plans-pricing'
     | '/gmat/top-university-cutoff'
     | '/gre/$city'
+    | '/gre/gre-test-prep-courses-group-classes-program'
     | '/gre/plans-pricing'
     | '/gre/private-tutoring'
-    | '/gre/test-prep-courses'
     | '/sat/$city'
     | '/sat/plans-pricing'
     | '/gmat/'
@@ -505,13 +506,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SatCityRouteImport
       parentRoute: typeof SatRoute
     }
-    '/gre/test-prep-courses': {
-      id: '/gre/test-prep-courses'
-      path: '/test-prep-courses'
-      fullPath: '/gre/test-prep-courses'
-      preLoaderRoute: typeof GreTestPrepCoursesRouteImport
-      parentRoute: typeof GreRoute
-    }
     '/gre/private-tutoring': {
       id: '/gre/private-tutoring'
       path: '/private-tutoring'
@@ -524,6 +518,13 @@ declare module '@tanstack/react-router' {
       path: '/plans-pricing'
       fullPath: '/gre/plans-pricing'
       preLoaderRoute: typeof GrePlansPricingRouteImport
+      parentRoute: typeof GreRoute
+    }
+    '/gre/gre-test-prep-courses-group-classes-program': {
+      id: '/gre/gre-test-prep-courses-group-classes-program'
+      path: '/gre-test-prep-courses-group-classes-program'
+      fullPath: '/gre/gre-test-prep-courses-group-classes-program'
+      preLoaderRoute: typeof GreGreTestPrepCoursesGroupClassesProgramRouteImport
       parentRoute: typeof GreRoute
     }
     '/gre/$city': {
@@ -575,17 +576,18 @@ const GmatRouteWithChildren = GmatRoute._addFileChildren(GmatRouteChildren)
 
 interface GreRouteChildren {
   GreCityRoute: typeof GreCityRoute
+  GreGreTestPrepCoursesGroupClassesProgramRoute: typeof GreGreTestPrepCoursesGroupClassesProgramRoute
   GrePlansPricingRoute: typeof GrePlansPricingRoute
   GrePrivateTutoringRoute: typeof GrePrivateTutoringRoute
-  GreTestPrepCoursesRoute: typeof GreTestPrepCoursesRoute
   GreIndexRoute: typeof GreIndexRoute
 }
 
 const GreRouteChildren: GreRouteChildren = {
   GreCityRoute: GreCityRoute,
+  GreGreTestPrepCoursesGroupClassesProgramRoute:
+    GreGreTestPrepCoursesGroupClassesProgramRoute,
   GrePlansPricingRoute: GrePlansPricingRoute,
   GrePrivateTutoringRoute: GrePrivateTutoringRoute,
-  GreTestPrepCoursesRoute: GreTestPrepCoursesRoute,
   GreIndexRoute: GreIndexRoute,
 }
 

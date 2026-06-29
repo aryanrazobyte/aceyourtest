@@ -105,7 +105,7 @@ const programCards = [
       "6 Months Recording Access",
     ],
     cta: "Explore Group Classes",
-    to: "/gre/test-prep-courses" as const,
+    to: "/gre/gre-test-prep-courses-group-classes-program" as const,
     featured: false,
   },
   {
@@ -473,7 +473,7 @@ function GrePlansPricingPage() {
                     <div className="mt-5 flex flex-wrap items-center gap-4">
                       <p className="text-2xl font-bold text-primary">₹49,999</p>
                       <Link
-                        to="/gre/test-prep-courses"
+                        to="/gre/gre-test-prep-courses-group-classes-program"
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
                       >
                         View full program details

@@ -29,7 +29,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           })),
           { path: "/gre", changefreq: "monthly", priority: "0.9" },
           { path: "/gre/private-tutoring", changefreq: "monthly", priority: "0.85" },
-          { path: "/gre/test-prep-courses", changefreq: "monthly", priority: "0.85" },
+          { path: "/gre/gre-test-prep-courses-group-classes-program", changefreq: "monthly", priority: "0.85" },
           { path: "/gre/plans-pricing", changefreq: "monthly", priority: "0.85" },
           ...GRE_COACHING_CITIES.map((city) => ({
             path: `/gre/${city.slug}`,

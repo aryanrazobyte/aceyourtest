@@ -23,7 +23,7 @@ import { CtaBand } from "../components/site/CtaBand";
 import { EnquiryForm } from "../components/site/EnquiryForm";
 import { BOOK_CONSULTATION_PATH } from "../lib/site-constants";
 
-export const Route = createFileRoute("/gre/test-prep-courses")({
+export const Route = createFileRoute("/gre/gre-test-prep-courses-group-classes-program")({
   head: () => ({
     meta: [
       {
@@ -43,9 +43,9 @@ export const Route = createFileRoute("/gre/test-prep-courses")({
         content:
           "Master the GRE in elite small cohorts — live classes, study vault, accountability, and top mentor access.",
       },
-      { property: "og:url", content: "/gre/test-prep-courses" },
+      { property: "og:url", content: "/gre/gre-test-prep-courses-group-classes-program" },
     ],
-    links: [{ rel: "canonical", href: "/gre/test-prep-courses" }],
+    links: [{ rel: "canonical", href: "/gre/gre-test-prep-courses-group-classes-program" }],
   }),
   component: GreTestPrepCoursesPage,
 });

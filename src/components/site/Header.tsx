@@ -32,7 +32,7 @@ type ExamMenuLink = {
     | "/gmat/plans-pricing"
     | "/gmat/top-university-cutoff"
     | "/gre/private-tutoring"
-    | "/gre/test-prep-courses"
+    | "/gre/gre-test-prep-courses-group-classes-program"
     | "/gre/plans-pricing"
     | "/sat/plans-pricing";
   label: string;
@@ -65,7 +65,7 @@ const gmatMenu = [
 
 const greMenu: ExamMenuItem[] = [
   { to: "/gre/private-tutoring", label: "GRE One On One Private Tutoring" },
-  { to: "/gre/test-prep-courses", label: "GRE Group Course" },
+  { to: "/gre/gre-test-prep-courses-group-classes-program", label: "GRE Group Course" },
   { to: "/gre/plans-pricing", label: "GRE Plans and Pricing" },
   // {
   //   label: "GRE Coaching",
