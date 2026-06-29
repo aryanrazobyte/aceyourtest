@@ -190,9 +190,9 @@ const selfStudyFeatures = [
 ];
 
 const impactStats = [
-  { value: "2000+", label: "Students with GMAT Scores Above 705" },
+  // { value: "2000+", label: "Students with GMAT Scores Above 705" },
   { value: "1500+", label: "Students with GRE Scores Above 330" },
-  { value: "1000+", label: "Students with SAT Scores Above 1500" },
+  // { value: "1000+", label: "Students with SAT Scores Above 1500" },
   { value: "500+", label: "Admits to Top-Ranked Global Universities" },
 ];
 
