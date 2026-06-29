@@ -387,7 +387,7 @@ function GrePlansPricingPage() {
               </div>
             </div>
 
-            <div id="private-coaching">
+            {/* <div id="private-coaching">
               <SectionHeader
                 eyebrow="Program 1"
                 title="Private 1-on-1 Premium GRE Coaching"
@@ -524,7 +524,7 @@ function GrePlansPricingPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div>
               <SectionHeader
