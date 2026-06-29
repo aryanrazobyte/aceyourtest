@@ -111,7 +111,7 @@ const programCards = [
   {
     id: "self-study",
     badge: "Program 3",
-    title: "Self Study Package",
+    title: "Micro Batches Classes",
     subtitle: "GRE Mastery Program",
     tagline: "Self Study Package",
     price: "₹1,20,000",
