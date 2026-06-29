@@ -200,7 +200,7 @@ const diSkills = [
 
 const practiceComponents = [
   "Full-Length GRE Mock Tests",
-  "Sectional Mock Tests",
+  // "Sectional Mock Tests",
   "Adaptive Practice Modules",
   "Timed Drill Sessions",
   "Performance Analytics",

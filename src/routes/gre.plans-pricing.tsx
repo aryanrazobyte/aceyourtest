@@ -115,7 +115,7 @@ const programCards = [
     subtitle: "GRE Mastery Program",
     tagline: "Self Study Package",
     price: "₹1,20,000",
-    priceNote: "one-time",
+    priceNote: "Full Program",
     image: PROGRAM_IMAGES.selfStudy,
     imageAlt: "GRE mastery program resources",
     idealFor: [
