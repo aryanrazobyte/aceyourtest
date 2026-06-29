@@ -49,12 +49,11 @@ export function EnquiryForm({ title = "Book a Free Consultation", compact = fals
         <div className="sm:col-span-2">
           <label className="text-sm font-medium text-navy">Exam Interested In</label>
           <select name="exam" defaultValue="" className="mt-1.5 w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring">
-            <option value="" disabled>Select an exam</option>
+            <option value="" disabled>Select Course</option>
             <option>GMAT</option>
             <option>GRE</option>
             <option>SAT</option>
-            <option>Study Abroad</option>
-            <option>Quantitative Aptitude</option>
+            <option>Admission's Consulting</option>
           </select>
           {errors.exam && <p className="mt-1 text-xs text-destructive">{errors.exam}</p>}
         </div>

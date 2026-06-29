@@ -244,6 +244,7 @@ function GrePrivateTutoringPage() {
       <PageHero
         eyebrow="GRE Premium Private Coaching"
         title="Achieve Your Target GRE Score with Elite 1-on-1 Mentorship"
+        titleClassName="max-w-none text-xl sm:text-2xl md:text-3xl lg:text-[2rem] xl:text-4xl lg:whitespace-nowrap"
         subtitle="Experience India's most personalized GRE preparation program — designed for ambitious students targeting top universities worldwide."
       >
         <Link
@@ -292,14 +293,28 @@ function GrePrivateTutoringPage() {
                         </p>
                       </div>
                     </div>
-                    <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                      {item.benefits.map((b) => (
-                        <li key={b} className="flex items-start gap-2 text-sm text-foreground">
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-success" />
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="mt-4 grid gap-2 sm:grid-cols-2 sm:items-start sm:gap-x-8">
+                      <ul className="space-y-2">
+                        {item.benefits
+                          .filter((_, index) => index % 2 === 0)
+                          .map((b) => (
+                            <li key={b} className="flex items-start gap-2 text-sm text-foreground">
+                              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-success" />
+                              {b}
+                            </li>
+                          ))}
+                      </ul>
+                      <ul className="space-y-2">
+                        {item.benefits
+                          .filter((_, index) => index % 2 === 1)
+                          .map((b) => (
+                            <li key={b} className="flex items-start gap-2 text-sm text-foreground">
+                              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-success" />
+                              {b}
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
                   </article>
                 ))}
               </div>
@@ -356,9 +371,8 @@ function GrePrivateTutoringPage() {
                 <h3 className="text-lg font-bold text-navy">Modern Online Learning Experience</h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Our virtual classroom environment is designed to provide a learning experience
-                superior to conventional offline coaching. All classes are conducted through
-                advanced online platforms — learn effectively from anywhere in the world.
+               Our virtual classrooms combine cutting-edge technology 
+               with expert teaching—bringing superior learning to you, wherever you are.
               </p>
               <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                 {onlineFeatures.map((f) => (

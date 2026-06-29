@@ -65,7 +65,7 @@ const gmatMenu = [
 
 const greMenu: ExamMenuItem[] = [
   { to: "/gre/private-tutoring", label: "GRE One On One Private Tutoring" },
-  { to: "/gre/test-prep-courses", label: "GRE Test Prep Courses Group Classes Programs" },
+  { to: "/gre/test-prep-courses", label: "GRE Group Course" },
   { to: "/gre/plans-pricing", label: "GRE Plans and Pricing" },
   // {
   //   label: "GRE Coaching",
