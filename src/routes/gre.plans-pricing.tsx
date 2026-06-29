@@ -201,7 +201,7 @@ const universities = [
   "Stanford University",
   "University of Oxford",
   "University of Cambridge",
-  "Johns Hopkins University",
+  "Wharton school of the university of Pennsylvania",
   "Cornell University",
 ];
 
@@ -595,7 +595,7 @@ function GrePlansPricingPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-navy to-secondary p-6 text-white shadow-elevated sm:p-8">
+            {/* <div className="rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-navy to-secondary p-6 text-white shadow-elevated sm:p-8">
               <BookOpen className="h-8 w-8 text-accent" />
               <h3 className="mt-3 text-2xl font-bold sm:text-3xl">
                 Start Your GRE Success Journey
@@ -611,7 +611,7 @@ function GrePlansPricingPage() {
               >
                 Book Free Consultation
               </Link>
-            </div>
+            </div> */}
         </div>
       </section>
 
