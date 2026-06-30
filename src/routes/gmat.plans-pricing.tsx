@@ -1,24 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import type { ReactNode } from "react";
 import {
-  CheckCircle2,
   User,
-  Users,
   BookOpen,
   Target,
   BarChart3,
   Lightbulb,
   Clock,
   GraduationCap,
-  ArrowRight,
   Sparkles,
   Briefcase,
 } from "lucide-react";
 import { PageHero } from "../components/site/PageHero";
 import { SectionHeader } from "../components/site/SectionHeader";
 import { CtaBand } from "../components/site/CtaBand";
+import { GmatProgramCard } from "../components/gmat/GmatProgramCard";
 import { BOOK_CONSULTATION_PATH } from "../lib/site-constants";
-import { cn } from "../lib/utils";
 
 export const Route = createFileRoute("/gmat/plans-pricing")({
   head: () => ({
@@ -54,6 +50,8 @@ const PROGRAM_IMAGES = {
     "https://res.cloudinary.com/ddcx08e0s/image/upload/v1781943926/4_xhhqwf.png",
   selfStudy:
     "https://res.cloudinary.com/ddcx08e0s/image/upload/v1781943926/6_nkxrv7.png",
+  microBatch:
+    "https://res.cloudinary.com/ddcx08e0s/image/upload/v1782808747/Group_Classes_1_bk7jyj.png",
 } as const;
 
 const programCards = [
@@ -74,11 +72,29 @@ const programCards = [
       "Applicants seeking maximum personalization",
     ],
     highlights: [
-      "Personalized Quant, Verbal & Data Insights Training",
-      "Individualized Study Roadmap",
-      "Direct Mentorship from Tarun Kaushik",
-      "5,000+ Premium Practice Questions",
-      "Flexible Weekday & Weekend Scheduling",
+      "Personalized 1-on-1 GMAT Coaching",
+      "Customized Study Plan & Score Strategy",
+      "Comprehensive Diagnostic Assessment",
+      "Official GMAT Study Material",
+      "Exclusive, Instructor-Curated Study Notes",
+    ],
+    extendedHighlights: [
+      "Personalized 1-on-1 GMAT Coaching",
+      "Customized Study Plan & Score Strategy",
+      "Comprehensive Diagnostic Assessment",
+      "Official GMAT Study Material",
+      "Exclusive, Instructor-Curated Study Notes",
+      "100,000+ Curated Practice Questions",
+      "20+ Sectional Mock Tests",
+      "Quant, Verbal & Data Insights Mastery",
+      "Adaptive Learning & Targeted Practice",
+      "Detailed Performance Analytics",
+      "Expert Error Analysis & Feedback",
+      "Advanced Time Management Strategies",
+      "Instant Doubt Resolution",
+      "Flexible Scheduling (Weekdays & Weekends)",
+      "Continuous Progress Tracking",
+      "Results-Driven Score Improvement",
     ],
     cta: "Explore Private Coaching",
     to: BOOK_CONSULTATION_PATH,
@@ -100,11 +116,29 @@ const programCards = [
       "MBA aspirants seeking premium prep at optimized cost",
     ],
     highlights: [
-      "Maximum 10 Students Per Batch",
-      "50+ Hours of Live Interactive Classes",
-      "40+ Sectional Practice Tests",
-      "WhatsApp Support Community",
-      "6 Months Recording Access",
+      "50+ Hours of Live, Interactive Classes",
+      "Small Batches (Maximum 10 Students)",
+      "Personalized Study Plan & Daily Targets",
+      "5,000+ GMAT-Focused Practice Questions",
+      "20 Sectional Tests with Performance Analytics",
+    ],
+    extendedHighlights: [
+      "50+ Hours of Live, Interactive Classes",
+      "Small Batches (Maximum 10 Students)",
+      "Personalized Study Plan & Daily Targets",
+      "5,000+ GMAT-Focused Practice Questions",
+      "20 Sectional Tests with Performance Analytics",
+      "Official GMAT-Style Practice Material",
+      "Exclusive, Instructor-Curated Study Notes",
+      "Topic-Wise Quant, Verbal & Data Insights Practice",
+      "Expert Test Strategy & Review Sessions",
+      "Personalized Error Analysis & Feedback",
+      "Instant Doubt Resolution During & Beyond Class",
+      "Weekly Progress Reviews & Score Tracking",
+      "Collaborative Learning with Peer Discussions",
+      "Dedicated WhatsApp Support",
+      "Class Recordings with 6-Month Access",
+      "Optional 1-on-1 Mentoring",
     ],
     cta: "Explore Group Classes",
     to: BOOK_CONSULTATION_PATH,
@@ -113,7 +147,7 @@ const programCards = [
   {
     id: "self-study",
     badge: "Program 3",
-    title: "Self Study Package",
+    title: "GMAT Self Study Plan",
     subtitle: "GMAT Self-Study Mastery Program",
     tagline: "Premium Preparation. Complete Flexibility.",
     price: "₹29,999",
@@ -126,73 +160,71 @@ const programCards = [
       "Students preparing alongside work commitments",
     ],
     highlights: [
-      "Elite GMAT Focus Study Notes",
-      "Structured Preparation Roadmap",
-      "Concept Mastery Framework",
-      "5,000+ Practice Questions",
-      "Exam-Day Strategy Modules",
+      "Recorded Lessons for complete flexibility",
+      "Structured Self-Study Roadmap for guided preparation",
+      "Personalized Strategy Plan based on diagnostic assessment",
+      "5,000+ Practice Questions for concept mastery",
+      "Exclusive Study Notes & Revision Material",
+    ],
+    extendedHighlights: [
+      "Recorded Lessons for complete flexibility",
+      "Structured Self-Study Roadmap for guided preparation",
+      "Personalized Strategy Plan based on diagnostic assessment",
+      "5,000+ Practice Questions for concept mastery",
+      "Exclusive Study Notes & Revision Material",
+      "Step-by-Step Concept Modules for Quant, Verbal & DI",
+      "Error Analysis Framework for continuous improvement",
+      "Progress Tracking System to monitor performance",
+      "Advanced Test Strategies for higher accuracy & speed",
+      "Anytime, Anywhere Access for self-paced learning",
     ],
     cta: "Get Self-Study Access",
     to: BOOK_CONSULTATION_PATH,
     featured: false,
   },
+  {
+    id: "micro-batch",
+    badge: "Program 4",
+    title: "GMAT Micro Batch Sessions",
+    subtitle: "Intensive Small-Group GMAT Focus",
+    tagline: "Live expert-led micro batches with personalized mentoring & score strategy",
+    price: "₹1,20,000",
+    priceNote: "full program",
+    image: PROGRAM_IMAGES.microBatch,
+    imageAlt: "GMAT micro batch group coaching sessions",
+    idealFor: [],
+    highlights: [
+      "Intensive 3-Month GMAT Preparation",
+      "Live Expert-Led Classes with Recording Access",
+      "Exclusive Micro Batches (Up to 4 Students)",
+      "Personalized Mentoring & Score Strategy",
+      "20+ Sectional Tests with Smart Analytics",
+    ],
+    extendedHighlights: [
+      "Intensive 3-Month GMAT Preparation",
+      "Live Expert-Led Classes with Recording Access",
+      "Exclusive Micro Batches (Up to 4 Students)",
+      "Personalized Mentoring & Score Strategy",
+      "20+ Sectional Tests with Smart Analytics",
+      "Quant, Verbal & Data Insights Mastery",
+      "Customized Study Roadmap",
+      "Targeted Practice & Assignments",
+      "Expert Error Analysis",
+      "Continuous Performance Tracking",
+      "Advanced Test-Taking Techniques",
+      "Flexible Online Learning",
+    ],
+    cta: "Explore Micro Batch Program",
+    to: BOOK_CONSULTATION_PATH,
+    featured: false,
+    layout: "landscape" as const,
+  },
 ] as const;
 
-const privateFeatures = [
-  "Personalized Quant, Verbal & Data Insights Training",
-  "Individualized Study Roadmap",
-  "Comprehensive Diagnostic Assessment",
-  "Direct Mentorship from Tarun Kaushik",
-  "Advanced Time Management Strategies",
-  "Unlimited Doubt Resolution",
-  "Performance Tracking & Analytics",
-  "5,000+ Premium Practice Questions",
-  "Topic-Wise Diagnostic Drills",
-  "Official GMAT Focus-Level Material",
-  "Flexible Weekday & Weekend Scheduling",
-  "Session Recordings & Revision Resources",
-];
-
-const groupFeatures = [
-  "Maximum 10 Students Per Batch",
-  "50+ Hours of Live Interactive Classes",
-  "Daily Study Plans & Progress Tracking",
-  "Weekly Performance Reviews",
-  "5,000+ Practice Questions",
-  "40+ Sectional Practice Tests",
-  "Detailed Error Analysis Framework",
-  "Official GMAT Focus Practice Material",
-  "Collaborative Peer Learning",
-  "WhatsApp Support Community",
-  "6 Months Recording Access",
-  "Optional 1-on-1 Mentorship Sessions",
-];
-
-const cohortAdvantages = [
-  "Strategic case discussions",
-  "Alternate solving approaches",
-  "Data Insights debates",
-  "Quantitative shortcut discovery",
-  "Collaborative error analysis",
-];
-
-const selfStudyFeatures = [
-  "Elite GMAT Focus Study Notes",
-  "Structured Preparation Roadmap",
-  "Concept Mastery Framework",
-  "Quantitative Strategy Guides",
-  "Verbal & Data Insights Systems",
-  "Official GMAT-Style Practice Material",
-  "5,000+ Practice Questions",
-  "Topic-Wise Practice Sets",
-  "Progress Monitoring Framework",
-  "Exam-Day Strategy Modules",
-];
-
 const impactStats = [
-  { value: "2000+", label: "Students with GMAT Scores Above 705" },
+  // { value: "2000+", label: "Students with GMAT Scores Above 705" },
   { value: "1500+", label: "Students with GRE Scores Above 330" },
-  { value: "1000+", label: "Students with SAT Scores Above 1500" },
+  // { value: "1000+", label: "Students with SAT Scores Above 1500" },
   { value: "500+", label: "Admits to Top-Ranked Global Universities" },
 ];
 
@@ -233,150 +265,6 @@ const methodology = [
   },
 ];
 
-function ProgramImage({
-  src,
-  alt,
-  variant = "card",
-}: {
-  src: string;
-  alt: string;
-  variant?: "card" | "detail";
-}) {
-  return (
-    <div
-      className={cn(
-        "flex items-center justify-center overflow-hidden bg-gradient-to-br from-navy/5 via-white to-accent/5",
-        variant === "card"
-          ? "aspect-[5/4] border-b border-border"
-          : "min-h-[220px] border-b border-border p-6 sm:min-h-[260px] sm:p-8 md:min-h-full md:border-b-0 md:border-l",
-      )}
-    >
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        decoding="async"
-        className={cn(
-          "h-auto w-full object-contain object-center",
-          variant === "card" ? "max-h-[200px] px-4 py-3 sm:max-h-[220px]" : "max-w-[300px]",
-        )}
-      />
-    </div>
-  );
-}
-
-function ProgramCard({
-  program,
-}: {
-  program: (typeof programCards)[number];
-}) {
-  return (
-    <article
-      className={cn(
-        "flex h-full flex-col overflow-hidden rounded-3xl border bg-card shadow-card transition-all hover:-translate-y-0.5 hover:shadow-elevated",
-        program.featured
-          ? "border-accent/50 ring-2 ring-accent/15"
-          : "border-border",
-      )}
-    >
-      <div className="relative">
-        <ProgramImage src={program.image} alt={program.imageAlt} variant="card" />
-        <span className="absolute left-3 top-3 z-10 rounded-full bg-secondary px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-white">
-          {program.badge}
-        </span>
-      </div>
-
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <p className="text-xs font-bold uppercase tracking-wider text-secondary">
-          {program.subtitle}
-        </p>
-        <h3 className="mt-1 text-xl font-bold text-navy">{program.title}</h3>
-        <p className="mt-1 text-sm text-muted-foreground">{program.tagline}</p>
-
-        <div className="mt-4 flex items-baseline gap-1.5">
-          <span className="text-2xl font-bold text-secondary sm:text-3xl">
-            {program.price}
-          </span>
-          <span className="text-sm text-muted-foreground">{program.priceNote}</span>
-        </div>
-
-        <ul className="mt-4 flex-1 space-y-2">
-          {program.highlights.map((item) => (
-            <li key={item} className="flex items-start gap-2 text-sm text-foreground">
-              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-success" />
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-4 rounded-xl border border-dashed border-border bg-surface/80 p-3">
-          <p className="text-xs font-bold uppercase tracking-wider text-navy">Ideal For</p>
-          <ul className="mt-2 space-y-1">
-            {program.idealFor.map((item) => (
-              <li key={item} className="text-xs text-muted-foreground sm:text-sm">
-                • {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <Link
-          to={program.to}
-          className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-secondary/90"
-        >
-          {program.cta}
-          <ArrowRight className="h-4 w-4" />
-        </Link>
-      </div>
-    </article>
-  );
-}
-
-function FeatureList({ items }: { items: readonly string[] }) {
-  return (
-    <ul className="grid gap-2 sm:grid-cols-2">
-      {items.map((item) => (
-        <li key={item} className="flex items-start gap-2 text-sm">
-          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-success" />
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function DetailSection({
-  id,
-  eyebrow,
-  title,
-  subtitle,
-  image,
-  imageAlt,
-  children,
-}: {
-  id: string;
-  eyebrow: string;
-  title: string;
-  subtitle: string;
-  image: string;
-  imageAlt: string;
-  children: ReactNode;
-}) {
-  return (
-    <div id={id}>
-      <SectionHeader eyebrow={eyebrow} title={title} subtitle={subtitle} />
-      <div className="section-gap overflow-hidden rounded-3xl border border-border bg-card shadow-card">
-        <div className="grid md:grid-cols-[1fr_minmax(240px,340px)]">
-          <div className="p-5 sm:p-6 md:order-1">{children}</div>
-          <div className="md:order-2">
-            <ProgramImage src={image} alt={imageAlt} variant="detail" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function GmatPlansPricingPage() {
   return (
     <>
@@ -416,127 +304,14 @@ function GmatPlansPricingPage() {
             <SectionHeader
               eyebrow="Compare Programs"
               title="Choose Your GMAT Preparation Path"
-              subtitle="Three distinct programs — each built on the same elite methodology, tailored to how you learn best."
+              subtitle="Four distinct programs — each built on the same elite methodology, tailored to how you learn best."
             />
             <div className="section-gap grid gap-5 lg:grid-cols-3">
               {programCards.map((program) => (
-                <ProgramCard key={program.id} program={program} />
+                <GmatProgramCard key={program.id} program={program} />
               ))}
             </div>
           </div>
-
-          <DetailSection
-            id="private-coaching"
-            eyebrow="Program 1"
-            title="Private 1-on-1 Premium GMAT Coaching"
-            subtitle="Designed for students targeting top MBA programs and elite GMAT scores — a completely customized learning journey."
-            image={PROGRAM_IMAGES.individual}
-            imageAlt="GMAT individual private coaching"
-          >
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Every session is tailored around your strengths, weaknesses, learning style, and
-              target score across Quant, Verbal, and Data Insights.
-            </p>
-            <p className="mt-3 text-xs font-bold uppercase tracking-wider text-navy">
-              What You Receive
-            </p>
-            <div className="mt-3">
-              <FeatureList items={privateFeatures} />
-            </div>
-            <div className="mt-5 flex flex-wrap items-center gap-4">
-              <p className="text-2xl font-bold text-secondary">
-                ₹4,999{" "}
-                <span className="text-base font-medium text-muted-foreground">per hour</span>
-              </p>
-              <Link
-                to={BOOK_CONSULTATION_PATH}
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-secondary hover:underline"
-              >
-                Enquire about private coaching
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </DetailSection>
-
-          <DetailSection
-            id="group-classes"
-            eyebrow="Program 2"
-            title="Elite Interactive GMAT Group Preparation"
-            subtitle="Experience collaborative learning inside a highly focused GMAT cohort — limited batches for meaningful participation and accountability."
-            image={PROGRAM_IMAGES.group}
-            imageAlt="GMAT group classes cohort learning"
-          >
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Unlike overcrowded coaching batches, our groups are intentionally limited to ensure
-              meaningful participation, mentor interaction, and accountability for MBA applicants.
-            </p>
-            <p className="mt-3 text-xs font-bold uppercase tracking-wider text-navy">
-              What Makes Our Cohorts Different
-            </p>
-            <div className="mt-3">
-              <FeatureList items={groupFeatures} />
-            </div>
-            <div className="mt-4 rounded-xl border border-dashed border-border bg-surface p-4">
-              <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-secondary" />
-                <p className="text-sm font-bold text-navy">The Cohort Learning Advantage</p>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Students learn from the collective intelligence of highly motivated peers. Every
-                session encourages:
-              </p>
-              <ul className="mt-2 flex flex-wrap gap-2">
-                {cohortAdvantages.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-border bg-card px-2.5 py-1 text-xs font-medium text-navy"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </ul>
-            </div>
-            <div className="mt-5 flex flex-wrap items-center gap-4">
-              <p className="text-2xl font-bold text-secondary">₹49,999</p>
-              <Link
-                to={BOOK_CONSULTATION_PATH}
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-secondary hover:underline"
-              >
-                Enquire about group classes
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </DetailSection>
-
-          <DetailSection
-            id="self-study"
-            eyebrow="Program 3"
-            title="GMAT Self-Study Mastery Program"
-            subtitle="Premium preparation with complete flexibility — the same conceptual framework used in our guided coaching programs."
-            image={PROGRAM_IMAGES.selfStudy}
-            imageAlt="GMAT self-study mastery program"
-          >
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              For disciplined students who prefer independent preparation — access elite study
-              resources and structured roadmaps for the GMAT Focus Edition at your own pace.
-            </p>
-            <p className="mt-3 text-xs font-bold uppercase tracking-wider text-navy">
-              Included Resources
-            </p>
-            <div className="mt-3">
-              <FeatureList items={selfStudyFeatures} />
-            </div>
-            <div className="mt-5 flex flex-wrap items-center gap-4">
-              <p className="text-2xl font-bold text-secondary">₹29,999</p>
-              <Link
-                to={BOOK_CONSULTATION_PATH}
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-secondary hover:underline"
-              >
-                Enquire about self-study access
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </DetailSection>
 
           <div>
             <SectionHeader
@@ -604,22 +379,7 @@ function GmatPlansPricingPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl border-2 border-secondary/30 bg-gradient-to-br from-navy via-secondary to-navy p-6 text-white shadow-elevated sm:p-8">
-            <BookOpen className="h-8 w-8 text-accent" />
-            <h3 className="mt-3 text-2xl font-bold sm:text-3xl">
-              Start Your GMAT Success Journey
-            </h3>
-            <p className="mt-3 text-sm text-white/85 leading-relaxed sm:text-base">
-              Seats are intentionally limited to maintain coaching quality. Book a consultation
-              and discover the preparation path best suited to your target score and MBA goals.
-            </p>
-            <Link
-              to={BOOK_CONSULTATION_PATH}
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-navy hover:bg-accent/90 transition-colors"
-            >
-              Book Free Consultation
-            </Link>
-          </div>
+         
         </div>
       </section>
 

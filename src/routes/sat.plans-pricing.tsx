@@ -1,9 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import type { ReactNode } from "react";
 import {
   CheckCircle2,
   User,
-  Users,
   BookOpen,
   Target,
   BarChart3,
@@ -110,47 +108,9 @@ const programCards = [
   },
 ] as const;
 
-const privateFeatures = [
-  "Personalized Math & Reading/Writing Training",
-  "Individualized Study Roadmap",
-  "Comprehensive Diagnostic Assessment",
-  "Direct Mentorship from Tarun Kaushik",
-  "Advanced Time Management Strategies",
-  "Unlimited Doubt Resolution",
-  "Performance Tracking & Analytics",
-  "5,000+ Premium Practice Questions",
-  "Topic-Wise Diagnostic Drills",
-  "Official Digital SAT-Level Material",
-  "Flexible Weekday & Weekend Scheduling",
-  "Session Recordings & Revision Resources",
-];
-
-const groupFeatures = [
-  "Maximum 10 Students Per Batch",
-  "50+ Hours of Live Interactive Classes",
-  "Daily Study Plans & Progress Tracking",
-  "Weekly Performance Reviews",
-  "5,000+ Practice Questions",
-  "40+ Sectional Practice Tests",
-  "Detailed Error Analysis Framework",
-  "Official Digital SAT Practice Material",
-  "Collaborative Peer Learning",
-  "WhatsApp Support Community",
-  "6 Months Recording Access",
-  "Optional 1-on-1 Mentorship Sessions",
-];
-
-const cohortAdvantages = [
-  "Strategic discussions",
-  "Alternate solving approaches",
-  "Reading & Writing debates",
-  "Math shortcut discovery",
-  "Collaborative error analysis",
-];
-
 const impactStats = [
-  { value: "1000+", label: "Students with SAT Scores Above 1500" },
-  { value: "2000+", label: "Students with GMAT Scores Above 705" },
+  // { value: "1000+", label: "Students with SAT Scores Above 1500" },
+  // { value: "2000+", label: "Students with GMAT Scores Above 705" },
   { value: "1500+", label: "Students with GRE Scores Above 330" },
   { value: "500+", label: "Admits to Top-Ranked Global Universities" },
 ];
@@ -192,33 +152,15 @@ const methodology = [
   },
 ];
 
-function ProgramImage({
-  src,
-  alt,
-  variant = "card",
-}: {
-  src: string;
-  alt: string;
-  variant?: "card" | "detail";
-}) {
+function ProgramImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div
-      className={cn(
-        "flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/5 via-white to-surface",
-        variant === "card"
-          ? "aspect-[5/4] border-b border-border"
-          : "min-h-[220px] border-b border-border p-6 sm:min-h-[260px] sm:p-8 md:min-h-full md:border-b-0 md:border-r",
-      )}
-    >
+    <div className="flex aspect-[5/4] items-center justify-center overflow-hidden border-b border-border bg-gradient-to-br from-primary/5 via-white to-surface">
       <img
         src={src}
         alt={alt}
         loading="lazy"
         decoding="async"
-        className={cn(
-          "h-auto w-full object-contain object-center",
-          variant === "card" ? "max-h-[200px] px-4 py-3 sm:max-h-[220px]" : "max-w-[300px]",
-        )}
+        className="h-auto max-h-[200px] w-full object-contain object-center px-4 py-3 sm:max-h-[220px]"
       />
     </div>
   );
@@ -237,7 +179,7 @@ function ProgramCard({
       )}
     >
       <div className="relative">
-        <ProgramImage src={program.image} alt={program.imageAlt} variant="card" />
+        <ProgramImage src={program.image} alt={program.imageAlt} />
         <span className="absolute left-3 top-3 z-10 rounded-full bg-navy/90 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-white">
           {program.badge}
         </span>
@@ -289,49 +231,6 @@ function ProgramCard({
   );
 }
 
-function FeatureList({ items }: { items: readonly string[] }) {
-  return (
-    <ul className="grid gap-2 sm:grid-cols-2">
-      {items.map((item) => (
-        <li key={item} className="flex items-start gap-2 text-sm">
-          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-success" />
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function DetailSection({
-  id,
-  eyebrow,
-  title,
-  subtitle,
-  image,
-  imageAlt,
-  children,
-}: {
-  id: string;
-  eyebrow: string;
-  title: string;
-  subtitle: string;
-  image: string;
-  imageAlt: string;
-  children: ReactNode;
-}) {
-  return (
-    <div id={id}>
-      <SectionHeader eyebrow={eyebrow} title={title} subtitle={subtitle} />
-      <div className="section-gap overflow-hidden rounded-2xl border border-border bg-card shadow-card">
-        <div className="grid md:grid-cols-[minmax(240px,340px)_1fr]">
-          <ProgramImage src={image} alt={imageAlt} variant="detail" />
-          <div className="p-5 sm:p-6">{children}</div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function SatPlansPricingPage() {
   return (
     <>
@@ -379,89 +278,6 @@ function SatPlansPricingPage() {
               ))}
             </div>
           </div>
-
-          <DetailSection
-            id="private-coaching"
-            eyebrow="Program 1"
-            title="Private 1-on-1 Premium SAT Coaching"
-            subtitle="Designed for students targeting top US universities and elite SAT scores — a completely customized learning journey."
-            image={PROGRAM_IMAGES.individual}
-            imageAlt="SAT individual private coaching"
-          >
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Every class is tailored around your strengths, weaknesses, learning style, and
-              target score across Math and Reading &amp; Writing modules.
-            </p>
-            <p className="mt-3 text-xs font-bold uppercase tracking-wider text-navy">
-              What You Receive
-            </p>
-            <div className="mt-3">
-              <FeatureList items={privateFeatures} />
-            </div>
-            <div className="mt-5 flex flex-wrap items-center gap-4">
-              <p className="text-2xl font-bold text-primary">
-                ₹4,999{" "}
-                <span className="text-base font-medium text-muted-foreground">per hour</span>
-              </p>
-              <Link
-                to={BOOK_CONSULTATION_PATH}
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
-              >
-                Enquire about private coaching
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </DetailSection>
-
-          <DetailSection
-            id="group-classes"
-            eyebrow="Program 2"
-            title="Elite Interactive SAT Group Preparation"
-            subtitle="Experience collaborative learning inside a highly focused Digital SAT cohort — limited batches for meaningful participation and accountability."
-            image={PROGRAM_IMAGES.group}
-            imageAlt="SAT group classes cohort learning"
-          >
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Unlike overcrowded coaching batches, our groups are intentionally limited to ensure
-              meaningful participation, mentor interaction, and accountability.
-            </p>
-            <p className="mt-3 text-xs font-bold uppercase tracking-wider text-navy">
-              What Makes Our Cohorts Different
-            </p>
-            <div className="mt-3">
-              <FeatureList items={groupFeatures} />
-            </div>
-            <div className="mt-4 rounded-lg border border-border bg-surface p-4">
-              <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-primary" />
-                <p className="text-sm font-bold text-navy">The Cohort Learning Advantage</p>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Students learn from the collective intelligence of highly motivated peers. Every
-                session encourages:
-              </p>
-              <ul className="mt-2 flex flex-wrap gap-2">
-                {cohortAdvantages.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-border bg-card px-2.5 py-1 text-xs font-medium text-navy"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </ul>
-            </div>
-            <div className="mt-5 flex flex-wrap items-center gap-4">
-              <p className="text-2xl font-bold text-primary">₹74,999</p>
-              <Link
-                to={BOOK_CONSULTATION_PATH}
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
-              >
-                Enquire about group classes
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </DetailSection>
 
           <div>
             <SectionHeader

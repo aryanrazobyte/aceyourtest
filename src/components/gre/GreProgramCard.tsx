@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles, Target, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -74,18 +75,19 @@ function ProgramFeaturesModal({
   useEffect(() => {
     if (!isOpen) return;
     document.addEventListener("keydown", handleKeyDown);
+    const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
     };
   }, [isOpen, handleKeyDown]);
 
-  if (!isOpen) return null;
+  if (!isOpen || typeof document === "undefined") return null;
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
       onClick={(e) => e.target === e.currentTarget && onClose()}
       role="dialog"
       aria-modal="true"
@@ -106,18 +108,19 @@ function ProgramFeaturesModal({
             {title}
           </h2>
         </div>
-        <ul className="max-h-[calc(min(90vh,720px)-88px)] overflow-y-auto px-5 py-4 sm:px-6 sm:py-5">
-          <div className="grid gap-3 sm:grid-cols-2">
+        <div className="max-h-[calc(min(90vh,720px)-88px)] overflow-y-auto px-5 py-4 sm:px-6 sm:py-5">
+          <ul className="grid gap-3 sm:grid-cols-2">
             {items.map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-sm text-foreground">
                 <OrangeCheck />
                 <span className="leading-snug">{item}</span>
               </li>
             ))}
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
