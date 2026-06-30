@@ -152,7 +152,7 @@ const programCards = [
     badge: "Program 3",
     title: "Micro Batches Classes",
     subtitle: "GRE Mastery Program",
-    tagline: "Self Study Package",
+    tagline: "Score Higher. Study Smarter. Achieve Your Dream GRE Score.",
     price: "₹1,20,000",
     priceNote: "Full Program",
     image: PROGRAM_IMAGES.selfStudy,

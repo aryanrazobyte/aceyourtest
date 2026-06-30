@@ -345,23 +345,7 @@ function SatPlansPricingPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-navy to-secondary p-6 text-white shadow-elevated sm:p-8">
-            <BookOpen className="h-8 w-8 text-accent" />
-            <h3 className="mt-3 text-2xl font-bold sm:text-3xl">
-              Start Your SAT Success Journey
-            </h3>
-            <p className="mt-3 text-sm text-white/85 leading-relaxed sm:text-base">
-              Seats are intentionally limited to maintain coaching quality. Book a consultation
-              and discover the preparation path best suited to your target score and university
-              goals.
-            </p>
-            <Link
-              to={BOOK_CONSULTATION_PATH}
-              className="mt-6 inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              Book Free Consultation
-            </Link>
-          </div>
+         
         </div>
       </section>
 
