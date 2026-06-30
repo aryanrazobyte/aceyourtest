@@ -184,7 +184,7 @@ const programCards = [
       "Flexible Learning Schedule for working professionals & students",
       "Strategy Sessions focused on high-score techniques",
     ],
-    cta: "Get Self-Study Access",
+    cta: "Explore Micro Batches ",
     to: BOOK_CONSULTATION_PATH,
     featured: false,
   },
