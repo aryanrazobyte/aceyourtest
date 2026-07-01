@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CheckCircle2, Target, Eye, Flag, Users } from "lucide-react";
+import { Target, Eye, Flag, Users } from "lucide-react";
 import { PageHero } from "../components/site/PageHero";
 import { SectionHeader } from "../components/site/SectionHeader";
 import { CtaBand } from "../components/site/CtaBand";
-import { MENTOR_IMAGE, MENTOR_NAME } from "../lib/site-constants";
+import { MentorProfile } from "../components/site/MentorProfile";
+import { shipraMentor, tarunMentor } from "../lib/mentors-content";
 
 const corePillars = [
   {
@@ -43,10 +44,10 @@ function OrangeCheck() {
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About AceYourTest — Our Story, Mission & Mentor" },
-      { name: "description", content: "Learn how AceYourTest became one of India's most trusted GMAT, GRE & SAT coaching brands — led by quant expert Tarun Kaushik." },
-      { property: "og:title", content: "About AceYourTest — Our Story, Mission & Mentor" },
-      { property: "og:description", content: "How AceYourTest started, our mission, and the mentor journey of Tarun Kaushik." },
+      { title: "About AceYourTest — Our Story, Mission & Mentors" },
+      { name: "description", content: "Learn how AceYourTest became one of India's most trusted GMAT, GRE & SAT coaching brands — led by quant expert Tarun Kaushik and verbal expert Shipra Sharma." },
+      { property: "og:title", content: "About AceYourTest — Our Story, Mission & Mentors" },
+      { property: "og:description", content: "How AceYourTest started, our mission, and the mentor journeys of Tarun Kaushik and Shipra Sharma." },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -118,26 +119,42 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="section-y">
-        <div className="container-page grid gap-6 lg:grid-cols-[1fr_1.2fr] items-center">
-          <div className="relative max-w-md mx-auto lg:mx-0">
-            <div className="absolute -inset-4 rounded-3xl bg-primary/15" aria-hidden />
-            <img src={MENTOR_IMAGE} alt={MENTOR_NAME} loading="lazy" width={800} height={800} className="relative rounded-2xl shadow-elevated w-full h-auto object-cover" />
-          </div>
-          <div>
-            <SectionHeader eyebrow="Mentor Journey" title="Tarun Kaushik — 15+ years guiding test-takers" subtitle="A quant expert across GMAT, GRE and SAT, Tarun has trained 10,000+ students and worked with several leading test-prep organisations before founding AceYourTest." />
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-              {[
-                "15+ years of full-time test-prep coaching",
-                "10,000+ students mentored 1-on-1 and in batches",
-                "Specialist in Quant for GMAT, GRE & SAT",
-                "Built proprietary frameworks for problem-solving",
-                "Mentor for top-percentile scorers across cohorts",
-                "Hands-on with each student's study plan",
-              ].map((b) => (
-                <li key={b} className="flex items-start gap-2 text-sm text-foreground"><CheckCircle2 className="h-5 w-5 text-success shrink-0 mt-0.5" /> {b}</li>
-              ))}
-            </ul>
+      <section className="section-y bg-surface border-y border-border">
+        <div className="container-page space-y-12 sm:space-y-14 lg:space-y-16">
+          <SectionHeader
+            eyebrow="Our Mentors"
+            title="Meet the mentors behind your success"
+            subtitle="Two lead mentors — one for Quant mastery, one for Verbal excellence — guiding thousands of GMAT, GRE and SAT aspirants toward top scores and global admits."
+            center
+          />
+
+          <MentorProfile
+            eyebrow="Mentor Journey"
+            image={tarunMentor.image}
+            imageAlt={tarunMentor.imageAlt}
+            title={tarunMentor.title}
+            subtitle={tarunMentor.homeSubtitle}
+            highlights={tarunMentor.highlights}
+            paragraphs={tarunMentor.aboutParagraphs}
+            hideStoryLink
+          />
+
+          <div className="relative">
+            <div
+              className="absolute inset-x-0 -top-6 hidden h-px bg-gradient-to-r from-transparent via-border to-transparent sm:block lg:-top-8"
+              aria-hidden
+            />
+            <MentorProfile
+              reversed
+              eyebrow="Mentor Journey"
+              image={shipraMentor.image}
+              imageAlt={shipraMentor.imageAlt}
+              title={shipraMentor.title}
+              subtitle={shipraMentor.homeSubtitle}
+              highlights={shipraMentor.highlights}
+              paragraphs={shipraMentor.aboutParagraphs}
+              hideStoryLink
+            />
           </div>
         </div>
       </section>

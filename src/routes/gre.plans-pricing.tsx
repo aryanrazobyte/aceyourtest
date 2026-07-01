@@ -150,11 +150,11 @@ const programCards = [
   {
     id: "self-study",
     badge: "Program 3",
-    title: "Micro Batches Classes",
-    subtitle: "GRE Mastery Program",
-    tagline: "Score Higher. Study Smarter. Achieve Your Dream GRE Score.",
+    title: "GRE Microbatch Classes",
+    subtitle: "Premium Personalized GRE Microbatch Program",
+    tagline: "Personalized mentoring with collaborative learning in exclusive microbatches.",
     price: "₹1,20,000",
-    priceNote: "Full Program",
+    priceNote: "full program",
     image: PROGRAM_IMAGES.selfStudy,
     imageAlt: "GRE mastery program resources",
     idealFor: [
@@ -164,28 +164,28 @@ const programCards = [
       "Learners who value personalized mentoring",
     ],
     highlights: [
-      "3-Month Intensive GRE Preparation",
-      "Live Interactive Online Classes with recorded access",
-      "Micro Batches (Up to 4 Students) for personalized attention",
-      "Expert Faculty with 1:1 Mentoring Support",
-      "30+ Sectional Tests with in-depth performance analysis",
+      "50+ Hours of Live Interactive Classes",
+      "Micro Batches (Maximum 4 Students)",
+      "5,000+ GRE-Level Practice Questions",
+      "Personalized Study Roadmaps & Mentoring",
+      "6 Months Recording Access",
     ],
     extendedHighlights: [
-      "3-Month Intensive GRE Preparation",
-      "Live Interactive Online Classes with recorded access",
-      "Micro Batches (Up to 4 Students) for personalized attention",
-      "Expert Faculty with 1:1 Mentoring Support",
-      "30+ Sectional Tests with in-depth performance analysis",
-      "Structured Topic-Wise Practice for Quant & Verbal mastery",
-      "Customized Assignments based on individual progress",
-      "Comprehensive Study Plan aligned with target score",
-      "Detailed Error Analysis for continuous improvement",
-      "Regular Performance Tracking with actionable insights",
-      "Flexible Learning Schedule for working professionals & students",
-      "Strategy Sessions focused on high-score techniques",
+      "50+ Hours of Live Interactive Classes",
+      "Micro Batches (Maximum 4 Students)",
+      "5,000+ GRE-Level Practice Questions",
+      "Personalized Study Roadmaps & Mentoring",
+      "6 Months Recording Access",
+      "Individual Performance Reviews",
+      "Weekly Progress Reviews & Error Tracking",
+      "Complete GRE Learning Vault & Study Notes",
+      "Full-Length Mock Tests & Timed Drills",
+      "WhatsApp & Live Mentor Support",
+      "Quant, Verbal & Data Interpretation Mastery",
+      "Strategy Sessions for High-Score Techniques",
     ],
-    cta: "Explore Micro Batches ",
-    to: BOOK_CONSULTATION_PATH,
+    cta: "Explore GRE Microbatch Classes",
+    to: "/gre/microbatch-classes" as const,
     featured: false,
   },
 ] as const;
@@ -238,18 +238,18 @@ const cohortAdvantages = [
 ];
 
 const selfStudyFeatures = [
-  "3-Month Intensive GRE Preparation",
-  "Live Interactive Online Classes with recorded access",
-  "Micro Batches (Up to 4 Students) for personalized attention",
-  "Expert Faculty with 1:1 Mentoring Support",
-  "30+ Sectional Tests with in-depth performance analysis",
-  "Structured Topic-Wise Practice for Quant & Verbal mastery",
-  "Customized Assignments based on individual progress",
-  "Comprehensive Study Plan aligned with target score",
-  "Detailed Error Analysis for continuous improvement",
-  "Regular Performance Tracking with actionable insights",
-  "Flexible Learning Schedule for working professionals & students",
-  "Strategy Sessions focused on high-score techniques",
+  "50+ Hours of Live Interactive Classes",
+  "Micro Batches (Maximum 4 Students)",
+  "5,000+ GRE-Level Practice Questions",
+  "Personalized Study Roadmaps & Mentoring",
+  "6 Months Recording Access",
+  "Individual Performance Reviews",
+  "Weekly Progress Reviews & Error Tracking",
+  "Complete GRE Learning Vault & Study Notes",
+  "Full-Length Mock Tests & Timed Drills",
+  "WhatsApp & Live Mentor Support",
+  "Quant, Verbal & Data Interpretation Mastery",
+  "Strategy Sessions for High-Score Techniques",
 ];
 
 const impactStats = [
@@ -488,34 +488,34 @@ function GrePlansPricingPage() {
             <div id="self-study">
               <SectionHeader
                 eyebrow="Program 3"
-                title="GRE Mastery Program"
-                subtitle="Premium preparation with complete flexibility — the same conceptual framework used in our guided coaching programs."
+                title="GRE Microbatch Classes"
+                subtitle="Premium personalized GRE preparation in exclusive microbatches — individual attention with collaborative peer learning."
               />
               <div className="section-gap overflow-hidden rounded-2xl border border-border bg-card shadow-card">
                 <div className="grid md:grid-cols-[minmax(240px,340px)_1fr]">
                   <ProgramImage
                     src={PROGRAM_IMAGES.selfStudy}
-                    alt="GRE smastery program"
+                    alt="GRE microbatch classes"
                     variant="detail"
                   />
                   <div className="p-5 sm:p-6">
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      For disciplined students who prefer independent preparation — access elite
-                      study resources and structured roadmaps at your own pace.
+                      Experience focused instruction, personalized performance tracking, and intensive
+                      practice inside a highly interactive microbatch environment led by Tarun Kaushik.
                     </p>
                     <p className="mt-3 text-xs font-bold uppercase tracking-wider text-navy">
-                      Included Resources
+                      Program Includes
                     </p>
                     <div className="mt-3">
                       <FeatureList items={selfStudyFeatures} />
                     </div>
                     <div className="mt-5 flex flex-wrap items-center gap-4">
-                      <p className="text-2xl font-bold text-primary">₹29,999</p>
+                      <p className="text-2xl font-bold text-primary">₹1,20,000</p>
                       <Link
-                        to={BOOK_CONSULTATION_PATH}
+                        to="/gre/microbatch-classes"
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
                       >
-                        Enquire about self-study access
+                        Explore GRE Microbatch Classes
                         <ArrowRight className="h-4 w-4" />
                       </Link>
                     </div>

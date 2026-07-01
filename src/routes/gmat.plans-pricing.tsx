@@ -97,7 +97,7 @@ const programCards = [
       "Results-Driven Score Improvement",
     ],
     cta: "Explore Private Coaching",
-    to: BOOK_CONSULTATION_PATH,
+    to: "/gmat/individual-tutoring" as const,
     featured: true,
   },
   {
@@ -141,7 +141,7 @@ const programCards = [
       "Optional 1-on-1 Mentoring",
     ],
     cta: "Explore Group Classes",
-    to: BOOK_CONSULTATION_PATH,
+    to: "/gmat/group-classes" as const,
     featured: false,
   },
   {
@@ -179,7 +179,7 @@ const programCards = [
       "Anytime, Anywhere Access for self-paced learning",
     ],
     cta: "Get Self-Study Access",
-    to: BOOK_CONSULTATION_PATH,
+    to: "/gmat/self-study-plan" as const,
     featured: false,
   },
   {
@@ -215,7 +215,7 @@ const programCards = [
       "Flexible Online Learning",
     ],
     cta: "Explore Micro Batch Program",
-    to: BOOK_CONSULTATION_PATH,
+    to: "/gmat/microbatch-classes" as const,
     featured: false,
     layout: "landscape" as const,
   },

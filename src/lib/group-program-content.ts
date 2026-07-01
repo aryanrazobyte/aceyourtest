@@ -1,0 +1,316 @@
+import gmatMicrobatchPoster from "@/assets/gmat-microbatch-poster.png";
+import { GMAT_PROGRAM_IMAGES } from "@/lib/gmat-program-pages";
+import type { MicrobatchProgramContent } from "@/lib/microbatch-program-content";
+
+const GMAT_GROUP_VISUAL = GMAT_PROGRAM_IMAGES.group;
+
+export const gmatGroupContent: MicrobatchProgramContent = {
+  exam: "GMAT",
+  meta: {
+    title: "GMAT Group Classes — Elite Interactive Cohort Coaching | AceYourTest",
+    description:
+      "Elite GMAT Focus Edition group classes with Tarun Kaushik. Maximum 10 students, 50+ live hours, 5,000+ questions, 20 sectional tests — ₹49,999.",
+    ogTitle: "GMAT Group Classes — AceYourTest",
+    ogDescription:
+      "Structured GMAT group coaching with live classes, collaborative learning, personalized tracking, and expert mentorship.",
+    canonical: "/gmat/group-classes",
+  },
+  hero: {
+    eyebrow: "GMAT Group Preparation",
+    title: "Elite Interactive GMAT Group Classes",
+    subtitle:
+      "Master the GMAT Focus Edition through structured, mentor-led group coaching designed for ambitious MBA aspirants — collaborative discussions and continuous guidance from Tarun Kaushik.",
+    cta: "Explore GMAT Group Classes",
+  },
+  posterImage: gmatMicrobatchPoster,
+  posterAlt: "GMAT group classes online course",
+  bannerVisual: GMAT_GROUP_VISUAL,
+  bannerVisualAlt: "GMAT group class cohort sessions",
+  programImage: GMAT_GROUP_VISUAL,
+  programImageAlt: "GMAT group class preparation",
+  intro: [
+    "Join an elite cohort where competition fuels improvement, peer learning accelerates growth, and expert mentorship keeps you on track toward your target GMAT score.",
+    "Ideal for students who want premium GMAT preparation with personalized guidance at an optimized investment.",
+  ],
+  whyChoose: {
+    title: "Learn Together. Compete Together. Succeed Together.",
+    subtitle:
+      "Our GMAT Group Classes combine the structure of classroom learning with the benefits of small batches, ensuring every student receives meaningful interaction, regular feedback, and continuous motivation.",
+    items: [
+      "Live Interactive Learning",
+      "Small Batches (Maximum 10 Students)",
+      "Personalized Performance Tracking",
+      "Healthy Academic Competition",
+      "Direct Mentor Access",
+      "Collaborative Learning Environment",
+      "Structured Study Plans",
+      "Continuous Motivation & Accountability",
+    ],
+  },
+  whatsIncluded: [
+    "50+ Hours of Live Interactive Classes",
+    "Small Batches (Maximum 10 Students)",
+    "Personalized Study Plan & Daily Targets",
+    "5,000+ GMAT-Focused Practice Questions",
+    "20 Sectional Tests with Smart Performance Analytics",
+    "Official GMAT-Style Practice Material",
+    "Exclusive Instructor-Curated Study Notes",
+    "Quantitative, Verbal & Data Insights Mastery",
+    "Topic-Wise Practice Sessions",
+    "Expert Strategy & Review Classes",
+    "Personalized Error Analysis",
+    "Instant Doubt Resolution",
+    "Weekly Progress Reviews",
+    "Score Improvement Tracking",
+    "Collaborative Peer Discussions",
+    "Dedicated WhatsApp Support",
+    "Class Recordings with 6-Month Access",
+    "Optional One-on-One Mentoring",
+  ],
+  blueprintCards: [
+    {
+      title: "Small Cohorts. Bigger Results.",
+      desc: "Each batch is intentionally limited to ensure high interaction while maintaining the benefits of collaborative learning.",
+      items: [
+        "Personalized mentor attention",
+        "Better classroom interaction",
+        "Active peer discussions",
+        "Faster doubt resolution",
+        "Strong accountability",
+        "Higher student engagement",
+      ],
+    },
+    {
+      title: "Collaborative Learning Environment",
+      desc: "Study alongside motivated MBA aspirants preparing for leading business schools around the world.",
+      items: [
+        "Quant Strategy Discussions",
+        "Verbal Reasoning Sessions",
+        "Data Insights Practice",
+        "Group Problem Solving",
+        "Mock Test Reviews",
+        "Alternative Solution Methods",
+      ],
+    },
+    {
+      title: "Continuous Mentor Guidance",
+      desc: "Every student receives regular feedback and strategic support throughout the course.",
+      items: [
+        "Weekly Performance Reviews",
+        "Personalized Study Recommendations",
+        "Mock Test Analysis",
+        "Time Management Coaching",
+        "Score Improvement Planning",
+        "MBA Application Guidance",
+      ],
+    },
+  ],
+  sessionStructure: [
+    {
+      step: "1",
+      title: "Concept Building",
+      desc: "Master every GMAT concept through structured explanations, practical frameworks, and proven teaching methodologies.",
+      outcome: "Conceptual clarity, logical reasoning, and analytical thinking.",
+    },
+    {
+      step: "2",
+      title: "Guided Practice",
+      desc: "Apply concepts through carefully selected GMAT-level questions under timed conditions.",
+      outcome: "Speed, accuracy, decision-making, and time management.",
+    },
+    {
+      step: "3",
+      title: "Collaborative Review",
+      desc: "Every practice session is followed by detailed discussions that help students understand mistakes and discover smarter solving techniques.",
+      outcome: "Error elimination, pattern recognition, strategic thinking, and higher accuracy.",
+    },
+    {
+      step: "4",
+      title: "Weekly Action Plan",
+      desc: "Every class concludes with personalized assignments and study goals to maintain consistent progress.",
+      outcome: "Daily targets, revision planning, practice strategy, and performance improvement.",
+    },
+  ],
+  learningHighlights: [
+    "50+ Hours of Live Interactive Classes",
+    "Expert Mentor-Led Sessions",
+    "Personalized Study Plans",
+    "Collaborative Learning",
+    "Weekly Performance Reviews",
+    "Recording Access",
+    "Continuous Mentor Support",
+  ],
+  performanceTracking: [
+    "Weekly Progress Reports",
+    "Topic-Wise Performance Analysis",
+    "Error Tracking",
+    "Smart Performance Analytics",
+    "Improvement Recommendations",
+    "Mentor Feedback Sessions",
+  ],
+  curriculum: {
+    quant: {
+      topics: [
+        "Number Properties",
+        "Arithmetic",
+        "Algebra",
+        "Word Problems",
+        "Ratios & Percentages",
+        "Statistics",
+        "Probability",
+        "Coordinate Geometry",
+        "Data Sufficiency Concepts",
+      ],
+      skills: [
+        "Logical Thinking",
+        "Faster Calculations",
+        "Problem-Solving Efficiency",
+        "Mathematical Accuracy",
+      ],
+    },
+    verbal: {
+      focusAreas: [
+        "Reading Comprehension",
+        "Critical Reasoning",
+        "Logical Evaluation",
+        "Argument Analysis",
+        "Inference Skills",
+        "Verbal Strategy",
+      ],
+      skills: [
+        "Reading Speed",
+        "Logical Interpretation",
+        "Decision Making",
+        "Accuracy Under Time Pressure",
+      ],
+    },
+    data: {
+      title: "Data Insights",
+      topics: [
+        "Data Sufficiency",
+        "Table Analysis",
+        "Graphics Interpretation",
+        "Multi-Source Reasoning",
+        "Two-Part Analysis",
+      ],
+      skills: [
+        "Data Interpretation",
+        "Analytical Thinking",
+        "Rapid Decision Making",
+        "Efficient Calculations",
+      ],
+    },
+  },
+  practiceFramework: [
+    "5,000+ GMAT-Level Practice Questions",
+    "20 Sectional Mock Tests",
+    "Timed Practice Modules",
+    "Adaptive Learning Exercises",
+    "Personalized Assignments",
+    "Detailed Performance Analytics",
+  ],
+  communityBenefits: [
+    "Live Doubt Resolution",
+    "WhatsApp Support Community",
+    "Peer Collaboration",
+    "Resource Sharing",
+    "Important Course Updates",
+  ],
+  idealFor: [
+    "Students targeting 655–705+ GMAT scores",
+    "MBA aspirants seeking structured preparation",
+    "Learners who thrive in competitive environments",
+    "Students looking for premium coaching at optimized cost",
+    "Working professionals balancing preparation with careers",
+    "Applicants planning for top global business schools",
+  ],
+  deliverables: [
+    {
+      component: "Live Classes",
+      deliverables: "50+ Hours Interactive Training",
+      benefits: "Expert Learning",
+    },
+    {
+      component: "Batch Size",
+      deliverables: "Maximum 10 Students",
+      benefits: "Personalized Attention",
+    },
+    {
+      component: "Practice Library",
+      deliverables: "5,000+ Questions",
+      benefits: "Complete Exam Preparation",
+    },
+    {
+      component: "Mock Tests",
+      deliverables: "20 Sectional Tests",
+      benefits: "Performance Evaluation",
+    },
+    {
+      component: "Study Material",
+      deliverables: "Official Material & Premium Notes",
+      benefits: "Comprehensive Learning",
+    },
+    {
+      component: "Recording Access",
+      deliverables: "6 Months",
+      benefits: "Flexible Revision",
+    },
+    {
+      component: "Performance Tracking",
+      deliverables: "Weekly Reports & Analytics",
+      benefits: "Continuous Improvement",
+    },
+    {
+      component: "Mentor Support",
+      deliverables: "WhatsApp & Live Guidance",
+      benefits: "Faster Doubt Resolution",
+    },
+  ],
+  pricing: {
+    amount: "₹49,999",
+    note: "Full Program",
+    includes: [
+      "50+ Hours of Live Interactive Classes",
+      "Small Batch Learning",
+      "Personalized Study Plan",
+      "Official GMAT Study Material",
+      "Premium Instructor Notes",
+      "5,000+ Practice Questions",
+      "20 Sectional Tests",
+      "Smart Performance Analytics",
+      "Recording Access",
+      "WhatsApp Support",
+      "Optional One-on-One Mentoring",
+    ],
+    cta: "Request Free Consultation",
+  },
+  ctaBand: {
+    title: "Start Your GMAT Group Preparation Journey",
+    subtitle:
+      "Book a free consultation with Tarun Kaushik and receive personalized guidance on selecting the ideal GMAT preparation plan for your MBA goals.",
+  },
+  enquiryTitle: "Book a Free Consultation",
+  comparePath: "/gmat/plans-pricing",
+  sidebarHighlights: [
+    { label: "Batch Size", value: "Max 10" },
+    { label: "Live Hours", value: "50+" },
+    { label: "Practice Questions", value: "5,000+" },
+    { label: "Sectional Tests", value: "20+" },
+    { label: "Course Fee", value: "₹49,999" },
+    { label: "Recording Access", value: "6 Months" },
+  ],
+  labels: {
+    promoBadge: "Group Class",
+    batchBadge: "Max 10 per batch",
+    whyEyebrow: "Why GMAT Group Classes",
+    advantageTitle: "The Group Learning Advantage",
+    sessionTitle: "Structure of Every Group Session",
+    communityTitle: "Dedicated Student Support",
+    whatsIncludedTitle: "Comprehensive GMAT Group Preparation Program",
+    whatsIncludedSubtitle:
+      "Everything you need to maximize your GMAT performance in one structured learning program.",
+    contactBody:
+      "Join an elite GMAT group class and prepare with expert mentorship, collaborative learning, and proven score-improvement strategies.",
+    sidebarNote: "Free 30-min strategy session · Max 10 students",
+  },
+};

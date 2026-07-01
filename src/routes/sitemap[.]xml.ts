@@ -20,6 +20,10 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/about", changefreq: "monthly", priority: "0.8" },
           { path: "/gmat", changefreq: "monthly", priority: "0.9" },
+          { path: "/gmat/individual-tutoring", changefreq: "monthly", priority: "0.85" },
+          { path: "/gmat/microbatch-classes", changefreq: "monthly", priority: "0.85" },
+          { path: "/gmat/group-classes", changefreq: "monthly", priority: "0.85" },
+          { path: "/gmat/self-study-plan", changefreq: "monthly", priority: "0.85" },
           { path: "/gmat/plans-pricing", changefreq: "monthly", priority: "0.85" },
           { path: "/gmat/top-university-cutoff", changefreq: "monthly", priority: "0.85" },
           ...GMAT_COACHING_CITIES.map((city) => ({
@@ -30,6 +34,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/gre", changefreq: "monthly", priority: "0.9" },
           { path: "/gre/private-tutoring", changefreq: "monthly", priority: "0.85" },
           { path: "/gre/gre-test-prep-courses-group-classes-program", changefreq: "monthly", priority: "0.85" },
+          { path: "/gre/microbatch-classes", changefreq: "monthly", priority: "0.85" },
           { path: "/gre/plans-pricing", changefreq: "monthly", priority: "0.85" },
           ...GRE_COACHING_CITIES.map((city) => ({
             path: `/gre/${city.slug}`,

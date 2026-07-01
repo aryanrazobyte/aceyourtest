@@ -4,8 +4,9 @@ import {
   CheckCircle2, Star, ArrowRight, Award, Globe2,
 } from "lucide-react";
 import heroImg from "../assets/hero-students.jpg";
-import { MENTOR_IMAGE } from "../lib/site-constants";
 import { SectionHeader } from "../components/site/SectionHeader";
+import { MentorProfile } from "../components/site/MentorProfile";
+import { shipraMentor, tarunMentor } from "../lib/mentors-content";
 import UniversitiesSection from "../components/site/UniversitiesSection";
 import BlogPreviewSection from "../components/site/BlogPreviewSection";
 import VocabSeminarSection from "../components/site/VocabSeminarSection";
@@ -148,30 +149,30 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Meet your mentor */}
+      {/* Meet your mentors */}
       <section className="section-y bg-surface">
-        <div className="container-page grid gap-6 lg:grid-cols-[1fr_1.2fr] items-center">
-          <div className="relative max-w-md mx-auto lg:mx-0">
-            <div className="absolute -inset-4 rounded-3xl bg-primary/15" aria-hidden />
-            <img src={MENTOR_IMAGE} alt="Tarun Kaushik, Founder and Lead Mentor at AceYourTest" loading="lazy" width={800} height={800} className="relative rounded-2xl shadow-elevated w-full h-auto object-cover" />
-          </div>
-          <div>
-            <SectionHeader eyebrow="Meet Your Mentor" title="Tarun Kaushik — Quant Expert & Lead Mentor" subtitle="A coach trusted by 10,000+ students across GMAT, GRE and SAT. Tarun has worked with leading test-prep organisations and built one of India's most respected quant programs." />
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-              {["15+ Years Experience", "10,000+ Students Mentored", "Worked with reputed test-prep brands", "Quant Expert: GMAT, GRE & SAT"].map((b) => (
-                <li key={b} className="flex items-start gap-2 text-sm text-foreground">
-                  <CheckCircle2 className="h-5 w-5 text-success shrink-0 mt-0.5" /> {b}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-4 flex flex-wrap gap-2 sm:gap-3">
-              <BookConsultationButton className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm">
-                Schedule Free Session <ArrowRight className="h-4 w-4" />
-              </BookConsultationButton>
-              <Link to="/about" className="inline-flex items-center justify-center rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-navy hover:bg-muted transition-colors">
-                Read Mentor Story
-              </Link>
-            </div>
+        <div className="container-page space-y-12 sm:space-y-14 lg:space-y-16">
+          <MentorProfile
+            image={tarunMentor.image}
+            imageAlt={tarunMentor.imageAlt}
+            title={tarunMentor.title}
+            subtitle={tarunMentor.homeSubtitle}
+            highlights={tarunMentor.highlights}
+          />
+
+          <div className="relative">
+            <div
+              className="absolute inset-x-0 -top-6 hidden h-px bg-gradient-to-r from-transparent via-border to-transparent sm:block lg:-top-8"
+              aria-hidden
+            />
+            <MentorProfile
+              reversed
+              image={shipraMentor.image}
+              imageAlt={shipraMentor.imageAlt}
+              title={shipraMentor.title}
+              subtitle={shipraMentor.homeSubtitle}
+              highlights={shipraMentor.highlights}
+            />
           </div>
         </div>
       </section>

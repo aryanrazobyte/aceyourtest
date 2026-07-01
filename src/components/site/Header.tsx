@@ -29,10 +29,15 @@ const contactMenu = [
 
 type ExamMenuLink = {
   to:
+    | "/gmat/individual-tutoring"
+    | "/gmat/microbatch-classes"
+    | "/gmat/group-classes"
+    | "/gmat/self-study-plan"
     | "/gmat/plans-pricing"
     | "/gmat/top-university-cutoff"
     | "/gre/private-tutoring"
     | "/gre/gre-test-prep-courses-group-classes-program"
+    | "/gre/microbatch-classes"
     | "/gre/plans-pricing"
     | "/sat/plans-pricing";
   label: string;
@@ -53,19 +58,19 @@ function isGreCoachingCityActive(pathname: string, slug: GreCitySlug) {
   return pathname === `/gre/${slug}`;
 }
 
-const gmatMenu = [
+const gmatMenu: ExamMenuItem[] = [
+  { to: "/gmat/individual-tutoring", label: "GMAT Private Tutoring" },
+  { to: "/gmat/microbatch-classes", label: "GMAT Micro Batches" },
+  { to: "/gmat/group-classes", label: "GMAT Group Classes" },
+  { to: "/gmat/self-study-plan", label: "GMAT Self Study Plan" },
   { to: "/gmat/plans-pricing", label: "GMAT Plans and Pricing" },
-  // { to: "/gmat/hyderabad", label: "GMAT Coaching in Hyderabad" },
-  // { to: "/gmat/mumbai", label: "GMAT Coaching in Mumbai" },
-  // { to: "/gmat/noida", label: "GMAT Coaching in Noida" },
-  // { to: "/gmat/gurgaon", label: "GMAT Coaching in Gurgaon" },
-  // { to: "/gmat/pune", label: "GMAT Coaching in Pune" },
   { to: "/gmat/top-university-cutoff", label: "Top University GMAT Cut-off" },
-] as const;
+];
 
 const greMenu: ExamMenuItem[] = [
-  { to: "/gre/private-tutoring", label: "GRE One On One Private Tutoring" },
+  { to: "/gre/private-tutoring", label: "GRE Private Tutoring" },
   { to: "/gre/gre-test-prep-courses-group-classes-program", label: "GRE Group Course" },
+  { to: "/gre/microbatch-classes", label: "GRE Microbatch Classes" },
   { to: "/gre/plans-pricing", label: "GRE Plans and Pricing" },
   // {
   //   label: "GRE Coaching",
