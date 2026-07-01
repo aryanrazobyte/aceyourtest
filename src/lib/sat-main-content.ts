@@ -143,9 +143,9 @@ export const satMainContent = {
       "With 15+ years of experience, Ace Your Test is recognized among India's most trusted Digital SAT coaching platforms. Our team of subject experts — with 25+ years of combined teaching experience — delivers structured programs designed to help ambitious students reach 1500+.",
   },
   stats: [
-    { value: "1000+", label: "Students with SAT score of 1500 and above" },
+    // { value: "1000+", label: "Students with SAT score of 1500 and above" },
     { value: "1500+", label: "Students with GRE score of 330 and above" },
-    { value: "2000+", label: "Students with GMAT score of 705 and above" },
+    // { value: "2000+", label: "Students with GMAT score of 705 and above" },
     { value: "500+", label: "Admits to top 20 ranked universities" },
   ],
   trustedFeatures: [
