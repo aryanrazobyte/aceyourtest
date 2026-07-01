@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" fill="none" role="img" aria-label="Trusted by thousands of GMAT aspirants">
+  <ellipse cx="250" cy="230" rx="220" ry="150" fill="#DBEAFE"/>
+  <g fill="#0F172A">
+    <circle cx="170" cy="175" r="34"/>
+    <path d="M120 255 C130 220 150 205 170 205 C190 205 210 220 220 255 Z"/>
+    <circle cx="250" cy="160" r="38"/>
+    <path d="M190 255 C202 212 226 195 250 195 C274 195 298 212 310 255 Z"/>
+    <circle cx="330" cy="175" r="34"/>
+    <path d="M280 255 C290 220 310 205 330 205 C350 205 370 220 380 255 Z"/>
+  </g>
+  <g fill="#F97316">
+    <circle cx="250" cy="160" r="38"/>
+    <path d="M190 255 C202 212 226 195 250 195 C274 195 298 212 310 255 Z"/>
+  </g>
+  <circle cx="250" cy="160" r="34" fill="#FDE047"/>
+  <path d="M230 145 C235 130 248 122 260 128 C272 134 276 148 268 158 C262 166 252 168 244 164" fill="#0F172A"/>
+  <g fill="#FBBF24">
+    <path d="M205 95 L212 112 L230 112 L216 123 L221 140 L205 130 L189 140 L194 123 L180 112 L198 112 Z"/>
+    <path d="M250 78 L255 90 L268 90 L258 98 L262 110 L250 102 L238 110 L242 98 L232 90 L245 90 Z"/>
+    <path d="M295 95 L302 112 L320 112 L306 123 L311 140 L295 130 L279 140 L284 123 L270 112 L288 112 Z"/>
+  </g>
+  <rect x="125" y="285" width="250" height="52" rx="14" fill="#fff" stroke="#BFDBFE" stroke-width="2"/>
+  <text x="250" y="318" text-anchor="middle" fill="#0F172A" font-family="system-ui,sans-serif" font-size="18" font-weight="700">10,000+ Students</text>
+</svg>

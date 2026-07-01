@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" fill="none" role="img" aria-label="Gain a competitive advantage">
+  <ellipse cx="250" cy="250" rx="210" ry="130" fill="#DBEAFE"/>
+  <path d="M120 300 C180 250 220 180 250 90 C280 180 320 250 380 300" stroke="#BFDBFE" stroke-width="3" stroke-dasharray="10 10"/>
+  <path d="M250 70 L285 170 L250 155 L215 170 Z" fill="#F97316"/>
+  <rect x="228" y="155" width="44" height="95" rx="10" fill="#fff" stroke="#F97316" stroke-width="3"/>
+  <circle cx="250" cy="185" r="12" fill="#0F172A"/>
+  <path d="M215 250 L228 210 L250 225 L272 210 L285 250 Z" fill="#F97316"/>
+  <path d="M205 285 C215 265 232 255 250 255 C268 255 285 265 295 285" fill="#FDE047" opacity="0.9"/>
+  <path d="M230 285 C235 275 242 270 250 270 C258 270 265 275 270 285" fill="#FB923C"/>
+  <path d="M250 285 C252 295 248 305 250 315 C252 305 248 295 250 285" fill="#F97316"/>
+  <rect x="95" y="120" width="95" height="42" rx="10" fill="#fff" stroke="#BFDBFE" stroke-width="2"/>
+  <text x="142" y="147" text-anchor="middle" fill="#0F172A" font-family="system-ui,sans-serif" font-size="12" font-weight="600">705+</text>
+  <rect x="310" y="95" width="110" height="42" rx="10" fill="#fff" stroke="#BFDBFE" stroke-width="2"/>
+  <text x="365" y="122" text-anchor="middle" fill="#0F172A" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Top B-Schools</text>
+  <rect x="330" y="300" width="110" height="42" rx="10" fill="#0F172A"/>
+  <text x="385" y="327" text-anchor="middle" fill="#F97316" font-family="system-ui,sans-serif" font-size="12" font-weight="700">Advantage</text>
+</svg>

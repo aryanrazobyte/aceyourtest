@@ -39,6 +39,9 @@ type ExamMenuLink = {
     | "/gre/gre-test-prep-courses-group-classes-program"
     | "/gre/microbatch-classes"
     | "/gre/plans-pricing"
+    | "/sat/private-tutoring"
+    | "/sat/microbatch-classes"
+    | "/sat/group-sessions"
     | "/sat/plans-pricing";
   label: string;
 };
@@ -81,14 +84,17 @@ const greMenu: ExamMenuItem[] = [
   // },
 ];
 
-const satMenu = [
+const satMenu: ExamMenuItem[] = [
+  { to: "/sat/private-tutoring", label: "SAT Private Tutoring" },
+  { to: "/sat/microbatch-classes", label: "SAT Micro-batches" },
+  { to: "/sat/group-sessions", label: "SAT Group Sessions" },
   { to: "/sat/plans-pricing", label: "SAT Plans and Pricing" },
   // { to: "/sat/gurgaon", label: "SAT Coaching in Gurgaon" },
   // { to: "/sat/noida", label: "SAT Coaching in Noida" },
   // { to: "/sat/mumbai", label: "SAT Coaching in Mumbai" },
   // { to: "/sat/hyderabad", label: "SAT Coaching in Hyderabad" },
   // { to: "/sat/pune", label: "SAT Coaching in Pune" },
-] as const;
+];
 
 const contactPaths = ["/contact", "/about", "/blog"];
 

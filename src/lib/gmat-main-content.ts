@@ -116,9 +116,9 @@ export const gmatMainContent = {
     { title: "Candidates Aiming for Scholarships & Top-Tier Admits" },
   ],
   stats: [
-    { value: "2000+", label: "Students with GMAT score of 705 and above" },
+    // { value: "2000+", label: "Students with GMAT score of 705 and above" },
     { value: "1500+", label: "Students with GRE score of 325 and above" },
-    { value: "1000+", label: "Students with SAT score of 1500 and above" },
+    // { value: "1000+", label: "Students with SAT score of 1500 and above" },
     { value: "500+", label: "Admits to top 20 ranked universities" },
   ],
   trustedFeatures: [

@@ -1,7 +1,7 @@
 import gmatMicrobatchPoster from "@/assets/gmat-microbatch-poster.png";
 
 export type MicrobatchProgramContent = {
-  exam: "GRE" | "GMAT";
+  exam: "GRE" | "GMAT" | "SAT";
   meta: {
     title: string;
     description: string;
@@ -70,7 +70,7 @@ export type MicrobatchProgramContent = {
   };
   ctaBand: { title: string; subtitle: string };
   enquiryTitle: string;
-  comparePath: "/gre/plans-pricing" | "/gmat/plans-pricing";
+  comparePath: "/gre/plans-pricing" | "/gmat/plans-pricing" | "/sat/plans-pricing";
   sidebarHighlights: readonly { label: string; value: string }[];
   labels?: {
     promoBadge?: string;

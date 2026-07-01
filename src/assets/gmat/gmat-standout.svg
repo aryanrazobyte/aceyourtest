@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" fill="none" role="img" aria-label="Stand out from the crowd">
+  <ellipse cx="250" cy="230" rx="210" ry="140" fill="#DBEAFE"/>
+  <g fill="#0F172A">
+    <circle cx="110" cy="170" r="28"/><path d="M72 245 C80 215 95 202 110 202 C125 202 140 215 148 245 Z"/>
+    <circle cx="175" cy="155" r="30"/><path d="M133 240 C142 205 158 190 175 190 C192 190 208 205 217 240 Z"/>
+    <circle cx="325" cy="155" r="30"/><path d="M283 240 C292 205 308 190 325 190 C342 190 358 205 367 240 Z"/>
+    <circle cx="390" cy="170" r="28"/><path d="M352 245 C360 215 375 202 390 202 C405 202 420 215 428 245 Z"/>
+  </g>
+  <g fill="#F97316">
+    <circle cx="250" cy="145" r="36"/>
+    <path d="M200 245 C212 200 230 182 250 182 C270 182 288 200 300 245 Z"/>
+  </g>
+  <circle cx="250" cy="145" r="30" fill="#FDE047"/>
+  <path d="M230 132 C236 118 248 112 258 118 C268 124 270 138 262 146 C256 152 246 154 238 150" fill="#0F172A"/>
+  <path d="M250 95 L258 118 L282 118 L263 132 L271 155 L250 141 L229 155 L237 132 L218 118 L242 118 Z" fill="#FBBF24"/>
+  <rect x="130" y="285" width="240" height="48" rx="12" fill="#fff" stroke="#FED7AA" stroke-width="2"/>
+  <text x="250" y="316" text-anchor="middle" fill="#0F172A" font-family="system-ui,sans-serif" font-size="16" font-weight="700">Stand Out</text>
+</svg>

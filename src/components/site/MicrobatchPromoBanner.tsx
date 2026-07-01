@@ -2,7 +2,7 @@ import { BookOpen, Sparkles, Star, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type MicrobatchPromoBannerProps = {
-  examLabel: "GRE" | "GMAT";
+  examLabel: "GRE" | "GMAT" | "SAT";
   posterImage: string;
   posterAlt: string;
   visualImage?: string;

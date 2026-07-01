@@ -1,0 +1,312 @@
+import type { MicrobatchProgramContent } from "@/lib/microbatch-program-content";
+import { SAT_PROGRAM_IMAGES } from "@/lib/sat-program-pages";
+
+const SAT_GROUP_VISUAL = SAT_PROGRAM_IMAGES.group;
+
+export const satGroupContent: MicrobatchProgramContent = {
+  exam: "SAT",
+  meta: {
+    title: "SAT Group Sessions — Elite Interactive Cohort Coaching | AceYourTest",
+    description:
+      "Elite Digital SAT group sessions with Tarun Kaushik. Maximum 10 students, 50+ live hours, 5,000+ questions, 40 sectional tests — ₹74,999.",
+    ogTitle: "SAT Group Sessions — AceYourTest",
+    ogDescription:
+      "Structured Digital SAT group coaching with live classes, collaborative learning, personalized tracking, and expert mentorship.",
+    canonical: "/sat/group-sessions",
+  },
+  hero: {
+    eyebrow: "SAT Group Sessions",
+    title: "Elite Interactive Digital SAT Group Sessions",
+    subtitle:
+      "Master the Digital SAT through structured, mentor-led group coaching designed for ambitious students — collaborative discussions and continuous guidance from Tarun Kaushik.",
+    cta: "Explore SAT Group Sessions",
+  },
+  posterImage: SAT_GROUP_VISUAL,
+  posterAlt: "SAT group sessions online course",
+  bannerVisual: SAT_GROUP_VISUAL,
+  bannerVisualAlt: "SAT group class cohort sessions",
+  programImage: SAT_GROUP_VISUAL,
+  programImageAlt: "SAT group session preparation",
+  intro: [
+    "Join an elite cohort where competition fuels improvement, peer learning accelerates growth, and expert mentorship keeps you on track toward your target SAT score.",
+    "Ideal for students who want premium Digital SAT preparation with personalized guidance at an optimized investment.",
+  ],
+  whyChoose: {
+    title: "Learn Together. Compete Together. Succeed Together.",
+    subtitle:
+      "Our SAT Group Sessions combine the structure of classroom learning with the benefits of small batches, ensuring every student receives meaningful interaction, regular feedback, and continuous motivation.",
+    items: [
+      "Live Interactive Learning",
+      "Small Batches (Maximum 10 Students)",
+      "Personalized Performance Tracking",
+      "Healthy Academic Competition",
+      "Direct Mentor Access",
+      "Collaborative Learning Environment",
+      "Structured Study Plans",
+      "Continuous Motivation & Accountability",
+    ],
+  },
+  whatsIncluded: [
+    "50+ Hours of Live Interactive Classes",
+    "Small Batches (Maximum 10 Students)",
+    "Personalized Study Plan & Daily Targets",
+    "5,000+ SAT-Focused Practice Questions",
+    "40+ Sectional Practice Tests",
+    "Digital SAT Adaptive Strategy Material",
+    "Exclusive Instructor-Curated Study Notes",
+    "SAT Math & Reading/Writing Mastery",
+    "Topic-Wise Practice Sessions",
+    "Expert Strategy & Review Classes",
+    "Personalized Error Analysis",
+    "Instant Doubt Resolution",
+    "Weekly Progress Reviews",
+    "Score Improvement Tracking",
+    "Collaborative Peer Discussions",
+    "Dedicated WhatsApp Support",
+    "Class Recordings with 6-Month Access",
+  ],
+  blueprintCards: [
+    {
+      title: "Small Cohorts. Bigger Results.",
+      desc: "Each batch is intentionally limited to ensure high interaction while maintaining the benefits of collaborative learning.",
+      items: [
+        "Personalized mentor attention",
+        "Better classroom interaction",
+        "Active peer discussions",
+        "Faster doubt resolution",
+        "Strong accountability",
+        "Higher student engagement",
+      ],
+    },
+    {
+      title: "Collaborative Learning Environment",
+      desc: "Study alongside motivated students preparing for leading US universities.",
+      items: [
+        "Math Strategy Discussions",
+        "Reading Comprehension Sessions",
+        "Writing & Grammar Practice",
+        "Group Problem Solving",
+        "Mock Test Reviews",
+        "Alternative Solution Methods",
+      ],
+    },
+    {
+      title: "Continuous Mentor Guidance",
+      desc: "Every student receives regular feedback and strategic support throughout the course.",
+      items: [
+        "Weekly Performance Reviews",
+        "Personalized Study Recommendations",
+        "Mock Test Analysis",
+        "Time Management Coaching",
+        "Score Improvement Planning",
+        "US Admissions Guidance",
+      ],
+    },
+  ],
+  sessionStructure: [
+    {
+      step: "1",
+      title: "Concept Building",
+      desc: "Master every Digital SAT concept through structured explanations, practical frameworks, and proven teaching methodologies.",
+      outcome: "Conceptual clarity, logical reasoning, and analytical thinking.",
+    },
+    {
+      step: "2",
+      title: "Guided Practice",
+      desc: "Apply concepts through carefully selected SAT-level questions under timed conditions.",
+      outcome: "Speed, accuracy, decision-making, and time management.",
+    },
+    {
+      step: "3",
+      title: "Collaborative Review",
+      desc: "Every practice session is followed by detailed discussions that help students understand mistakes and discover smarter solving techniques.",
+      outcome: "Error elimination, pattern recognition, strategic thinking, and higher accuracy.",
+    },
+    {
+      step: "4",
+      title: "Weekly Action Plan",
+      desc: "Every class concludes with personalized assignments and study goals to maintain consistent progress.",
+      outcome: "Daily targets, revision planning, practice strategy, and performance improvement.",
+    },
+  ],
+  learningHighlights: [
+    "50+ Hours of Live Interactive Classes",
+    "Expert Mentor-Led Sessions",
+    "Personalized Study Plans",
+    "Collaborative Learning",
+    "Weekly Performance Reviews",
+    "Recording Access",
+    "Continuous Mentor Support",
+  ],
+  performanceTracking: [
+    "Weekly Progress Reports",
+    "Topic-Wise Performance Analysis",
+    "Error Tracking",
+    "Smart Performance Analytics",
+    "Improvement Recommendations",
+    "Mentor Feedback Sessions",
+  ],
+  curriculum: {
+    quant: {
+      topics: [
+        "Algebra",
+        "Advanced Math",
+        "Problem Solving & Data Analysis",
+        "Geometry & Trigonometry",
+        "Ratios & Percentages",
+        "Statistics & Probability",
+        "Linear Equations",
+        "Quadratic Functions",
+      ],
+      skills: [
+        "Logical Thinking",
+        "Faster Calculations",
+        "Problem-Solving Efficiency",
+        "Mathematical Accuracy",
+      ],
+    },
+    verbal: {
+      focusAreas: [
+        "Reading Comprehension",
+        "Command of Evidence",
+        "Words in Context",
+        "Text Structure Analysis",
+        "Inference Skills",
+        "Cross-Text Connections",
+      ],
+      skills: [
+        "Reading Speed",
+        "Logical Interpretation",
+        "Evidence-Based Reasoning",
+        "Accuracy Under Time Pressure",
+      ],
+    },
+    data: {
+      title: "Reading & Writing",
+      topics: [
+        "Standard English Conventions",
+        "Expression of Ideas",
+        "Grammar & Punctuation",
+        "Sentence Structure",
+        "Transitions & Rhetoric",
+        "Editing & Revision",
+      ],
+      skills: [
+        "Writing Clarity",
+        "Grammar Mastery",
+        "Rhetorical Analysis",
+        "Efficient Editing",
+      ],
+    },
+  },
+  practiceFramework: [
+    "5,000+ SAT-Level Practice Questions",
+    "40+ Sectional Practice Tests",
+    "Timed Practice Modules",
+    "Adaptive Learning Exercises",
+    "Personalized Assignments",
+    "Detailed Performance Analytics",
+  ],
+  communityBenefits: [
+    "Live Doubt Resolution",
+    "WhatsApp Support Community",
+    "Peer Collaboration",
+    "Resource Sharing",
+    "Important Course Updates",
+  ],
+  idealFor: [
+    "Students targeting 1350–1500+ SAT scores",
+    "Learners who thrive in competitive environments",
+    "Students seeking premium prep at optimized cost",
+    "High schoolers preparing for US university admissions",
+    "Candidates who enjoy collaborative learning",
+    "Applicants planning for top-ranked US universities",
+  ],
+  deliverables: [
+    {
+      component: "Live Classes",
+      deliverables: "50+ Hours Interactive Training",
+      benefits: "Expert Learning",
+    },
+    {
+      component: "Batch Size",
+      deliverables: "Maximum 10 Students",
+      benefits: "Personalized Attention",
+    },
+    {
+      component: "Practice Library",
+      deliverables: "5,000+ Questions",
+      benefits: "Complete Exam Preparation",
+    },
+    {
+      component: "Sectional Tests",
+      deliverables: "40+ Practice Tests",
+      benefits: "Performance Evaluation",
+    },
+    {
+      component: "Study Material",
+      deliverables: "Premium Notes & Resources",
+      benefits: "Comprehensive Learning",
+    },
+    {
+      component: "Recording Access",
+      deliverables: "6 Months",
+      benefits: "Flexible Revision",
+    },
+    {
+      component: "Performance Tracking",
+      deliverables: "Weekly Reports & Analytics",
+      benefits: "Continuous Improvement",
+    },
+    {
+      component: "Mentor Support",
+      deliverables: "WhatsApp & Live Guidance",
+      benefits: "Faster Doubt Resolution",
+    },
+  ],
+  pricing: {
+    amount: "₹74,999",
+    note: "Full Program",
+    includes: [
+      "50+ Hours of Live Interactive Classes",
+      "Small Batch Learning",
+      "Personalized Study Plan",
+      "Premium Instructor Notes",
+      "5,000+ Practice Questions",
+      "40+ Sectional Tests",
+      "Smart Performance Analytics",
+      "6 Months Recording Access",
+      "WhatsApp Support",
+    ],
+    cta: "Request Free Consultation",
+  },
+  ctaBand: {
+    title: "Start Your SAT Group Preparation Journey",
+    subtitle:
+      "Book a free consultation with Tarun Kaushik and receive personalized guidance on selecting the ideal Digital SAT preparation plan for your US university goals.",
+  },
+  enquiryTitle: "Book a Free Consultation",
+  comparePath: "/sat/plans-pricing",
+  sidebarHighlights: [
+    { label: "Batch Size", value: "Max 10" },
+    { label: "Live Hours", value: "50+" },
+    { label: "Practice Questions", value: "5,000+" },
+    { label: "Sectional Tests", value: "40+" },
+    { label: "Course Fee", value: "₹74,999" },
+    { label: "Recording Access", value: "6 Months" },
+  ],
+  labels: {
+    promoBadge: "Group Session",
+    batchBadge: "Max 10 per batch",
+    whyEyebrow: "Why SAT Group Sessions",
+    advantageTitle: "The Group Learning Advantage",
+    sessionTitle: "Structure of Every Group Session",
+    communityTitle: "Dedicated Student Support",
+    whatsIncludedTitle: "Comprehensive SAT Group Preparation Program",
+    whatsIncludedSubtitle:
+      "Everything you need to maximize your Digital SAT performance in one structured learning program.",
+    contactBody:
+      "Join an elite SAT group session and prepare with expert mentorship, collaborative learning, and proven score-improvement strategies.",
+    sidebarNote: "Free 30-min strategy session · Max 10 students",
+  },
+};

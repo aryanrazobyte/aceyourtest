@@ -1,16 +1,22 @@
+import gmatAboutIllustration from "@/assets/gmat/gmat-about-illustration.png";
+import gmatAdvantagesIllustration from "@/assets/gmat/gmat-advantages.svg";
+import gmatPartnerIllustration from "@/assets/gmat/gmat-partner-illustration.png";
+import gmatStrategyIllustration from "@/assets/gmat/gmat-strategy-illustration.png";
+import gmatTrustedIllustration from "@/assets/gmat/gmat-trusted.svg";
+import gmatStandoutIllustration from "@/assets/gmat/gmat-standout.svg";
+import gmatRocketIllustration from "@/assets/gmat/gmat-rocket.svg";
 import gmatFeaturesHub from "@/assets/gmat/gmat-features-hub.png";
-import { GMAT_CITY_IMAGES } from "@/lib/gmat-city-images";
-import { GMAT_PROGRAM_IMAGES } from "@/lib/gmat-program-pages";
+import heroStudentsImg from "@/assets/hero-students.jpg";
 
-/** Clean Cloudinary vectors — avoids clipped PDF slice composites */
+/** Clean local vector illustrations — no mentor poster composites */
 export const GMAT_MAIN_IMAGES = {
-  aboutIllustration: GMAT_CITY_IMAGES.groupLearning,
-  advantagesIllustration: GMAT_PROGRAM_IMAGES.group,
-  partnerIllustration: GMAT_CITY_IMAGES.privateCoaching,
-  strategyPhoto: GMAT_CITY_IMAGES.studyMaterials,
-  trustedIllustration: GMAT_CITY_IMAGES.classroomTraining,
-  journeyIllustration: GMAT_CITY_IMAGES.studentsStudy,
-  standoutIllustration: GMAT_PROGRAM_IMAGES.group,
-  rocketIllustration: GMAT_PROGRAM_IMAGES.microBatch,
+  aboutIllustration: gmatAboutIllustration,
+  advantagesIllustration: gmatAdvantagesIllustration,
+  partnerIllustration: gmatPartnerIllustration,
+  strategyIllustration: gmatStrategyIllustration,
+  trustedIllustration: gmatTrustedIllustration,
+  standoutIllustration: gmatStandoutIllustration,
+  rocketIllustration: gmatRocketIllustration,
+  journeyIllustration: heroStudentsImg,
   featuresHub: gmatFeaturesHub,
 } as const;

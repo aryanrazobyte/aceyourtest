@@ -230,7 +230,7 @@ export function GmatMainPage() {
           <SplitSection
             reverse
             image={GMAT_MAIN_IMAGES.advantagesIllustration}
-            imageAlt="Key advantages of GMAT exam"
+            imageAlt="Why GMAT Focus Edition matters for MBA aspirants"
           >
             <SectionHeader
               eyebrow="Why It Matters"
@@ -257,7 +257,7 @@ export function GmatMainPage() {
             <SplitSection
               className="mt-2"
               image={GMAT_MAIN_IMAGES.partnerIllustration}
-              imageAlt="AceYourTest GMAT coaching"
+              imageAlt="AceYourTest as your GMAT preparation partner"
             >
               <ul className="space-y-2">
                 {c.whatYouGet.map((item) => (
@@ -279,7 +279,10 @@ export function GmatMainPage() {
           <PageBlock>
             <SectionHeader eyebrow="Roadmap" title="Preparation Strategy" center />
             <div className="grid gap-5 lg:grid-cols-2 lg:items-start">
-              <Illustration src={GMAT_MAIN_IMAGES.strategyPhoto} alt="GMAT preparation strategy" />
+              <Illustration
+                src={GMAT_MAIN_IMAGES.strategyIllustration}
+                alt="Structured GMAT preparation strategy roadmap"
+              />
               <div className="grid gap-3">
                 {c.preparationStrategy.map((step, index) => {
                   const Icon = strategyIcons[index] ?? BookOpen;
@@ -329,7 +332,7 @@ export function GmatMainPage() {
               subtitle="Get everything you need to score 705+ in GMAT, 325+ in GRE, and 1500+ in SAT."
               center
             />
-            <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mx-auto mt-5 grid max-w-lg grid-cols-2 gap-5 sm:gap-8">
               {c.stats.map((stat) => (
                 <div key={stat.value} className="text-center">
                   <div className="mx-auto grid h-20 w-20 place-items-center rounded-full border-[3px] border-primary bg-card shadow-card sm:h-24 sm:w-24">
@@ -341,7 +344,10 @@ export function GmatMainPage() {
             </div>
           </div>
 
-          <SplitSection image={GMAT_MAIN_IMAGES.trustedIllustration} imageAlt="Why students trust AceYourTest">
+          <SplitSection
+            image={GMAT_MAIN_IMAGES.trustedIllustration}
+            imageAlt="Why thousands of GMAT aspirants trust AceYourTest"
+          >
             <SectionHeader eyebrow="Trust" title="Why 10,000+ Aspirants Trusted Us" />
             <ul className="mt-3 space-y-3">
               {c.trustedFeatures.map((f) => (
@@ -391,7 +397,10 @@ export function GmatMainPage() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
             <div className="space-y-4">
               <SectionHeader eyebrow="Differentiation" title="Stand Out from the Crowd" />
-              <Illustration src={GMAT_MAIN_IMAGES.standoutIllustration} alt="Stand out from the crowd" />
+              <Illustration
+                src={GMAT_MAIN_IMAGES.standoutIllustration}
+                alt="Stand out from the crowd with GMAT coaching"
+              />
               <ul className="space-y-2">
                 {c.standOut.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm">
@@ -403,7 +412,10 @@ export function GmatMainPage() {
             </div>
             <div className="space-y-4">
               <SectionHeader eyebrow="Edge" title="Gain a Competitive Advantage" />
-              <Illustration src={GMAT_MAIN_IMAGES.rocketIllustration} alt="Gain competitive advantage" />
+              <Illustration
+                src={GMAT_MAIN_IMAGES.rocketIllustration}
+                alt="Gain a competitive advantage in GMAT preparation"
+              />
               <ul className="space-y-2">
                 {c.competitiveEdge.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm">

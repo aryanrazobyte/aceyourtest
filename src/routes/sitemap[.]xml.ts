@@ -42,6 +42,9 @@ export const Route = createFileRoute("/sitemap.xml")({
             priority: "0.8",
           })),
           { path: "/sat", changefreq: "monthly", priority: "0.9" },
+          { path: "/sat/private-tutoring", changefreq: "monthly", priority: "0.85" },
+          { path: "/sat/microbatch-classes", changefreq: "monthly", priority: "0.85" },
+          { path: "/sat/group-sessions", changefreq: "monthly", priority: "0.85" },
           { path: "/sat/plans-pricing", changefreq: "monthly", priority: "0.85" },
           ...SAT_COACHING_CITIES.map((city) => ({
             path: `/sat/${city.slug}`,

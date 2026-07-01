@@ -27,7 +27,10 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SatIndexRouteImport } from './routes/sat.index'
 import { Route as GreIndexRouteImport } from './routes/gre.index'
 import { Route as GmatIndexRouteImport } from './routes/gmat.index'
+import { Route as SatPrivateTutoringRouteImport } from './routes/sat.private-tutoring'
 import { Route as SatPlansPricingRouteImport } from './routes/sat.plans-pricing'
+import { Route as SatMicrobatchClassesRouteImport } from './routes/sat.microbatch-classes'
+import { Route as SatGroupSessionsRouteImport } from './routes/sat.group-sessions'
 import { Route as SatCityRouteImport } from './routes/sat.$city'
 import { Route as GrePrivateTutoringRouteImport } from './routes/gre.private-tutoring'
 import { Route as GrePlansPricingRouteImport } from './routes/gre.plans-pricing'
@@ -132,9 +135,24 @@ const GmatIndexRoute = GmatIndexRouteImport.update({
   path: '/',
   getParentRoute: () => GmatRoute,
 } as any)
+const SatPrivateTutoringRoute = SatPrivateTutoringRouteImport.update({
+  id: '/private-tutoring',
+  path: '/private-tutoring',
+  getParentRoute: () => SatRoute,
+} as any)
 const SatPlansPricingRoute = SatPlansPricingRouteImport.update({
   id: '/plans-pricing',
   path: '/plans-pricing',
+  getParentRoute: () => SatRoute,
+} as any)
+const SatMicrobatchClassesRoute = SatMicrobatchClassesRouteImport.update({
+  id: '/microbatch-classes',
+  path: '/microbatch-classes',
+  getParentRoute: () => SatRoute,
+} as any)
+const SatGroupSessionsRoute = SatGroupSessionsRouteImport.update({
+  id: '/group-sessions',
+  path: '/group-sessions',
   getParentRoute: () => SatRoute,
 } as any)
 const SatCityRoute = SatCityRouteImport.update({
@@ -233,7 +251,10 @@ export interface FileRoutesByFullPath {
   '/gre/plans-pricing': typeof GrePlansPricingRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
   '/sat/$city': typeof SatCityRoute
+  '/sat/group-sessions': typeof SatGroupSessionsRoute
+  '/sat/microbatch-classes': typeof SatMicrobatchClassesRoute
   '/sat/plans-pricing': typeof SatPlansPricingRoute
+  '/sat/private-tutoring': typeof SatPrivateTutoringRoute
   '/gmat/': typeof GmatIndexRoute
   '/gre/': typeof GreIndexRoute
   '/sat/': typeof SatIndexRoute
@@ -264,7 +285,10 @@ export interface FileRoutesByTo {
   '/gre/plans-pricing': typeof GrePlansPricingRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
   '/sat/$city': typeof SatCityRoute
+  '/sat/group-sessions': typeof SatGroupSessionsRoute
+  '/sat/microbatch-classes': typeof SatMicrobatchClassesRoute
   '/sat/plans-pricing': typeof SatPlansPricingRoute
+  '/sat/private-tutoring': typeof SatPrivateTutoringRoute
   '/gmat': typeof GmatIndexRoute
   '/gre': typeof GreIndexRoute
   '/sat': typeof SatIndexRoute
@@ -299,7 +323,10 @@ export interface FileRoutesById {
   '/gre/plans-pricing': typeof GrePlansPricingRoute
   '/gre/private-tutoring': typeof GrePrivateTutoringRoute
   '/sat/$city': typeof SatCityRoute
+  '/sat/group-sessions': typeof SatGroupSessionsRoute
+  '/sat/microbatch-classes': typeof SatMicrobatchClassesRoute
   '/sat/plans-pricing': typeof SatPlansPricingRoute
+  '/sat/private-tutoring': typeof SatPrivateTutoringRoute
   '/gmat/': typeof GmatIndexRoute
   '/gre/': typeof GreIndexRoute
   '/sat/': typeof SatIndexRoute
@@ -335,7 +362,10 @@ export interface FileRouteTypes {
     | '/gre/plans-pricing'
     | '/gre/private-tutoring'
     | '/sat/$city'
+    | '/sat/group-sessions'
+    | '/sat/microbatch-classes'
     | '/sat/plans-pricing'
+    | '/sat/private-tutoring'
     | '/gmat/'
     | '/gre/'
     | '/sat/'
@@ -366,7 +396,10 @@ export interface FileRouteTypes {
     | '/gre/plans-pricing'
     | '/gre/private-tutoring'
     | '/sat/$city'
+    | '/sat/group-sessions'
+    | '/sat/microbatch-classes'
     | '/sat/plans-pricing'
+    | '/sat/private-tutoring'
     | '/gmat'
     | '/gre'
     | '/sat'
@@ -400,7 +433,10 @@ export interface FileRouteTypes {
     | '/gre/plans-pricing'
     | '/gre/private-tutoring'
     | '/sat/$city'
+    | '/sat/group-sessions'
+    | '/sat/microbatch-classes'
     | '/sat/plans-pricing'
+    | '/sat/private-tutoring'
     | '/gmat/'
     | '/gre/'
     | '/sat/'
@@ -552,11 +588,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GmatIndexRouteImport
       parentRoute: typeof GmatRoute
     }
+    '/sat/private-tutoring': {
+      id: '/sat/private-tutoring'
+      path: '/private-tutoring'
+      fullPath: '/sat/private-tutoring'
+      preLoaderRoute: typeof SatPrivateTutoringRouteImport
+      parentRoute: typeof SatRoute
+    }
     '/sat/plans-pricing': {
       id: '/sat/plans-pricing'
       path: '/plans-pricing'
       fullPath: '/sat/plans-pricing'
       preLoaderRoute: typeof SatPlansPricingRouteImport
+      parentRoute: typeof SatRoute
+    }
+    '/sat/microbatch-classes': {
+      id: '/sat/microbatch-classes'
+      path: '/microbatch-classes'
+      fullPath: '/sat/microbatch-classes'
+      preLoaderRoute: typeof SatMicrobatchClassesRouteImport
+      parentRoute: typeof SatRoute
+    }
+    '/sat/group-sessions': {
+      id: '/sat/group-sessions'
+      path: '/group-sessions'
+      fullPath: '/sat/group-sessions'
+      preLoaderRoute: typeof SatGroupSessionsRouteImport
       parentRoute: typeof SatRoute
     }
     '/sat/$city': {
@@ -700,13 +757,19 @@ const GreRouteWithChildren = GreRoute._addFileChildren(GreRouteChildren)
 
 interface SatRouteChildren {
   SatCityRoute: typeof SatCityRoute
+  SatGroupSessionsRoute: typeof SatGroupSessionsRoute
+  SatMicrobatchClassesRoute: typeof SatMicrobatchClassesRoute
   SatPlansPricingRoute: typeof SatPlansPricingRoute
+  SatPrivateTutoringRoute: typeof SatPrivateTutoringRoute
   SatIndexRoute: typeof SatIndexRoute
 }
 
 const SatRouteChildren: SatRouteChildren = {
   SatCityRoute: SatCityRoute,
+  SatGroupSessionsRoute: SatGroupSessionsRoute,
+  SatMicrobatchClassesRoute: SatMicrobatchClassesRoute,
   SatPlansPricingRoute: SatPlansPricingRoute,
+  SatPrivateTutoringRoute: SatPrivateTutoringRoute,
   SatIndexRoute: SatIndexRoute,
 }
 
