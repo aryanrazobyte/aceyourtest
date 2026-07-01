@@ -49,20 +49,13 @@ function Pills({ items }: { items: readonly string[] }) {
 
 function Illustration({ src, alt, className }: { src: string; alt: string; className?: string }) {
   return (
-    <div
-      className={cn(
-        "flex w-full items-center justify-center rounded-2xl border border-border bg-gradient-to-br from-white to-surface p-4 shadow-card sm:p-5",
-        className,
-      )}
-    >
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        decoding="async"
-        className="mx-auto block h-auto w-full max-w-[420px] object-contain"
-      />
-    </div>
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      className={cn("mx-auto block h-auto w-full max-w-[420px] object-contain", className)}
+    />
   );
 }
 
@@ -82,7 +75,7 @@ function SplitSection({
   return (
     <div
       className={cn(
-        "grid items-start gap-5 lg:grid-cols-2 lg:gap-8",
+        "grid items-start gap-4 lg:grid-cols-2 lg:gap-6",
         reverse && "lg:[&>*:first-child]:order-2",
         className,
       )}
@@ -113,7 +106,7 @@ export function GmatMainPage() {
       </PageHero>
 
       <section className="section-y !py-8 sm:!py-10">
-        <div className="container-page space-y-8 sm:space-y-10">
+        <div className="container-page space-y-7 sm:space-y-9">
           <PageBlock>
             <SectionHeader eyebrow="Exam Overview" title={c.aboutGmat.title} center />
             <SplitSection image={GMAT_MAIN_IMAGES.aboutIllustration} imageAlt="GMAT preparation illustration">
@@ -278,7 +271,7 @@ export function GmatMainPage() {
 
           <PageBlock>
             <SectionHeader eyebrow="Roadmap" title="Preparation Strategy" center />
-            <div className="grid gap-5 lg:grid-cols-2 lg:items-start">
+            <div className="grid gap-4 lg:grid-cols-2 lg:items-start">
               <Illustration
                 src={GMAT_MAIN_IMAGES.strategyIllustration}
                 alt="Structured GMAT preparation strategy roadmap"
@@ -362,14 +355,14 @@ export function GmatMainPage() {
             </ul>
           </SplitSection>
 
-          <div className="rounded-2xl border border-border bg-white p-4 shadow-card sm:p-6">
+          <div className="pt-1">
             <SectionHeader
               eyebrow="Our Promise"
               title="Everything You Need to Reach Your Target Score"
               subtitle="Structured training, live accountability, and expert reviews."
               center
             />
-            <div className="mt-5 w-full">
+            <div className="mt-4 w-full">
               <img
                 src={GMAT_MAIN_IMAGES.featuresHub}
                 alt="AceYourTest GMAT coaching features — target score assurance, live classes, customized learning paths"
@@ -394,37 +387,35 @@ export function GmatMainPage() {
             </ol>
           </SplitSection>
 
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
-            <div className="space-y-4">
+          <div className="grid gap-5 lg:grid-cols-2 lg:gap-7">
+            <div>
               <SectionHeader eyebrow="Differentiation" title="Stand Out from the Crowd" />
-              <Illustration
-                src={GMAT_MAIN_IMAGES.standoutIllustration}
-                alt="Stand out from the crowd with GMAT coaching"
-              />
-              <ul className="space-y-2">
+              <ul className="mt-3 space-y-2">
                 {c.standOut.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden />
-                    {item}
+                  <li
+                    key={item}
+                    className="flex items-center gap-3 rounded-lg bg-success/[0.07] px-3 py-2.5"
+                  >
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-success" aria-hidden />
+                    <span className="text-sm font-medium leading-snug text-navy">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="space-y-4">
+            <div>
               <SectionHeader eyebrow="Edge" title="Gain a Competitive Advantage" />
-              <Illustration
-                src={GMAT_MAIN_IMAGES.rocketIllustration}
-                alt="Gain a competitive advantage in GMAT preparation"
-              />
-              <ul className="space-y-2">
+              <ul className="mt-3 space-y-2">
                 {c.competitiveEdge.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm">
-                    <Target className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
-                    {item}
+                  <li
+                    key={item}
+                    className="flex items-center gap-3 rounded-lg bg-primary/[0.07] px-3 py-2.5"
+                  >
+                    <Target className="h-4 w-4 shrink-0 text-primary" aria-hidden />
+                    <span className="text-sm font-medium leading-snug text-navy">{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/10 px-3 py-2.5 text-sm font-medium text-navy">
+              <div className="mt-3 flex items-center gap-2.5 rounded-lg bg-gradient-to-r from-primary/10 via-accent/10 to-primary/5 px-3 py-2.5 text-sm font-medium text-navy">
                 <Rocket className="h-4 w-4 shrink-0 text-primary" aria-hidden />
                 Free GMAT study resources, strategy guides & tips with every program
               </div>
